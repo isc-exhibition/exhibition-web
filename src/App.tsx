@@ -1,28 +1,19 @@
 import React from 'react';
-import './App.css';
+import {
+  Route, Switch, Redirect, BrowserRouter as Router,
+} from 'react-router-dom';
+import IntroPage from './pages/IntroPage/IntroPage';
+import MainPage from './pages/MainPage/MainPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.tsx</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/main" component={MainPage} />
+        <Route exact path="/intro" component={IntroPage} />
+        <Redirect exact to="/intro" />
+      </Switch>
+    </Router>
   );
 }
 
