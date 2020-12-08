@@ -1,5 +1,5 @@
 import React from 'react';
-import IntroImage from './assets/intro_page.png';
+import IntroImage from './assets/MobileIntro.png';
 import IntroEnter from './assets/enter.png';
 import styles from './IntroPage.module.scss';
 
