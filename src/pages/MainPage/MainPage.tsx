@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './MainPage.module.scss';
+import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
 
 function MainPage() {
-  return <h1 className={styles.header}>ISC Main Page</h1>;
+  return <BackgroundImage />;
 }
 
 export default MainPage;
