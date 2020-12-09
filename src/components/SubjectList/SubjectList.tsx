@@ -1,10 +1,23 @@
 import React from 'react';
 import styles from './SubjectList.module.scss';
-import subjectList from '../../assets/subjectList.png';
+import subjectListImage from '../../assets/subjectList.png';
 
 function SubjectList() {
   return (
-    <img className={styles.subjectList} src={subjectList} alt="" />
+    <div className={styles.subjectList} style={{ backgroundImage: `url(${subjectListImage})` }}>
+      <div className={styles.subjectListColumn}>
+        <h1>Subject</h1>
+        <h1>Subject</h1>
+        <h1>Subject</h1>
+        <h1>Subject</h1>
+      </div>
+      <div className={styles.subjectListColumn}>
+        <h1>Subject</h1>
+        <h1>Subject</h1>
+        <h1>Subject</h1>
+        <h1>Subject</h1>
+      </div>
+    </div>
   );
 }
 

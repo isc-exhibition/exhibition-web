@@ -1,4 +1,20 @@
 .subjectList {
     width: 100%;
-    bottom: 0%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    border: solid pink 5px;
+}
+
+.subjectListColumn {
+    border: solid white 5px;
+    align-items: center;
+    justify-self: center;
 }
