@@ -3,7 +3,7 @@ import styles from './InfoNpc.module.scss';
 import infoNpc from '../../assets/infonpc.png';
 
 function InfoNpc() {
-  return <img className={styles.infonpc} src={infoNpc} alt="" />;
+  return <img className={styles.infoNpc} src={infoNpc} alt="" />;
 }
 
 export default InfoNpc;
