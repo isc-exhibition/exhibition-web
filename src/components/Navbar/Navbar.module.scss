@@ -1,0 +1,64 @@
+h2 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.navbarMenu {
+    display: flex;
+    flex-direction: column;
+    transition: all 2s ease;
+    
+    a {
+        color: black;
+        text-decoration: none;
+        padding: 5px;
+    }
+
+    p {
+        margin: 0;
+        padding: 5px;
+    }
+}
+
+.navbarButton {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+
+    font-size: medium;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.modal {
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    background: white;
+    padding: 20px 45px 40px 20px;
+    border-radius: 20px;
+    outline: none;
+
+    animation: fadein 0.7s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: none;
+
+}
