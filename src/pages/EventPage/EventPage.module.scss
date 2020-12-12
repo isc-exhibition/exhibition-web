@@ -10,12 +10,12 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;    
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .TextContainer{
-    position: relative;
-    top: 20%;
     height: 20vh;
     width: 100vw;
     text-align: center;
@@ -55,22 +55,18 @@ text-shadow: 2px 2px 3px black;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;   
-    position: relative;
-    top: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .BoardTitle{
     font-size: 5vw;
-    margin : 0px 0px 20px 0px;
+    margin : 5px 0px 0px 0px;
     color: white;
 }
 
-
-
 .EventButton {
-    margin: 20px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
