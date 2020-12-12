@@ -1,20 +1,35 @@
-.subjectList {
+.subjectListBorder {
+    position: relative;
+    width: 100%;
+    /* border: solid pink 5px; */
+}
+
+.subjectList{
+    position: absolute;
+    /* border: solid red 5px; */
+
     width: 100%;
     height: 100%;
+
+    top: 0%;
 
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+}
 
-    background-position: center center;
-    background-repeat: no-repeat;
-
-    border: solid pink 5px;
+.subjectListImage {
+    /* border: solid orange 5px; */
+    width: 100%;
 }
 
 .subjectListColumn {
-    border: solid white 5px;
+    /* border: solid blue 5px; */
+    margin: 0 10px;
+
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-self: center;
+    justify-content: space-evenly;
 }
