@@ -42,12 +42,12 @@
     width: 148px;
     height: 251px;
 
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     padding: 27px 35px 35px 27px;
     border-radius: 20px;
     outline: none;
 
-    animation: fadein 0.7s;
+    animation: fadein 0.5s;
 }
 
 @keyframes fadein {

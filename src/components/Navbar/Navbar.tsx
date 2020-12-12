@@ -31,6 +31,8 @@ function Navbar() {
         className={styles.modal}
         overlayClassName={styles.overlay}
         shouldFocusAfterRender={false}
+        closeTimeoutMS={2000}
+
       >
         <div className={styles.navbarMenu}>
           <h2>MENU</h2>
