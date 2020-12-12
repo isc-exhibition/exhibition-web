@@ -1,9 +1,13 @@
 import React from 'react';
-import backgroundImage from '../../assets/background/mobile_background.png';
 import styles from './BackgroundImage.module.scss';
 
-function BackgroundImage() {
-  return <div className={styles.background} style={{ backgroundImage: `url(${backgroundImage})` }} />;
+interface Props {
+  backgroundImageUrl: string;
+}
+
+function BackgroundImage(props: Props) {
+  const { backgroundImageUrl } = props;
+  return <div className={styles.background} style={{ backgroundImage: `url(${backgroundImageUrl})` }} />;
 }
 
 export default BackgroundImage;

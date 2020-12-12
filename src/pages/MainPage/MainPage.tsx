@@ -5,10 +5,12 @@ import LogoButton from '../../components/LogoButton/LogoButton';
 import SubjectList from '../../components/SubjectList/SubjectList';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
 
+import backgroundImage from '../../assets/background/mobile_background.png';
+
 function MainPage() {
   return (
     <>
-      <BackgroundImage />
+      <BackgroundImage backgroundImageUrl={backgroundImage} />
       <div className={styles.mainPageContainer}>
         <LogoButton />
         <InfoNpc />
