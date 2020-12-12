@@ -4,10 +4,73 @@
 }
 
 .BackgroundImage {
+    background-image: url(./assets/EventBackground.png);
     height: 100vh;
-    width: 100vh;
-    background-size: cover;
+    width: 100vw;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center;    
 
+}
+
+.TextContainer{
+    position: relative;
+    top: 20%;
+    height: 20vh;
+    width: 100vw;
+    text-align: center;
+}
+
+.EventTitle {
+    margin: 0px 0px 10px 0px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 10vw;
+    text-shadow: 4px 4px 4px black;
+    
+}
+
+.EventContent{
+margin: 1vw;
+color: white;
+font-size: 5vw;
+text-shadow: 2px 2px 3px black;
+
+}
+
+.EventFiveLetter{
+    margin: 0px;
+    color: white;
+    font-weight: bold;
+    font-size: 5vw;
+    text-shadow: 2px 2px 3px black;
+
+}
+
+.EventBoard {
+    background-image: url(./assets/Event_board.png);
+    height: 35vh;
+    width: 100vw;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;   
+    position: relative;
+    top: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.BoardTitle{
+    font-size: 5vw;
+    margin : 0px 0px 20px 0px;
+    color: white;
+}
+
+
+
+.EventButton {
+    margin: 20px 0px 0px 0px;
 }
