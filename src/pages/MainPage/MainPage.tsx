@@ -4,6 +4,7 @@ import InfoNpc from '../../components/InfoNpc/InfoNpc';
 import LogoButton from '../../components/LogoButton/LogoButton';
 import SubjectList from '../../components/SubjectList/SubjectList';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
+import Navbar from '../../components/Navbar/Navbar';
 
 import backgroundImage from '../../assets/background/mobile_background.png';
 
@@ -16,6 +17,7 @@ function MainPage() {
         <InfoNpc />
         <SubjectList />
       </div>
+      <Navbar />
     </>
   );
 }
