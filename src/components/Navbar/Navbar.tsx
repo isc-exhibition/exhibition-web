@@ -27,7 +27,6 @@ function Navbar() {
       <Modal
         isOpen={isNavbarMenuModalOpen}
         onRequestClose={toggleNavbarModal}
-        contentLabel="Example Modal"
         className={styles.modal}
         overlayClassName={styles.overlay}
         shouldFocusAfterRender={false}
