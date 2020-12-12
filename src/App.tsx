@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import IntroPage from './pages/IntroPage/IntroPage';
 import MainPage from './pages/MainPage/MainPage';
+import SubjectPage from './pages/SubjectPage/SubjectPage';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Switch>
         <Route exact path="/main" component={MainPage} />
         <Route exact path="/intro" component={IntroPage} />
+        <Route exact path="/subjectpage" component={SubjectPage} />
         <Redirect exact to="/intro" />
       </Switch>
     </Router>

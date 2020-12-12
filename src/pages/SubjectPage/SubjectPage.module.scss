@@ -1,0 +1,40 @@
+.subjectWrapper {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2, h4, h5 {
+        margin: 0;
+    }
+
+    .name {
+        font-size: 2.25rem;
+        font-weight: bold;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
+        margin: 4px 0 22px;
+    }
+
+    .shortName {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-shadow: 3px 3px 0.4px rgba(0, 0, 0, 0.7);
+    }
+
+    .professor {
+        font-size: 1.5rem;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+    }
+
+    .introduction {
+        word-break: break-all;
+        width: 84%;
+        text-align: center;
+    }
+}
