@@ -1,19 +1,23 @@
-.IntroImage {
-    width: 70%;
-    height: auto;
-    
+.IntroBackground {
+    background-image: url(./assets/MobileIntro.png);
+    height: 100vh;
+    width: 100vw;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 .IntroContainer {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .IntroEnter {
     width: 30vw;
-    height: 5vw;
+    height: 5vh;
 }
