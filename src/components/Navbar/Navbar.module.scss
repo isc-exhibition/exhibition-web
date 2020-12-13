@@ -180,3 +180,48 @@
         }
     }
 }
+
+.navbarMenuPC {
+    display: none;
+}
+
+@media (min-width: 800px) {
+    .navbarMenu {
+        display: none;
+    }
+
+    .navbarButton {
+        display: none;
+    }
+
+    .navbarMenuPC {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 0%;
+        right: 5%;
+        width: 60vw;
+        height: 15vh;
+        font-size: 25px;
+
+        .infoMenuButton {
+            text-align: left;
+            font-size: 25px;
+            padding: 0;
+            background: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        h2 {
+            display: none;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+    }
+}
