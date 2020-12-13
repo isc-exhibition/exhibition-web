@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './SubjectList.module.scss';
-import subjectListImage from '../../assets/subjectList.png';
+import subjectListImage from '../../assets/mobile_subjectList.png';
 
 function SubjectList() {
   return (
