@@ -8,13 +8,15 @@
     background-repeat: no-repeat;
 
     .subjectList {
-        width: 100%;
+        width: 90%;
         max-width: 340px;
         height: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(4, 1fr);
         margin: auto;
+        text-align: center;
+        align-items: center;
     }
 }
 
@@ -33,9 +35,9 @@
             width: 100%;
             max-width: 340px;
             height: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-evenly;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
             margin: auto;
         }
     }
