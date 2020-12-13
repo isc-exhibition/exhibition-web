@@ -21,8 +21,9 @@
 @media (min-width: 800px) {
     .subjectListWrapper {
         background-image: url("../../assets/desktop_subjectList.png");
-        width: 30vw;
+        width: 100%;
         height: 50vh;
+        min-width: 500px;
         top: 0%;
         background-position: center;
         background-size: contain;
