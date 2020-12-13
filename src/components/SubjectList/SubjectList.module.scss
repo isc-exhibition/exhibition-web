@@ -1,4 +1,5 @@
 .subjectListWrapper {
+    background-image: url("../../assets/mobile_subjectList.png");
     width: 90%;
     height: 100%;
     top: 0%;
@@ -14,6 +15,28 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
         margin: auto;
+    }
+}
+
+@media (min-width: 800px) {
+    .subjectListWrapper {
+        background-image: url("../../assets/desktop_subjectList.png");
+        width: 30vw;
+        height: 50vh;
+        top: 0%;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    
+        .subjectList {
+            width: 100%;
+            max-width: 340px;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: auto;
+        }
     }
 }
 

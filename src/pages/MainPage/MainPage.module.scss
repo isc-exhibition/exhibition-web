@@ -3,10 +3,21 @@
   top: 0%;
   width: 100%;
   height: 100%;
-  margin: auto;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+}
+
+@media (min-width: 800px) {
+  .mainPageContainer {
+    position: absolute;
+    bottom: 0%;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 }

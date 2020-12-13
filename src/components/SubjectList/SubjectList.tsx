@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from './SubjectList.module.scss';
-import subjectListImage from '../../assets/mobile_subjectList.png';
 
 function SubjectList() {
   return (
-    <div className={styles.subjectListWrapper} style={{ backgroundImage: `url(${subjectListImage})` }}>
+    <div className={styles.subjectListWrapper}>
       <div className={styles.subjectList}>
         <h1>Subject</h1>
         <h1>Subject</h1>
@@ -14,6 +13,7 @@ function SubjectList() {
         <h1>Subject</h1>
         <h1>Subject</h1>
         <h1>Subject</h1>
+        {window.matchMedia('(min-width: 800px)').matches}
       </div>
     </div>
   );
