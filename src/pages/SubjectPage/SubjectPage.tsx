@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './SubjectPage.module.scss';
 import subjectBackgroundImage from './mobile_subject_background.png';
+import AssignmentList from '../../components/AssignmentList/AssignmentList';
 
 const mockupSubject = {
   shortName: '유저는 저유',
@@ -20,15 +21,20 @@ function SubjectPage() {
   const subject = mockupSubject;
 
   return (
-    <div className={styles.subjectWrapper} style={{ backgroundImage: `url(${subjectBackgroundImage})` }}>
-      <h4 className={styles.shortName}>
-        &quot;
-        {subject.shortName}
-        &quot;
-      </h4>
-      <h2 className={styles.name}>{subject.name}</h2>
-      <h5 className={styles.professor}>{subject.professor}</h5>
-      <p className={styles.introduction}>{subject.introduction}</p>
+    <div className={styles.subjectPage}>
+      <div className={styles.subjectWrapper} style={{ backgroundImage: `url(${subjectBackgroundImage})` }}>
+        <h4 className={styles.shortName}>
+          &quot;
+          {subject.shortName}
+          &quot;
+        </h4>
+        <h2 className={styles.name}>{subject.name}</h2>
+        <h5 className={styles.professor}>{subject.professor}</h5>
+        <p className={styles.introduction}>{subject.introduction}</p>
+      </div>
+      <div className={styles.assignmentListWrapper}>
+        <AssignmentList />
+      </div>
     </div>
   );
 }
