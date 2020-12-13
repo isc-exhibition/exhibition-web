@@ -4,6 +4,10 @@ import {
 } from 'react-router-dom';
 import IntroPage from './pages/IntroPage/IntroPage';
 import MainPage from './pages/MainPage/MainPage';
+// import {
+//   CSSTransition,
+//   TransitionGroup
+// } from 'react-transition-group';
 
 function App() {
   return (
