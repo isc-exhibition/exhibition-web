@@ -27,3 +27,5 @@ yarn-error.log*
 /dist
 /.vscode
 
+.nginx.conf
+
