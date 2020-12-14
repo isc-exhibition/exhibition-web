@@ -10,13 +10,11 @@
     .subjectList {
         width: 90%;
         max-width: 340px;
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: repeat(4, 1fr);
+        height: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
         margin: auto;
-        text-align: center;
-        align-items: center;
     }
 }
 
@@ -33,11 +31,11 @@
     
         .subjectList {
             width: 100%;
-            max-width: 340px;
-            height: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr;
+            max-width: 500px;
+            height: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
             margin: auto;
         }
     }
