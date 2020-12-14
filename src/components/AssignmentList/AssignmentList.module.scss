@@ -7,4 +7,18 @@
     background-size: cover;
     background-repeat: no-repeat;
     margin: auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 30px;
+
+
+    .assignment {
+        width: 120px;
+        height: 120px;
+        background-color: gray;
+        border-radius: 50%;
+    }
 }
