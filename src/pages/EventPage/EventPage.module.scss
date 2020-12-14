@@ -1,6 +1,6 @@
 .BackgroundContainer {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 .BackgroundImage {
@@ -20,10 +20,12 @@
     height: 50vh;
     width: 100vw;
     text-align: center;
+
 }
 
 .EventTitle {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
     color: white;
     font-weight: bold;
     font-size: 2.25rem;
@@ -34,7 +36,7 @@
 .EventContent{
 margin: 1vw;
 color: white;
-font-size: 1.3rem;
+font-size: 1.2rem;
 text-shadow: 2px 2px 3px black;
 
 }
@@ -55,11 +57,12 @@ text-shadow: 2px 2px 3px black;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;   
+
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 20px;
 }
 
 .BoardTitle{
@@ -69,11 +72,98 @@ text-shadow: 2px 2px 3px black;
 }
 
 .EventButton {
-    margin: -10px 0px 0px 0px;
+    margin-top: -10px;
     height: 5vh;
     width: 40vw;
 }
 
 input {
     font-size: 1.5rem;
+}
+
+
+@media (min-width: 767px) {
+    .BackgroundContainer {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .BackgroundImage {
+        background-image: url(./assets/DesktopEventBackground.png);
+        height: 100vh;
+        width: 100vw;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+    .TextContainer{
+        height: 20vh;
+        width: 100vw;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    
+    .EventTitle {
+        margin-bottom:10px;
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 2.25rem;
+        text-shadow: 4px 4px 4px black;
+        
+    }
+    
+    .EventContent{
+    margin: 1vw;
+    color: white;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 3px black;
+    
+    }
+    
+    .EventFiveLetter{
+        margin: 0px;
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-shadow: 2px 2px 3px black;
+    
+    }
+    
+    .EventBoard {
+        background-image: url(./assets/DesktopBoard.png);
+        height: 35vh;
+        width: 100vw;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: center;   
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: 100px 0 0 0;
+    }
+    
+    .BoardTitle{
+        font-size: 1.5rem;
+        margin : 5px 0px -10px 0px;
+        color: white;
+    }
+    
+    .EventButton {
+        margin-top: -10px;
+        height: 5vh;
+        width: 40vw;
+    }
+    
+    input {
+        font-size: 1.5rem;
+    }
 }
