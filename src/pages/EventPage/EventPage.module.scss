@@ -1,30 +1,30 @@
 .BackgroundContainer {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 .BackgroundImage {
     background-image: url(./assets/EventBackground.png);
     height: 100vh;
     width: 100vw;
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;    
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
 .TextContainer{
-    height: 55vh;
+    height: 50vh;
     width: 100vw;
     text-align: center;
-    margin-bottom: 20px;
 
 }
 
 .EventTitle {
-    margin: 0px 0px 10px 0px;
+    margin-bottom: 30px;
     text-align: center;
     color: white;
     font-weight: bold;
@@ -36,7 +36,7 @@
 .EventContent{
 margin: 1vw;
 color: white;
-font-size: 1.5rem;
+font-size: 1.2rem;
 text-shadow: 2px 2px 3px black;
 
 }
@@ -52,15 +52,18 @@ text-shadow: 2px 2px 3px black;
 
 .EventBoard {
     background-image: url(./assets/Event_board.png);
-    height: 35vh;
+    height: 29vh;
     width: 100vw;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;   
+
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+
 }
 
 .BoardTitle{
@@ -70,7 +73,7 @@ text-shadow: 2px 2px 3px black;
 }
 
 .EventButton {
-    margin: -10px 0px 0px 0px;
+    margin-top: -10px;
     height: 5vh;
     width: 40vw;
 }
@@ -79,24 +82,15 @@ input {
     font-size: 1.5rem;
 }
 
-.Letter{
-    position: absolute;
-    top: 40%;
-    right: 5%;
-    height: auto;
-    width: 50vw;
-    transform: translateX(200px) translateY(-230px);
-     
-}
 
-@media (min-width: 800px) {
+@media (min-width: 767px) {
     .BackgroundContainer {
         width: 100%;
         height: 100%;
     }
     
     .BackgroundImage {
-        background-image: url(./assets/EventBackground.png);
+        background-image: url(./assets/DesktopEventBackground.png);
         height: 100vh;
         width: 100vw;
         background-size: 100% 100%;
@@ -118,7 +112,7 @@ input {
     }
     
     .EventTitle {
-        margin: 0px 0px 10px 0px;
+        margin-bottom:10px;
         text-align: center;
         color: white;
         font-weight: bold;
@@ -145,7 +139,7 @@ input {
     }
     
     .EventBoard {
-        background-image: url(./assets/Event_board.png);
+        background-image: url(./assets/DesktopBoard.png);
         height: 35vh;
         width: 100vw;
         background-size: 100% 100%;
@@ -165,7 +159,7 @@ input {
     }
     
     .EventButton {
-        margin: -10px 0px 0px 0px;
+        margin-top: -10px;
         height: 5vh;
         width: 40vw;
     }
