@@ -24,11 +24,11 @@ function EventPage() {
           <br />
           가져다 줄 것입니다.
         </p>
-      </div>
-      <div className={styles.EventBoard}>
-        <p className={styles.BoardTitle}>회문입력</p>
-        <input type="text" name="EventAnswer" placeholder="Hint: _ _ _ _ _(5글자)" />
-        <button className={styles.EventButton} name="EventButton" type="button">제출하기</button>
+        <div className={styles.EventBoard}>
+          <p className={styles.BoardTitle}>회문입력</p>
+          <input type="text" name="EventAnswer" placeholder="Hint: _ _ _ _ _(5글자)" />
+          <button className={styles.EventButton} name="EventButton" type="button">제출하기</button>
+        </div>
       </div>
     </div>
   );
