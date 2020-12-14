@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react';
 import styles from './SubjectPage.module.scss';
-import subjectBackgroundImage from './mobile_subject_background.png';
+import subjectBackgroundImage from '../../assets/mobile_subject_background.png';
 import AssignmentList from '../../components/AssignmentList/AssignmentList';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
 

@@ -1,0 +1,72 @@
+.assignmentWrapper {
+    position: absolute;
+    height: 100%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    color: white;
+
+        h2, h3, h4, h5, p {
+            margin: 0;
+        }
+
+        .name, .concept, .teamname, .members, .description, .whiteRectangle, a {
+            padding: 0 50px;
+        }
+
+        .concept, .teamname, .members, .description, a {
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+        }
+
+        .teamname, .members, .description {
+            font-size: 1.25rem; 
+         }
+
+        .name {
+            font-size: 2.25rem;
+            font-weight: bold;
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
+            margin: 4px 0 22px;
+        }
+
+        .concept {
+           font-size: 1.375rem;
+        }
+
+        .mainImage {
+            height: 286px;
+            display: flex;
+            margin: auto;
+        }
+
+        .concept:after {
+            content: "";
+            width: 26px;
+            height: 6px;
+            background-color: white;
+            display: block;
+            padding: 8p;
+            margin: 18px 0 20px 0;
+        }
+
+        .members {
+            margin: 4px 0 16px 0;
+        }
+
+        .link {
+            width: 100%;
+            height: 180px;
+            border: none;
+            margin-top: 40px;
+            display: block;
+        }
+
+        a {
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+            margin-top: 24px;
+            margin: auto;
+        }
+
+}
