@@ -1,0 +1,136 @@
+.IntroContainer {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.IntroImage{
+    background-image: url(./assets/mobiletitle.png);
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.Logo{
+    max-width: 100vw;
+    max-height: 100vh;
+    margin-bottom: 60px;
+    margin-top: 60px; 
+}
+
+.IntroImage[data-click = 'true'] {
+    animation: title 1.5s 1;
+}
+
+
+.Logo[data-click = 'true'] {
+    animation: logo 1.5s 1;
+}
+
+.IntroEnter {
+    width: 30vw;
+    height: 5vh;
+    transform: translateY(-40px);
+    display: block
+
+}
+
+
+@keyframes logo {
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes title {
+    100% {
+        transform: rotate(-180deg);
+    }
+
+}
+
+@media (min-width: 800px) {
+    .IntroContainer {
+        height: 100%;
+        width: 100%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    
+    
+    .IntroImage{
+        background-image: url(./assets/DesktopTitle.png);
+        width: 100vw;
+        height: 100vh;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    
+    
+    .Logo{
+        max-width: 100vw;
+        max-height: 100vh;
+        margin-bottom: 60px;
+        margin-top: 60px; 
+    }
+    
+    .IntroImage[data-click = 'true'] {
+        animation: title 1.5s 1;
+    }
+    
+    
+    .Logo[data-click = 'true'] {
+        animation: logo 1.5s 1;
+    }
+    
+    .IntroEnter {
+        width: 30vw;
+        height: 5vh;
+        transform: translateY(-40px);
+        display: block
+    
+    }
+    
+    
+    @keyframes logo {
+        100% {
+            transform: rotate(360deg);
+        }
+    
+    }
+    
+    @keyframes title {
+        100% {
+            transform: rotate(-180deg);
+        }
+    
+    }
+
+}
