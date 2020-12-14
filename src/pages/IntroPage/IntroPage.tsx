@@ -7,9 +7,11 @@ import styles from './IntroPage.module.scss';
 function IntroPage() {
   const [notClick, setClick] = useState(false);
   const history = useHistory();
+
   function MovePage() {
     history.push('/main');
   }
+
   return (
     <div
       className={styles.IntroContainer}
