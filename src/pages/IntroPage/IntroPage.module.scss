@@ -6,13 +6,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    vertical-align: middle;
+   
 
 }
 
 
 .IntroImage{
     background-image: url(./assets/mobiletitle.png);
-    width: 100vw;
+    width: auto;
     height: 100vh;
     background-position: center center;
     background-repeat: no-repeat;
@@ -43,10 +46,16 @@
 }
 
 .IntroEnter {
-    width: 30vw;
+    position: absolute;
+    bottom: 50px;
+    width: 60vw;
     height: 5vh;
-    transform: translateY(-40px);
-    display: block
+    font-size : 1rem;
+    background-color: rgba(200,200,200,0.7);
+    border-radius: 50px;
+    font-weight: bold;
+    line-height: 5vh;
+    padding: 7px;
 
 }
 
@@ -65,23 +74,21 @@
 
 }
 
-@media (min-width: 800px) {
+@media (min-width: 768px) {
     .IntroContainer {
         height: 100%;
         width: 100%;
-    
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    
     }
     
     
     .IntroImage{
         background-image: url(./assets/DesktopTitle.png);
         width: 100vw;
-        height: 100vh;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -90,7 +97,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    
     }
     
     
@@ -111,10 +117,16 @@
     }
     
     .IntroEnter {
-        width: 30vw;
+        position: absolute;
+        bottom: 50px;
+        width: 20vw;
         height: 5vh;
-        transform: translateY(-40px);
-        display: block
+        font-size : 1rem;
+        background-color: rgba(200,200,200,0.7);
+        border-radius: 50px;
+        font-weight: bold;
+        line-height: 5vh;
+        
     
     }
     
@@ -122,6 +134,7 @@
     @keyframes logo {
         100% {
             transform: rotate(360deg);
+ 
         }
     
     }
@@ -129,6 +142,7 @@
     @keyframes title {
         100% {
             transform: rotate(-180deg);
+
         }
     
     }
