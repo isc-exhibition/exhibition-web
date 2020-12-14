@@ -26,13 +26,13 @@
 }
 
 .IntroContainer{
-    height: 10vh;
+    height: 5vh;
     width: 80vw;
     background-color: black;
     opacity: 0.7;
     border: 2px;
     border-radius: 25px;
-    margin-top: 5px;
+    margin-top: 15px;
 
     display: flex;
     flex-direction: column;
@@ -72,7 +72,7 @@
 .FaqText {
     font-size: 0.4rem;
     font-weight: bold;
-    margin:  0 0 0 10px;
+    margin:  0 0 0 20px;
     line-height: 1.8;
 
 }
@@ -80,7 +80,7 @@
 .IndentText{
     font-size: 0.4rem;
     font-weight: bold;
-    margin: 0 0 0 20px;
+    margin: 0 0 0 30px;
     line-height: 1.8;
 
 }
@@ -88,8 +88,7 @@
 .DoubleIndentText{
     font-size: 0.4rem;
     font-weight: bold;
-    margin:  0 0 0 30px;
+    margin:  0 0 0 40px;
     line-height: 1.8;
-
 
 }
