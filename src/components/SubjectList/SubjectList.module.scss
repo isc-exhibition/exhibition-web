@@ -10,11 +10,28 @@
     .subjectList {
         width: 90%;
         max-width: 340px;
-        height: 80%;
+        height: 100%;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
         margin: auto;
+        text-align: center;
+        margin-top: -10px;
+
+        img {
+            height: auto;
+            width: 125px;
+            margin-bottom: -20px;
+        }
+    }
+    
+    .subjectContainer {
+        align-items: center;
+    }
+
+    .subjectName {
+        background-color: black;
+        z-index: 1;
     }
 }
 
