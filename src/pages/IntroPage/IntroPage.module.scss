@@ -6,6 +6,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    vertical-align: middle;
+   
 
 }
 
@@ -43,10 +46,15 @@
 }
 
 .IntroEnter {
-    width: 30vw;
+    position: absolute;
+    bottom: 50px;
+    width: 50vw;
     height: 5vh;
-    transform: translateY(-40px);
-    display: block
+    font-size : 1rem;
+    background-color: rgba(200,200,200,0.7);
+    border-radius: 50px;
+    font-weight: bold;
+    line-height: 5vh;
 
 }
 
@@ -111,10 +119,15 @@
     }
     
     .IntroEnter {
-        width: 30vw;
+        position: absolute;
+        bottom: 50px;
+        width: 20vw;
         height: 5vh;
-        transform: translateY(-40px);
-        display: block
+        font-size : 1rem;
+        background-color: rgba(200,200,200,0.7);
+        border-radius: 50px;
+        font-weight: bold;
+        line-height: 5vh;
     
     }
     
