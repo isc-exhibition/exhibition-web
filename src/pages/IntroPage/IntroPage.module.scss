@@ -48,13 +48,14 @@
 .IntroEnter {
     position: absolute;
     bottom: 50px;
-    width: 50vw;
+    width: 60vw;
     height: 5vh;
     font-size : 1rem;
     background-color: rgba(200,200,200,0.7);
     border-radius: 50px;
     font-weight: bold;
     line-height: 5vh;
+    padding: 7px;
 
 }
 
@@ -73,22 +74,21 @@
 
 }
 
-@media (min-width: 800px) {
+@media (min-width: 768px) {
     .IntroContainer {
         height: 100%;
         width: 100%;
-    
+        
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    
     }
     
     
     .IntroImage{
         background-image: url(./assets/DesktopTitle.png);
-        width: 100vw;
+        width: 80vw;
         height: 100vh;
         background-position: center center;
         background-repeat: no-repeat;
@@ -98,13 +98,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    
     }
     
     
     .Logo{
-        max-width: 100vw;
-        max-height: 100vh;
+        max-width: 80vw;
+        max-height: 80vh;
         margin-bottom: 60px;
         margin-top: 60px; 
     }
@@ -128,6 +127,7 @@
         border-radius: 50px;
         font-weight: bold;
         line-height: 5vh;
+        
     
     }
     
@@ -135,6 +135,7 @@
     @keyframes logo {
         100% {
             transform: rotate(360deg);
+ 
         }
     
     }
@@ -142,6 +143,7 @@
     @keyframes title {
         100% {
             transform: rotate(-180deg);
+
         }
     
     }

@@ -8,7 +8,7 @@ import UseMediaQuery from '../../customHooks/UseMediaQuery';
 function IntroPage() {
   const [notClick, setClick] = useState(false);
   const history = useHistory();
-  const isDeviceHeightHighAsIphone8Plus = UseMediaQuery('(min-height: 730px)');
+  const isDeviceHeightHighAsIphone8Plus = UseMediaQuery('(max-width: 767px)');
   let logo;
   let enter;
 
