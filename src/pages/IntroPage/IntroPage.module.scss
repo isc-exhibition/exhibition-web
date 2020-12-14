@@ -15,7 +15,7 @@
 
 .IntroImage{
     background-image: url(./assets/mobiletitle.png);
-    width: 100vw;
+    width: auto;
     height: 100vh;
     background-position: center center;
     background-repeat: no-repeat;
@@ -88,8 +88,7 @@
     
     .IntroImage{
         background-image: url(./assets/DesktopTitle.png);
-        width: 80vw;
-        height: 100vh;
+        width: 100vw;
         background-position: center center;
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -102,8 +101,8 @@
     
     
     .Logo{
-        max-width: 80vw;
-        max-height: 80vh;
+        max-width: 100vw;
+        max-height: 100vh;
         margin-bottom: 60px;
         margin-top: 60px; 
     }
