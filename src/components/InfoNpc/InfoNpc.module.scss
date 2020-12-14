@@ -11,6 +11,13 @@
     }
 }
 
+@media (max-height: 667px) {
+    .infoNpc {
+        display: none;
+    }
+}
+
+
 @media (min-width: 800px) {
     .infoNpc {
         height: 30vh;
