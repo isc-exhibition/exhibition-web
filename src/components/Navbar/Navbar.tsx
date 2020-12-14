@@ -57,6 +57,14 @@ function Navbar() {
           }
         </div>
       </Modal>
+      <div className={styles.navbarMenuPC}>
+        <button className={styles.infoMenuButton} type="button" onClick={toggleInfoModal}>과제전 소개</button>
+        {
+            menuList.map((menu) => (
+              <Link to={menu.path}>{menu.name}</Link>
+            ))
+          }
+      </div>
       <Modal
         isOpen={isInfoModalOpen}
         onRequestClose={toggleInfoModal}

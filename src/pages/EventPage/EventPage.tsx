@@ -30,7 +30,6 @@ function EventPage() {
           <button className={styles.EventButton} name="EventButton" type="button">제출하기</button>
         </div>
       </div>
-
     </div>
   );
 }
