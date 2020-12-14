@@ -5,6 +5,7 @@ import {
 import IntroPage from './pages/IntroPage/IntroPage';
 import MainPage from './pages/MainPage/MainPage';
 import SubjectPage from './pages/SubjectPage/SubjectPage';
+import EventPage from './pages/EventPage/EventPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/main" component={MainPage} />
         <Route exact path="/intro" component={IntroPage} />
         <Route exact path="/subjectpage" component={SubjectPage} />
+        <Route exact path="/event" component={EventPage} />
         <Redirect exact to="/intro" />
       </Switch>
     </Router>

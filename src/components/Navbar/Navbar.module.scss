@@ -1,0 +1,182 @@
+.navbarMenu {
+    display: flex;
+    flex-direction: column;
+    transition: all 2s ease;
+    font-size: 18px;
+    
+    h2 {
+        font-size: 30px;
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+        padding: 10px 0;
+    }
+
+    p {
+        margin: 0;
+        padding: 9px 0;
+    }
+}
+
+.navbarButton {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 20px;
+    color: white;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.modal {
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    width: 148px;
+    height: 251px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 27px 35px 35px 27px;
+    border-radius: 20px;
+    outline: none;
+    animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: none;
+}
+
+.infoMenuButton {
+    text-align: left;
+    font-size: 18px;
+    padding: 9px 0;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.infoModalButton {
+    width: 135px;
+    height: 50px;
+    border: solid black 1px;
+    background: rgba(200, 200, 200, 0.46);
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.infoModal {
+    position: absolute;
+    width: 70%;
+    height: 67%;
+    min-height: 476px;
+    background: rgba(255, 255, 255, 0.95);
+    border: solid black 1px;
+    padding: 27px 35px 35px 27px;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border-radius: 40px;
+    outline: none;
+    animation: fadein 0.5s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .infoTitle {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 9px 0;
+    }
+
+    .infoContetns {
+        font-weight: lighter;
+        font-size: 16px;
+    }
+
+    .infoEvent {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    a {
+        color: black;
+    }
+}
+
+.infoOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: none;
+}
+
+@media (max-height: 510px) {
+    .infoModal {
+        position: absolute;
+        width: 70%;
+        height: 67%;
+        background: rgba(255, 255, 255, 0.95);
+        border: solid black 1px;
+        padding: 27px 35px 35px 27px;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        border-radius: 40px;
+        outline: none;
+        animation: fadein 0.5s;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    
+        .infoTitle {
+            font-weight: bold;
+            font-size: 18px;
+            margin: 9px 0;
+        }
+    
+        .infoContetns {
+            font-weight: 300;
+            font-size: 16px;
+        }
+
+        .infoEvent {
+            display: none;
+        }
+    
+        a {
+            display: none;
+        }
+    }
+}

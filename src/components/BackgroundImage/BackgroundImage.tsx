@@ -1,7 +1,13 @@
 import React from 'react';
+import styles from './BackgroundImage.module.scss';
 
-function BackgroundImage() {
-  return <h1>BackgroundImage</h1>;
+interface Props {
+  backgroundImageUrl: string;
+}
+
+function BackgroundImage(props: Props) {
+  const { backgroundImageUrl } = props;
+  return <div className={styles.background} style={{ backgroundImage: `url(${backgroundImageUrl})` }} />;
 }
 
 export default BackgroundImage;
