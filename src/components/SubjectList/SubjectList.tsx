@@ -9,8 +9,9 @@ function SubjectList() {
         {
           subjectListOnFallSemester.map((subject) => (
             <div className={styles.subjectContainer}>
-              <img src={subject.image} alt="" />
-              <div className={styles.subjectName}>{subject.name}</div>
+              <div className={styles.subjectImage} style={{ backgroundImage: `url(${subject.image})` }} />
+              <p className={styles.subjectName}>{subject.name}</p>
+
             </div>
           ))
         }

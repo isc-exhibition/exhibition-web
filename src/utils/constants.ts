@@ -22,14 +22,14 @@ interface SubjectListOnFallSemester {
 }
 
 const subjectListOnFallSemester: SubjectListOnFallSemester[] = [
-  { name: digitalVideo2, image: digitalVideo2Image },
-  { name: futureNews2, image: futureNews2Image },
-  { name: ICT101, image: ICT101Image },
-  { name: interactiveStory, image: interactiveStoryImage },
-  { name: interactiveMedia, image: interactiveMediaImage },
-  { name: personalProject, image: personalProjectImage },
-  { name: soundInteraction, image: soundInteractionImage },
   { name: UCD, image: UCDImage },
+  { name: soundInteraction, image: soundInteractionImage },
+  { name: ICT101, image: ICT101Image },
+  { name: futureNews2, image: futureNews2Image },
+  { name: interactiveMedia, image: interactiveMediaImage },
+  { name: digitalVideo2, image: digitalVideo2Image },
+  { name: interactiveStory, image: interactiveStoryImage },
+  { name: personalProject, image: personalProjectImage },
 ];
 
 export default subjectListOnFallSemester;

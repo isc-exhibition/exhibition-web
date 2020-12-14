@@ -1,3 +1,9 @@
 .infoNpc {
-    height: 30vh;
+    height: 25vh;
+}
+
+@media (min-height: 896px) {
+    .infoNPC {
+        height: 30vh;
+    }
 }
