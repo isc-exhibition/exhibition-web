@@ -4,7 +4,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
 import EventLetter from './assets/EventLetter.png';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
-import backgroundImage from '../../assets/background/mobile_background.png';
+import MobilebackgroundImage from '../../assets/background/mobile_background.png';
 
 let event;
 
@@ -75,7 +75,7 @@ function EventPage() {
   }
   return (
     <>
-      <BackgroundImage backgroundImageUrl={isDeviceHeightHighAsIphone8Plus ? backgroundImage : ''} />
+      <BackgroundImage backgroundImageUrl={isDeviceHeightHighAsIphone8Plus ? MobilebackgroundImage : ''} />
       {event}
       <Navbar />
     </>
