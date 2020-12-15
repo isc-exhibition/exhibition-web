@@ -1,6 +1,6 @@
 .EventPageContainer {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     position: absolute;
     top:0%;
 
@@ -13,7 +13,7 @@
     position: absolute;
     width: 50vw;
     height: auto;
-    top: 35%;
+    top: 45%;
     right: 1%;
 
 }
@@ -36,15 +36,16 @@
 }
 
 .EventContent{
-margin: 1vw;
+margin: 0;
 color: white;
 font-size: 1.3em;
 text-shadow: 2px 2px 3px black;
 
+
 }
 
 .EventFiveLetter{
-    margin: 0px;
+    margin: 0;
     color: white;
     font-weight: bold;
     font-size: 1.3rem;
@@ -55,7 +56,7 @@ text-shadow: 2px 2px 3px black;
 .EventBoard {
     background-image: url(./assets/Event_board.png);
     height: 40vh;
-    width: 100vw;
+    width: auto;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;   
@@ -79,6 +80,7 @@ text-shadow: 2px 2px 3px black;
 .EventButton {
     height: 5vh;
     width: 40vw;
+    padding: 0;
 }
 
 input {
@@ -86,7 +88,7 @@ input {
 }
 
 
-@media (min-width: 767px) {    
+@media (min-width: 768px) {    
 
     .EventPageContainer {
         width: 100vw;
@@ -130,7 +132,7 @@ input {
     .DeskTopTextContainer {
         margin-top: 100px;
         width: 45vw;
-        height: 30vh;
+        height: auto;
         line-height: 1.6;
         transform: translateX(-50px);
         
@@ -173,6 +175,7 @@ input {
         font-size: 2rem;
         margin: 30px 0 0 0;
         text-shadow: 2px 2px 3px black;
+        transform: translateX(-60px);
        
     }
 

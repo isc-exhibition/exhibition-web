@@ -14,7 +14,6 @@ function EventPage() {
   if (isDeviceHeightHighAsIphone8Plus) {
     event = (
       <div className={styles.EventPageContainer}>
-        <img src={EventLetter} alt="Letter" className={styles.EventLetter} />
         <div className={styles.TextContainer}>
           <p className={styles.EventTitle}>이벤트</p>
           <p className={styles.EventContent}>
@@ -36,6 +35,7 @@ function EventPage() {
             가져다 줄 것입니다.
           </p>
         </div>
+        <img src={EventLetter} alt="Letter" className={styles.EventLetter} />
         <div className={styles.EventBoard}>
           <p className={styles.BoardTitle}>회문입력</p>
           <input type="text" name="EventAnswer" placeholder="Hint: _ _ _ _ _(5글자)" />
