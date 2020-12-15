@@ -5,11 +5,13 @@ import UseMediaQuery from '../../customHooks/UseMediaQuery';
 import EventLetter from './assets/EventLetter.png';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
 import MobilebackgroundImage from '../../assets/background/mobile_background.png';
+import DesktopbackgroundImage from '../../assets/background/desktop_background.png';
+import LogoButton from '../../components/LogoButton/LogoButton';
 
 let event;
 
 function EventPage() {
-  const isDeviceHeightHighAsIphone8Plus = UseMediaQuery('(max-width: 767px)');
+  const isDeviceHeightHighAsIphone8Plus = UseMediaQuery('(max-width: 800px)');
 
   if (isDeviceHeightHighAsIphone8Plus) {
     event = (
@@ -59,6 +61,7 @@ function EventPage() {
                 <span className={styles.DeskTopFiveLetter}>다섯 글자 회문</span>
                 을 만들어 보세요!
               </p>
+
               <p className={styles.DeskTopText2}>완성된 회문은 당신에게 행운을 가져다 줄 것입니다.</p>
             </div>
             <div className={styles.DeskTopInputContainer}>
@@ -75,8 +78,12 @@ function EventPage() {
   }
   return (
     <>
-      <BackgroundImage backgroundImageUrl={isDeviceHeightHighAsIphone8Plus ? MobilebackgroundImage : ''} />
+      <BackgroundImage backgroundImageUrl={isDeviceHeightHighAsIphone8Plus
+        ? MobilebackgroundImage : DesktopbackgroundImage}
+      />
+
       {event}
+      <LogoButton />
       <Navbar />
     </>
   );
