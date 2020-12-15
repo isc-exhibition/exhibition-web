@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './SubjectList.module.scss';
 import subjectListOnFallSemester from '../../utils/constants';
 
@@ -8,11 +9,12 @@ function SubjectList() {
       <div className={styles.subjectList}>
         {
           subjectListOnFallSemester.map((subject) => (
-            <div className={styles.subjectContainer}>
-              <div className={styles.subjectImage} style={{ backgroundImage: `url(${subject.image})` }} />
-              <p className={styles.subjectName}>{subject.name}</p>
-
-            </div>
+            <Link to="/subjectpage">
+              <div className={styles.subjectContainer}>
+                <div className={styles.subjectImage} style={{ backgroundImage: `url(${subject.image})` }} />
+                <p className={styles.subjectName}>{subject.name}</p>
+              </div>
+            </Link>
           ))
         }
       </div>

@@ -24,7 +24,7 @@ function Navbar() {
 
   const menuList = [
     { name: '메인 페이지', path: '/main' },
-    { name: '이벤트', path: '/main' },
+    { name: '이벤트', path: '/event' },
     { name: '크레딧', path: '/main' },
   ];
 
