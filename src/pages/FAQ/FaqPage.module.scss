@@ -16,9 +16,9 @@
     background-position: center;
     background-size: cover;
     width: 95vw;
-    height: 80vh;
+    height: auto;
 
-    margin-bottom: 15px;
+ 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,12 +27,13 @@
 
 .IntroContainer{
     height: 5vh;
-    width: 80vw;
+    width: auto;
     background-color: black;
     opacity: 0.7;
     border: 2px;
     border-radius: 25px;
     margin-top: 15px;
+    padding: 5px;
 
     display: flex;
     flex-direction: column;
@@ -48,7 +49,14 @@
     color: white;
 }
 
-.FaqIndexBox {
+.FaqIndexBoxFirst {
+    width: 90%;
+    height: 27%;
+    margin-top: 3px;
+    margin-bottom: 10px;
+}
+
+.FaqIndexBoxSecond {
     width: 90%;
     height: 27%;
     margin-top: 3px;
@@ -64,13 +72,13 @@
 
 
 .FaqTitle{
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin: 10px;
 
 }
 
 .FaqText {
-    font-size: 0.4rem;
+    font-size: 0.7rem;
     font-weight: bold;
     margin:  0 0 0 20px;
     line-height: 1.8;
@@ -78,7 +86,7 @@
 }
 
 .IndentText{
-    font-size: 0.4rem;
+    font-size: 0.7rem;
     font-weight: bold;
     margin: 0 0 0 30px;
     line-height: 1.8;
@@ -86,7 +94,7 @@
 }
 
 .DoubleIndentText{
-    font-size: 0.4rem;
+    font-size: 0.7rem;
     font-weight: bold;
     margin:  0 0 0 40px;
     line-height: 1.8;
