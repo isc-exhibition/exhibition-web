@@ -7,18 +7,23 @@
     background-size: cover;
     background-repeat: no-repeat;
     margin: auto;
-
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 0 30px;
+    justify-content: center;
 
+    .assignmentWrapper {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 90%;
+        padding-top: 30p;
+        padding: 44px 0;
 
     .assignment {
         width: 120px;
         height: 120px;
         background-color: gray;
         border-radius: 50%;
+        }
     }
 }

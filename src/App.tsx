@@ -16,7 +16,7 @@ function App() {
         <Route exact path="/intro" component={IntroPage} />
         <Route exact path="/subjectpage" component={SubjectPage} />
         <Route exact path="/event" component={EventPage} />
-        <Route exact path="/assginment" component={AssignmentPage} />
+        <Route exact path="/assignment/:id" component={AssignmentPage} />
         <Redirect exact to="/intro" />
       </Switch>
     </Router>

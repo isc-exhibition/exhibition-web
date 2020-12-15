@@ -18,11 +18,13 @@ function AssignmentList() {
       className={styles.assignmnetList}
       style={{ backgroundImage: `url(${trayBackgroundImage})` }}
     >
-      {mockupAssignmentList.map((assignment) => (
-        <Link to={`/assignment/${assignment.id}`}>
-          <div className={styles.assignment}><h1>{assignment.name}</h1></div>
-        </Link>
-      ))}
+      <div className={styles.assignmentWrapper} style={{ padding: '30px' }}>
+        {mockupAssignmentList.map((assignment) => (
+          <Link to={`/assignment/${assignment.id}`}>
+            <div className={styles.assignment} />
+          </Link>
+        ))}
+      </div>
     </div>
 
   );
