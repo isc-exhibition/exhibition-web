@@ -16,13 +16,13 @@
 
 
 .IntroImage{
-    background-image: url(./assets/mobiletitle.png);
+    background-image: url(../../assets/mobiletitle.png);
     width: auto;
-    height: 100vh;
+    height: 100%;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-
+    /* background-size: auto; */
+    background-size: contain;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,7 +75,7 @@
 
 }
 
-@media (min-width: 768px) and (max-width:1440px) {
+@media (min-width: 800px) {
     .IntroContainer {
         height: 100%;
         width: 100%;
@@ -88,13 +88,13 @@
     
     
     .IntroImage{
-        background-image: url(./assets/DesktopTitle.png);
-        width: 100vw;
+        background-image: url(../../assets/DesktopTitle.png);
+        width: 100%;
         height: auto;
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
-    
+        /* background-size: auto; */
+        background-size: contain;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -119,7 +119,7 @@
     
     .IntroEnter {
         position: absolute;
-        bottom: 15%;
+        bottom: 10%;
         width: 20vw;
         height: 5vh;
         font-size : 1rem;
@@ -150,77 +150,77 @@
 
 }
 
-@media (min-width: 1441px) {
-    .IntroContainer {
-        height: 100%;
-        width: 100%;
+// @media (min-width: 1441px) {
+//     .IntroContainer {
+//         height: 100%;
+//         width: 100%;
         
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//     }
     
     
-    .IntroImage{
-        background-image: url(./assets/DesktopTitle.png);
-        width: 100vw;
-        height: 100vh;
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
+//     .IntroImage{
+//         background-image: url(../../assets/DesktopTitle.png);
+//         width: 100vw;
+//         height: 100vh;
+//         background-position: center center;
+//         background-repeat: no-repeat;
+//         background-size: 100% 100%;
     
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    
-    .Logo{
-        width: 100vh;
-        margin-bottom: 60px;
-        margin-top: 60px; 
-    }
-    
-    .IntroImage[data-click = 'true'] {
-        animation: title 1.5s 1;
-    }
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//     }
     
     
-    .Logo[data-click = 'true'] {
-        animation: logo 1.5s 1;
-    }
+//     .Logo{
+//         width: 100vh;
+//         margin-bottom: 60px;
+//         margin-top: 60px; 
+//     }
     
-    .IntroEnter {
-        position: absolute;
-        bottom: 5%;
-        width: 20vw;
-        height: 5vh;
-        font-size : 2rem;
-        background-color: rgba(200,200,200,0.7);
-        border-radius: 50px;
-        font-weight: bold;
-        line-height: 5vh;
+//     .IntroImage[data-click = 'true'] {
+//         animation: title 1.5s 1;
+//     }
+    
+    
+//     .Logo[data-click = 'true'] {
+//         animation: logo 1.5s 1;
+//     }
+    
+//     .IntroEnter {
+//         position: absolute;
+//         bottom: 5%;
+//         width: 20vw;
+//         height: 5vh;
+//         font-size : 2rem;
+//         background-color: rgba(200,200,200,0.7);
+//         border-radius: 50px;
+//         font-weight: bold;
+//         line-height: 5vh;
         
     
-    }
+//     }
     
     
-    @keyframes logo {
-        100% {
-            transform: rotate(360deg);
+//     @keyframes logo {
+//         100% {
+//             transform: rotate(360deg);
  
-        }
+//         }
     
-    }
+//     }
     
-    @keyframes title {
-        100% {
-            transform: rotate(-180deg);
+//     @keyframes title {
+//         100% {
+//             transform: rotate(-180deg);
 
-        }
+//         }
     
-    }
+//     }
 
-}
+// }
