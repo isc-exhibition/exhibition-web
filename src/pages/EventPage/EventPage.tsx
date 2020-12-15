@@ -14,6 +14,7 @@ function EventPage() {
   if (isDeviceHeightHighAsIphone8Plus) {
     event = (
       <div className={styles.EventPageContainer}>
+        <img src={EventLetter} alt="Letter" className={styles.EventLetter} />
         <div className={styles.TextContainer}>
           <p className={styles.EventTitle}>이벤트</p>
           <p className={styles.EventContent}>
