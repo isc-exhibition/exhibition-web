@@ -1,3 +1,4 @@
+
 .IntroContainer {
     height: 100%;
     width: 100%;
@@ -8,19 +9,20 @@
     align-items: center;
     text-align: center;
     vertical-align: middle;
-   
+    position: absolute;
+    top: 0%;
 
 }
 
 
 .IntroImage{
-    background-image: url(./assets/mobiletitle.png);
+    background-image: url(../../assets/mobiletitle.png);
     width: auto;
-    height: 100vh;
+    height: 100%;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-
+    /* background-size: auto; */
+    background-size: contain;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,7 +33,6 @@
 
 .Logo{
     max-width: 100vw;
-    max-height: 100vh;
     margin-bottom: 60px;
     margin-top: 60px; 
 }
@@ -47,9 +48,9 @@
 
 .IntroEnter {
     position: absolute;
-    bottom: 50px;
+    bottom: 10%;
     width: 60vw;
-    height: 5vh;
+    height: auto;
     font-size : 1rem;
     background-color: rgba(200,200,200,0.7);
     border-radius: 50px;
@@ -74,7 +75,7 @@
 
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
     .IntroContainer {
         height: 100%;
         width: 100%;
@@ -87,12 +88,13 @@
     
     
     .IntroImage{
-        background-image: url(./assets/DesktopTitle.png);
-        width: 100vw;
+        background-image: url(../../assets/DesktopTitle.png);
+        width: 100%;
+        height: auto;
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: 100% 100%;
-    
+        /* background-size: auto; */
+        background-size: contain;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -101,8 +103,7 @@
     
     
     .Logo{
-        max-width: 100vw;
-        max-height: 100vh;
+        max-width: 80vw;
         margin-bottom: 60px;
         margin-top: 60px; 
     }
@@ -118,7 +119,7 @@
     
     .IntroEnter {
         position: absolute;
-        bottom: 50px;
+        bottom: 10%;
         width: 20vw;
         height: 5vh;
         font-size : 1rem;
