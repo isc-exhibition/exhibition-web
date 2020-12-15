@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Logo from './assets/logo.png';
-import DesktopLogo from './assets/DesktopLogo.png';
+import Logo from '../../assets/logo.png';
+import DesktopLogo from '../../assets/DesktopLogo.png';
 import styles from './IntroPage.module.scss';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
 
