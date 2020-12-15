@@ -14,7 +14,7 @@ function FaqPage() {
           <div className={styles.IntroContainer}>
             <p className={styles.Intro}>문항을 터치하여 내용을 확인하세요</p>
           </div>
-          <div className={styles.FaqIndexBox}>
+          <div className={styles.FaqIndexBoxFirst}>
             <h2 className={styles.FaqTitle}>1) 과제전 소개</h2>
             <p className={styles.FaqText}>
               1. 과제전이란 무엇인가요?
@@ -25,7 +25,7 @@ function FaqPage() {
               3. 이번 과제전의 특별한 점은 없나요?
             </p>
           </div>
-          <div className={styles.FaqIndexBox}>
+          <div className={styles.FaqIndexBoxSecond}>
             <h2 className={styles.FaqTitle}>2) 연합전공 정보문화학 소개</h2>
             <p className={styles.FaqText}>1. 정보문화학에서는 무엇을 배우나요?</p>
             <p className={styles.IndentText}>1.1 영상제작만 or 코딩만 하는 건가요?</p>
