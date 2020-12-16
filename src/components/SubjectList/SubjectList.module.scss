@@ -1,9 +1,10 @@
 .subjectListWrapper {
     background-image: url("../../assets/mobile_subjectList.png");
     width: 100%;
-    height: 100%;
-    top: 0%;
-    background-position: center;
+    min-width: 345px;
+    min-height: 443px;
+    bottom: 0%;
+    background-position: top center;
     background-size: contain;
     background-repeat: no-repeat;
 
@@ -11,6 +12,7 @@
         width: 90%;
         max-width: 340px;
         height: 90%;
+        max-height: 450px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
