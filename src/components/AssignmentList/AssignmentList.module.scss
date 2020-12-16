@@ -1,5 +1,5 @@
 .assignmnetList {
-    max-width: 900px;
+    max-width: 380px;
     height: 70vh;
     min-height: 546px;
     max-height: 650px;
@@ -16,11 +16,11 @@
         align-items: center;
         justify-content: space-evenly;
         width: 90%;
-        padding: 80px;
+        padding: 30px;
 
     .assignment {
-        width: 200px;
-        height: 200px;
+        width: 120px;
+        height: 120px;
         background-color: gray;
         border-radius: 50%;
         background-position: center center;
@@ -28,4 +28,40 @@
         background-repeat: no-repeat;
         }
     }
+}
+
+@media(min-width: 800px){
+
+    .assignmnetList {
+        max-width: 900px;
+        height: 70vh;
+        min-height: 546px;
+        max-height: 650px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    
+        .assignmentWrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 90%;
+            padding: 80px;
+    
+        .assignment {
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            border-radius: 50%;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            }
+        }
+    }
+    
 }

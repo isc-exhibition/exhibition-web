@@ -73,7 +73,7 @@
         flex-direction: column;
     
         .scrollUpText {
-            font-size: 2.25rem;
+            font-size: 3rem;
             font-family: 'Niconne';
             margin: 0 0 -10px 0;
             text-align: center;
@@ -111,7 +111,7 @@
                 
 
                 .name {
-                    font-size: 2.25rem;
+                    font-size: 3rem;
                     font-weight: bold;
                     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
                     margin: 4px 0 22px 10px;
@@ -119,13 +119,13 @@
 
             }
                 .shortName {
-                    font-size: 1.5rem;
+                    font-size: 2rem;
                     font-weight: bold;
                     text-shadow: 3px 3px 0.4px rgba(0, 0, 0, 0.7);
                 }
         
                 .professor {
-                    font-size: 1.5rem;
+                    font-size: 1.8rem;
                     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
                 }
         
@@ -133,7 +133,7 @@
                     word-break: break-all;
                     width: 84%;
                     text-align:end;
-                    font-size: 1.3rem;
+                    font-size: 1.5rem;
                 }
             }
             }
