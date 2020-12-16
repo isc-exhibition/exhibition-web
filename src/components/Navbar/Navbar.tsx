@@ -54,7 +54,7 @@ function Navbar() {
           <button className={styles.infoMenuButton} type="button" onClick={toggleInfoModal}>과제전 소개 </button>
           {
             menuList.map((menu) => (
-              <Link to={menu.path}>{menu.name}</Link>
+              <Link to={menu.path} onClick={toggleNavbarModal}>{menu.name}</Link>
             ))
           }
         </div>
