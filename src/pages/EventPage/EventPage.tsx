@@ -1,12 +1,10 @@
 import React from 'react';
 import styles from './EventPage.module.scss';
-import Navbar from '../../components/Navbar/Navbar';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
 import EventLetter from './assets/EventLetter.png';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
 import MobilebackgroundImage from '../../assets/background/mobile_background.png';
 import DesktopbackgroundImage from '../../assets/background/desktop_background.png';
-import LogoButton from '../../components/LogoButton/LogoButton';
 
 let event;
 
@@ -81,10 +79,7 @@ function EventPage() {
       <BackgroundImage backgroundImageUrl={isDeviceHeightHighAsIphone8Plus
         ? MobilebackgroundImage : DesktopbackgroundImage}
       />
-
       {event}
-      <LogoButton />
-      <Navbar />
     </>
   );
 }
