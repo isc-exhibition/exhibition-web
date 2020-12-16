@@ -1,6 +1,61 @@
 .background {
   height: 100vh;
+  min-height: 750px;
+  min-width: 350px;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+@media (max-width: 800px) and (max-height: 700px) {
+  .background {
+    height: 100vh;
+    min-height: 750px;
+    min-width: 350px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 800px) and (max-height: 815px) {
+  .background {
+    height: 100vh;
+    min-height: 820px;
+    min-width: 350px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 800px) and (max-height: 700px) {
+  .background {
+    height: 100vh;
+    min-height: 750px;
+    min-width: 350px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 800px) and (max-height: 815px) {
+  .background {
+    height: 100vh;
+    min-height: 820px;
+    min-width: 350px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 800px) {
+  .background {
+    height: 100vh;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }

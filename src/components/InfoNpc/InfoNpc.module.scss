@@ -1,22 +1,9 @@
-@media (max-width: 800px) and (max-height: 896px) {
-    .infoNpc {
-        height: 25vh;
-    }
-}
-
-@media (max-width: 800px) and (min-height: 896px) {
+@media (max-width: 800px) {
     .infoNpc {
         height: 30vh;
         width: auto;
     }
 }
-
-@media (max-height: 667px) {
-    .infoNpc {
-        display: none;
-    }
-}
-
 
 @media (min-width: 800px) {
     .infoNpc {
