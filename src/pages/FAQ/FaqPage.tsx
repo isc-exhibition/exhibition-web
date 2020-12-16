@@ -187,11 +187,10 @@ function FaqPage() {
   } else {
     faqPage = (
       isOpen ? (
-        <div>
+        <>
           { faqAnswer }
           <InfoNpc />
-
-        </div>
+        </>
       )
         : (
           <>

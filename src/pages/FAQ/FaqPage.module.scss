@@ -25,6 +25,7 @@
     justify-content: space-between;
 }
 
+
 .IntroContainer{
     height: 5vh;
     width: auto;
@@ -186,6 +187,7 @@
         transform : translateX(280px);
     }
     
+    
     .IntroContainer{
         height: 5vh;
         width: auto;
@@ -233,7 +235,7 @@
     
     
     .FaqTitle{
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         margin: 10px;
         font-weight: bold;
         text-shadow: 1px 1px 1px black;
@@ -241,7 +243,7 @@
     }
     
     .FaqText {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         font-weight: bold;
         margin:  0 0 0 20px;
         line-height: 1.8;
@@ -268,15 +270,17 @@
         background-image: url('../../assets/paper.png');
         background-position: center;
         background-size: cover;
-        width: 30vw;
+        width: 37vw;
         height: 80vh;
+        overflow: scroll;
+        overflow-x: hidden;
     
      
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        transform: translateX(300px);
+        transform: translateX(250px);
     }
     
     .AnswerTextContainer {
@@ -286,12 +290,12 @@
     .AnswerTitle {
         font-size: 1.2rem;
         margin: 10px 30px;
-        text-shadow: 1px 1px 1px black;
+
         
     }
     
     .AnswerContent {
-        margin: 10px 40px;
+        margin: 10px 30px;
         font-size: 1rem;
         
     }
@@ -303,8 +307,9 @@
         width: 10vw;
         height: auto;
         top: 5%;
-        left: -8%;
+        left: 0%;
         font-size: 20px;
     }
+
 
 }
