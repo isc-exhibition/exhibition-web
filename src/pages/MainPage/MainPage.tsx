@@ -17,11 +17,11 @@ function MainPage() {
   return (
     <>
       <BackgroundImage backgroundImageUrl={backgroundImageUrl} />
-      <Header />
       <div className={styles.mainPageContainer}>
         <InfoNpc />
         <SubjectList />
       </div>
+      <Header />
 
     </>
   );
