@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import styles from './FaqPage.module.scss';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
-import backgroundImage from '../../assets/background/mobile_background.png';
-import DesktopbackgorundImage from '../../assets/background/desktop_background.png';
+import mobileBackgroundImage from '../../assets/background/mobile_background.png';
+import desktopBackgroundImage from '../../assets/background/desktop_background.png';
 import { faqWhatIsISCExhibition, ISCIntroduction, HowtoEnterISC } from '../../utils/faqList';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
+// import InfoNpc from '../../components/InfoNpc/InfoNpc';
 
 function FaqPage() {
   let faqPage;
@@ -41,7 +42,9 @@ function FaqPage() {
   if (isOpen && isFirst && !isSecond && !isThird) {
     faqAnswer = (
       <>
-        <BackgroundImage backgroundImageUrl={isMobile ? backgroundImage : DesktopbackgorundImage} />
+        {!isMobile
+          ? <div className={styles.desktopMainPageContainer} style={{ backgroundImage: `url(${desktopBackgroundImage})` }} />
+          : <BackgroundImage backgroundImageUrl={mobileBackgroundImage} />}
         <div className={styles.FaqContainer}>
           <div className={styles.FaqAnswerContainer}>
             <button type="button" className={styles.FaqButton} onClick={handleOnClickFirst}>
@@ -62,7 +65,9 @@ function FaqPage() {
   } else if (isOpen && !isFirst && isSecond && !isThird) {
     faqAnswer = (
       <>
-        <BackgroundImage backgroundImageUrl={isMobile ? backgroundImage : DesktopbackgorundImage} />
+        {!isMobile
+          ? <div className={styles.desktopMainPageContainer} style={{ backgroundImage: `url(${desktopBackgroundImage})` }} />
+          : <BackgroundImage backgroundImageUrl={mobileBackgroundImage} />}
         <div className={styles.FaqContainer}>
           <div className={styles.FaqAnswerContainer}>
             <button type="button" className={styles.FaqButton} onClick={handleOnClickSecond}>
@@ -83,7 +88,9 @@ function FaqPage() {
   } else if (isOpen && !isFirst && !isSecond && isThird) {
     faqAnswer = (
       <>
-        <BackgroundImage backgroundImageUrl={isMobile ? backgroundImage : DesktopbackgorundImage} />
+        {!isMobile
+          ? <div className={styles.desktopMainPageContainer} style={{ backgroundImage: `url(${desktopBackgroundImage})` }} />
+          : <BackgroundImage backgroundImageUrl={mobileBackgroundImage} />}
         <div className={styles.FaqContainer}>
           <div className={styles.FaqAnswerContainer}>
             <button type="button" className={styles.FaqButton} onClick={handleOnClickThird}>
@@ -112,9 +119,9 @@ function FaqPage() {
       )
         : (
           <>
-            <BackgroundImage
-              backgroundImageUrl={isMobile ? backgroundImage : DesktopbackgorundImage}
-            />
+            {!isMobile
+              ? <div className={styles.desktopMainPageContainer} style={{ backgroundImage: `url(${desktopBackgroundImage})` }} />
+              : <BackgroundImage backgroundImageUrl={mobileBackgroundImage} />}
             <div className={styles.FaqContainer}>
               <div className={styles.FaqIndexContainer}>
                 <div className={styles.IntroContainer}>
@@ -187,7 +194,9 @@ function FaqPage() {
       )
         : (
           <>
-            <BackgroundImage backgroundImageUrl={DesktopbackgorundImage} />
+            {!isMobile
+              ? <div className={styles.desktopMainPageContainer} style={{ backgroundImage: `url(${desktopBackgroundImage})` }} />
+              : <BackgroundImage backgroundImageUrl={mobileBackgroundImage} />}
             <div className={styles.DesktopFaqContainer}>
               <div className={styles.FaqContainer}>
                 <div className={styles.FaqIndexContainer}>
@@ -259,6 +268,7 @@ function FaqPage() {
   return (
     <>
       { faqPage }
+      {/* {!isMobile && <InfoNpc />} */}
     </>
   );
 }

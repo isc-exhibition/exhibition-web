@@ -27,7 +27,6 @@
     top: 25%;
     right: 5%;
     font-size: 20px;
-    color: white;
     background: none;
     border: none;
     outline: none;
@@ -201,7 +200,7 @@
     .navbarMenuPC {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-end;
         position: absolute;
         top: 1%;
         right: 7%;
