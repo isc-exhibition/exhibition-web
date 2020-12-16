@@ -1,7 +1,7 @@
 import React, { CSSProperties, useEffect, useState } from 'react';
 import styles from './SubjectPage.module.scss';
 import AssignmentList from '../../components/AssignmentList/AssignmentList';
-import tempImg from '../../assets/mobile_subject/UCD_bread.png';
+import tempImg from '../../assets/subject/UCD_bread.png';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
 
 const mockupSubject = {
