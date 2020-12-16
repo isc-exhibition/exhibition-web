@@ -8,10 +8,14 @@ import SubjectPage from './pages/SubjectPage/SubjectPage';
 import EventPage from './pages/EventPage/EventPage';
 import AssignmentPage from './pages/AssignmentPage/AssignmentPage';
 import FaqPage from './pages/FAQ/FaqPage';
+import Header from './components/Header/Header';
+import LogoStand from './components/LogoStand/LogoStand';
 
 function App() {
   return (
     <Router>
+      <Header />
+      <LogoStand />
       <Switch>
         <Route exact path="/main" component={MainPage} />
         <Route exact path="/intro" component={IntroPage} />

@@ -1,0 +1,17 @@
+.header {
+    position: fixed;
+    top: 0%;
+    width: 100vw;
+    height: 15vh;
+    z-index: 100;
+
+    .backButton {
+        position: absolute;
+        top: 25%;
+        left: 8%;
+        font-size: 23px;
+        color: white;
+        border: none;
+        background: none;
+    }
+}
