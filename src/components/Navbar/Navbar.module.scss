@@ -38,7 +38,6 @@
     position: absolute;
     top: 4%;
     right: 4%;
-    width: 148px;
     height: 251px;
     background: rgba(255, 255, 255, 0.9);
     padding: 27px 35px 35px 27px;
@@ -63,6 +62,7 @@
     right: 0;
     bottom: 0;
     background-color: none;
+    z-index: 150;
 }
 
 .infoMenuButton {
@@ -107,6 +107,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    z-index: 150;
 
     .infoTitle {
         font-weight: bold;
@@ -136,6 +137,7 @@
     right: 0;
     bottom: 0;
     background-color: none;
+    z-index: 150;
 }
 
 @media (max-height: 510px) {
@@ -160,6 +162,7 @@
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        z-index: 150;
     
         .infoTitle {
             font-weight: bold;
