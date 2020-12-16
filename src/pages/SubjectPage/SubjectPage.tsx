@@ -59,6 +59,18 @@ function SubjectPage() {
     paddingBottom: '32px',
   };
 
+  const scrollMessage = isDeviceWidthWideAsDesktop ? (
+    <div style={assignmentTrayStyle}>
+      {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Down!</h2> }
+      <AssignmentList />
+    </div>
+  ) : (
+    <div style={assignmentTrayStyle}>
+      {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Up!</h2> }
+      <AssignmentList />
+    </div>
+  );
+
   return (
     <div className={styles.subjectPage}>
       <div className={styles.subjectWrapper}>
@@ -73,10 +85,7 @@ function SubjectPage() {
           <p className={styles.introduction}>{subject.introduction}</p>
         </div>
       </div>
-      <div style={assignmentTrayStyle}>
-        {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Down!</h2> }
-        <AssignmentList />
-      </div>
+      {scrollMessage}
     </div>
   );
 }
