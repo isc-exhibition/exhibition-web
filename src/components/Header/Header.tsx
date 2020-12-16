@@ -10,20 +10,26 @@ function Header() {
     history.goBack();
   };
 
+  const isOnIntro = useRouteMatch('/intro')?.path === '/intro';
   const isOnMain = useRouteMatch('/main')?.path === '/main';
 
   return (
+    <>
+      {!isOnIntro
+    && (
     <div className={styles.header}>
       {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
       {!isOnMain
-      && (
-      <button className={styles.backButton} type="button" onClick={goBack}>
-        <i className="fas fa-arrow-left" />
-      </button>
-      )}
+        && (
+        <button className={styles.backButton} type="button" onClick={goBack}>
+          <i className="fas fa-arrow-left" />
+        </button>
+        )}
       <LogoButton />
       <Navbar />
     </div>
+    )}
+    </>
   );
 }
 
