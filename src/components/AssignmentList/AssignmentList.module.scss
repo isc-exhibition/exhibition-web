@@ -1,5 +1,5 @@
 .assignmnetList {
-    max-width: 380px;
+    max-width: 900px;
     height: 70vh;
     min-height: 546px;
     max-height: 650px;
@@ -16,12 +16,11 @@
         align-items: center;
         justify-content: space-evenly;
         width: 90%;
-        padding-top: 30p;
-        padding: 44px 0;
+        padding: 80px;
 
     .assignment {
-        width: 120px;
-        height: 120px;
+        width: 200px;
+        height: 200px;
         background-color: gray;
         border-radius: 50%;
         background-position: center center;

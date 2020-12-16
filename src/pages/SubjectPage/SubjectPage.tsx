@@ -74,7 +74,7 @@ function SubjectPage() {
         </div>
       </div>
       <div style={assignmentTrayStyle}>
-        {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Up!</h2> }
+        {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Down!</h2> }
         <AssignmentList />
       </div>
     </div>
