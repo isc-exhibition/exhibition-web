@@ -56,7 +56,7 @@ text-shadow: 2px 2px 3px black;
 }
 
 .EventBoard {
-    background-image: url(./assets/Event_board.png);
+    background-image: url(../../assets/Event_board.png);
     height: 40vh;
     width: auto;
     background-size: 100% 100%;
@@ -105,7 +105,7 @@ input {
 
     
     .DeskTopBoard {
-        background-image: url(./assets/DesktopBoard.png);
+        background-image: url(../../assets/DesktopBoard.png);
         height: auto;
         width: 80vw;
 
@@ -175,7 +175,7 @@ input {
         font-weight: bold;
         color: white;
         font-size: 2.5rem;
-        margin: 50px 0 0 0;
+        margin: 30px  0;
         text-shadow: 2px 2px 3px black;
         transform: translateX(-60px);
        
@@ -220,7 +220,7 @@ input {
 
     
     .DeskTopBoard {
-        background-image: url(./assets/DesktopBoard.png);
+        background-image: url(../../assets/DesktopBoard.png);
         height: auto;
         width: 80vw;
 
@@ -308,7 +308,7 @@ input {
     }
 
     .DeskTopEventButton {
-        width: 7vw;
+        width: 10vw;
         height: 7vh;
         margin-left: 20px;
     
