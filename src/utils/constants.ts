@@ -17,19 +17,20 @@ const soundInteraction = '사운드인터랙션';
 const UCD = '사용자중심디자인';
 
 interface SubjectListOnFallSemester {
+    id: number;
     name: string;
     image: string;
 }
 
 const subjectListOnFallSemester: SubjectListOnFallSemester[] = [
-  { name: UCD, image: UCDImage },
-  { name: soundInteraction, image: soundInteractionImage },
-  { name: ICT101, image: ICT101Image },
-  { name: futureNews2, image: futureNews2Image },
-  { name: interactiveMedia, image: interactiveMediaImage },
-  { name: digitalVideo2, image: digitalVideo2Image },
-  { name: interactiveStory, image: interactiveStoryImage },
-  { name: personalProject, image: personalProjectImage },
+  { id: 1, name: UCD, image: UCDImage },
+  { id: 2, name: soundInteraction, image: soundInteractionImage },
+  { id: 3, name: ICT101, image: ICT101Image },
+  { id: 4, name: futureNews2, image: futureNews2Image },
+  { id: 5, name: interactiveMedia, image: interactiveMediaImage },
+  { id: 6, name: digitalVideo2, image: digitalVideo2Image },
+  { id: 7, name: interactiveStory, image: interactiveStoryImage },
+  { id: 8, name: personalProject, image: personalProjectImage },
 ];
 
 export default subjectListOnFallSemester;

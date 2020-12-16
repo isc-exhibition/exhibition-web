@@ -1,7 +1,8 @@
 import React, { CSSProperties, useEffect, useState } from 'react';
 import styles from './SubjectPage.module.scss';
-import subjectBackgroundImage from '../../assets/mobile_subject_background.png';
 import AssignmentList from '../../components/AssignmentList/AssignmentList';
+import tempImg from '../../assets/mobile_subject/UCD_bread.png';
+import UseMediaQuery from '../../customHooks/UseMediaQuery';
 
 const mockupSubject = {
   shortName: '유저는 저유',
@@ -18,9 +19,18 @@ const mockupSubject = {
 };
 
 function SubjectPage() {
+  const isDeviceWidthWideAsDesktop = UseMediaQuery('(min-width: 800px)');
+
   const subject = mockupSubject;
 
   const [isHiddenScrollUpText, setHiddenScrollUpText] = useState(false);
+
+  const isClassImage = isDeviceWidthWideAsDesktop ? (
+    <div className={styles.classImage}>
+      <img src={tempImg} alt="img" />
+      <h2 className={styles.name}>{subject.name}</h2>
+    </div>
+  ) : <h2 className={styles.name}>{subject.name}</h2>;
 
   const assignmentTrayBottom = '-496px';
 
@@ -51,15 +61,17 @@ function SubjectPage() {
 
   return (
     <div className={styles.subjectPage}>
-      <div className={styles.subjectWrapper} style={{ backgroundImage: `url(${subjectBackgroundImage})` }}>
-        <h4 className={styles.shortName}>
-          &quot;
-          {subject.shortName}
-          &quot;
-        </h4>
-        <h2 className={styles.name}>{subject.name}</h2>
-        <h5 className={styles.professor}>{subject.professor}</h5>
-        <p className={styles.introduction}>{subject.introduction}</p>
+      <div className={styles.subjectWrapper}>
+        <div className={styles.textContainer}>
+          <h4 className={styles.shortName}>
+            &quot;
+            {subject.shortName}
+            &quot;
+          </h4>
+          {isClassImage}
+          <h5 className={styles.professor}>{subject.professor}</h5>
+          <p className={styles.introduction}>{subject.introduction}</p>
+        </div>
       </div>
       <div style={assignmentTrayStyle}>
         {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Up!</h2> }
