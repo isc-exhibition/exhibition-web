@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import styles from './FaqPage.module.scss';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
-import LogoButton from '../../components/LogoButton/LogoButton';
 import backgroundImage from '../../assets/background/mobile_background.png';
 import DesktopbackgorundImage from '../../assets/background/desktop_background.png';
-import InfoNpc from '../../components/InfoNpc/InfoNpc';
 import { faqWhatIsISCExhibition, ISCIntroduction, HowtoEnterISC } from '../../utils/faqList';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
 
@@ -40,12 +38,11 @@ function FaqPage() {
     }
   }
 
-  if (isOpen && isFirst && isSecond === false && isThird === false) {
+  if (isOpen && isFirst && !isSecond && !isThird) {
     faqAnswer = (
       <>
         <BackgroundImage backgroundImageUrl={isMobile ? backgroundImage : DesktopbackgorundImage} />
         <div className={styles.FaqContainer}>
-          <LogoButton />
           <div className={styles.FaqAnswerContainer}>
             <button type="button" className={styles.FaqButton} onClick={handleOnClickFirst}>
               <i className="fas fa-arrow-left" />
@@ -62,12 +59,11 @@ function FaqPage() {
         </div>
       </>
     );
-  } else if (isOpen && isFirst === false && isSecond && isThird === false) {
+  } else if (isOpen && !isFirst && isSecond && !isThird) {
     faqAnswer = (
       <>
         <BackgroundImage backgroundImageUrl={isMobile ? backgroundImage : DesktopbackgorundImage} />
         <div className={styles.FaqContainer}>
-          <LogoButton />
           <div className={styles.FaqAnswerContainer}>
             <button type="button" className={styles.FaqButton} onClick={handleOnClickSecond}>
               <i className="fas fa-arrow-left" />
@@ -84,12 +80,11 @@ function FaqPage() {
         </div>
       </>
     );
-  } else if (isOpen && isFirst === false && isSecond === false && isThird) {
+  } else if (isOpen && !isFirst && !isSecond && isThird) {
     faqAnswer = (
       <>
         <BackgroundImage backgroundImageUrl={isMobile ? backgroundImage : DesktopbackgorundImage} />
         <div className={styles.FaqContainer}>
-          <LogoButton />
           <div className={styles.FaqAnswerContainer}>
             <button type="button" className={styles.FaqButton} onClick={handleOnClickThird}>
               <i className="fas fa-arrow-left" />
@@ -121,7 +116,6 @@ function FaqPage() {
               backgroundImageUrl={isMobile ? backgroundImage : DesktopbackgorundImage}
             />
             <div className={styles.FaqContainer}>
-              <LogoButton />
               <div className={styles.FaqIndexContainer}>
                 <div className={styles.IntroContainer}>
                   <p className={styles.Intro}>문항을 터치하여 내용을 확인하세요</p>
@@ -167,11 +161,11 @@ function FaqPage() {
                   <p className={styles.FaqText}>
                     1. 진입 전에 전공수업 많이 들어야 하나요?
                     <br />
-                    2.코딩을 전혀 모르는데 진입해도 괜찮을까요?
+                    2. 코딩을 전혀 모르는데 진입해도 괜찮을까요?
                   </p>
                   <p className={styles.IndentText}>2-1. 코딩 독학 팁을 주실 수 있나요?</p>
                   <p className={styles.FaqText}>
-                    3. 포토폴리오가 필요한가요?
+                    3. 포트폴리오가 필요한가요?
                     <br />
                     4. 면접 준비는 어떻게 해야 하나요?
                     <br />
@@ -189,15 +183,12 @@ function FaqPage() {
       isOpen ? (
         <>
           { faqAnswer }
-          <InfoNpc />
         </>
       )
         : (
           <>
             <BackgroundImage backgroundImageUrl={DesktopbackgorundImage} />
             <div className={styles.DesktopFaqContainer}>
-              <LogoButton />
-              <InfoNpc />
               <div className={styles.FaqContainer}>
                 <div className={styles.FaqIndexContainer}>
                   <div className={styles.IntroContainer}>
@@ -244,11 +235,11 @@ function FaqPage() {
                     <p className={styles.FaqText}>
                       1. 진입 전에 전공수업 많이 들어야 하나요?
                       <br />
-                      2.코딩을 전혀 모르는데 진입해도 괜찮을까요?
+                      2. 코딩을 전혀 모르는데 진입해도 괜찮을까요?
                     </p>
                     <p className={styles.IndentText}>2-1. 코딩 독학 팁을 주실 수 있나요?</p>
                     <p className={styles.FaqText}>
-                      3. 포토폴리오가 필요한가요?
+                      3. 포트폴리오가 필요한가요?
                       <br />
                       4. 면접 준비는 어떻게 해야 하나요?
                       <br />
