@@ -51,30 +51,41 @@
     .subjectListWrapper {
         background-image: url("../../assets/desktop_subjectList.png");
         width: 40vw;
-        min-width: 460px;
+        min-width: 500px;
         height: auto;
-        margin-right: 5vw;
-        margin-bottom: -40vh;
-        background-position: center;
+        background-position: bottom center;
         background-size: contain;
         background-repeat: no-repeat;
+        margin-bottom: 3vh;
     
         .subjectList {
-            margin-bottom: 30px;
-            width: 100%;
-            min-width: 460px;
+            min-width: 500px;
             height: 40vh;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-evenly;
+            max-width: 500px;
+            justify-content: center;
+            margin: 0;
+            margin-top: 80px;
         }
 
         .subjectImage {
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-            width: 150px;
+            width: 130px;
             height: 150px;
+            margin: -40px 0;
+        }
+
+        .subjectName {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            margin: -30px 0;
+            display: inline;
+            padding: 4px 8px;
         }
     }
 }

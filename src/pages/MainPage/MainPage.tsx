@@ -10,16 +10,22 @@ import UseMediaQuery from '../../customHooks/UseMediaQuery';
 function MainPage() {
   const isDeviceWidthWideAsDesktop = UseMediaQuery('(min-width: 800px)');
 
-  const backgroundImageUrl = isDeviceWidthWideAsDesktop
-    ? desktopMainBackgroundImage : mobileMainBackgroundImage;
-
   return (
     <>
-      <BackgroundImage backgroundImageUrl={backgroundImageUrl} />
-      <div className={styles.mainPageContainer}>
-        <InfoNpc />
-        <SubjectList />
-      </div>
+      {!isDeviceWidthWideAsDesktop ? (
+        <>
+          <BackgroundImage backgroundImageUrl={mobileMainBackgroundImage} />
+          <div className={styles.mainPageContainer}>
+            <InfoNpc />
+            <SubjectList />
+          </div>
+        </>
+      ) : (
+        <div className={styles.desktopMainPageContainer} style={{ backgroundImage: `url(${desktopMainBackgroundImage})` }}>
+          <InfoNpc />
+          <SubjectList />
+        </div>
+      )}
     </>
   );
 }

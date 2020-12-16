@@ -38,9 +38,9 @@
     position: absolute;
     top: 4%;
     right: 4%;
-    height: 251px;
+    height: 200px;
     background: rgba(255, 255, 255, 0.9);
-    padding: 27px 35px 35px 27px;
+    padding: 27px 50px 50px 27px;
     border-radius: 20px;
     outline: none;
     animation: fadein 0.5s;
@@ -147,7 +147,7 @@
         height: 67%;
         background: rgba(255, 255, 255, 0.95);
         border: solid black 1px;
-        padding: 27px 35px 35px 27px;
+        padding: 27px 50px 50px 27px;
         top: 50%;
         left: 50%;
         right: auto;
@@ -226,6 +226,7 @@
         a {
             color: black;
             text-decoration: none;
+            padding: 10px;
         }
     }
 }
