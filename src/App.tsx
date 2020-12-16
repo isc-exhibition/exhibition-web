@@ -7,6 +7,7 @@ import MainPage from './pages/MainPage/MainPage';
 import SubjectPage from './pages/SubjectPage/SubjectPage';
 import EventPage from './pages/EventPage/EventPage';
 import AssignmentPage from './pages/AssignmentPage/AssignmentPage';
+import FaqPage from './pages/FAQ/FaqPage';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/subjectpage" component={SubjectPage} />
         <Route exact path="/event" component={EventPage} />
         <Route exact path="/assignment/:id" component={AssignmentPage} />
+        <Route exact path="/faq" component={FaqPage} />
         <Redirect exact to="/intro" />
       </Switch>
     </Router>
