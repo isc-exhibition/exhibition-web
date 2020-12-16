@@ -3,7 +3,6 @@
     height: 100%;
     position: absolute;
     top:0%;
-
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -16,9 +15,7 @@
     height: auto;
     top: 50%;
     right: -8%;
-
 }
-
 
 .TextContainer{
     height: 40vh;
@@ -34,7 +31,6 @@
     font-weight: bold;
     font-size: 2.25rem;
     text-shadow: 4px 4px 4px black;
-    
 }
 
 .EventContent{
@@ -42,8 +38,6 @@ margin: 0;
 color: white;
 font-size: 1.3em;
 text-shadow: 2px 2px 3px black;
-
-
 }
 
 .EventFiveLetter{
@@ -52,7 +46,6 @@ text-shadow: 2px 2px 3px black;
     font-weight: bold;
     font-size: 1.3rem;
     text-shadow: 2px 2px 3px black;
-
 }
 
 .EventBoard {
@@ -63,11 +56,15 @@ text-shadow: 2px 2px 3px black;
     background-repeat: no-repeat;
     background-position: center;   
     margin :0;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+
+    input {
+        border: none;
+        padding: 8px;
+    }
 }
 
 .BoardTitle{
@@ -81,11 +78,15 @@ text-shadow: 2px 2px 3px black;
 .EventButton {
     height: 5vh;
     width: 40vw;
-    padding: 0;
+    border-radius: 30px;
+    border: none;
+    background-color: rgba(169, 169, 169, 1);
 }
 
 input {
     font-size: 1.5rem;
+    border: none;
+    padding: 8px;
 }
 
 
@@ -96,7 +97,6 @@ input {
         height: 100vh;
         position: absolute;
         top: 0%;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -108,15 +108,14 @@ input {
         background-image: url(../../assets/DesktopBoard.png);
         height: auto;
         width: 60vw;
-
         background-size: 100% 100%;
         background-repeat: no-repeat;
         background-position: center;    
-        
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+        z-index: 150;
 
     }
 
@@ -126,7 +125,6 @@ input {
         height: auto;
         top: 35%;
         right: 25%;
-
     }
 
 
@@ -136,15 +134,12 @@ input {
         height: auto;
         line-height: 1.6;
         transform: translateX(50px);
-        
-
     }
 
     .DeskTopText {
         color: white;
         font-size: 2.1rem;
         text-shadow: 2px 2px 3px black;
-
     }
 
     .DeskTopText2 {
@@ -153,18 +148,15 @@ input {
         font-size: 1.5rem;
         text-shadow: 2px 2px 3px black;
         font-weight: normal
-
     }
 
     .DeskTopFiveLetter {
         font-weight: 900
-
     }
 
     .DeskTopInputContainer {
         width: 70vw;
         height: 30vh;
-
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -178,7 +170,6 @@ input {
         margin: 30px  0;
         text-shadow: 2px 2px 3px black;
         transform: translateX(-60px);
-       
     }
 
     .DeskTopInput {
@@ -187,19 +178,27 @@ input {
         justify-content: center;
         margin-bottom: 100px;
 
+        input {
+            border: none;
+            padding: 8px;
+        }
     }
 
     .DeskTopEventButton {
-        width: 7vw;
+        width: 8vw;
         height: 7vh;
         margin-left: 20px;
         font-size: 1.2rem;
-    
+        border-radius: 30px;
+        border: none;
+        background-color: rgba(169, 169, 169, 1);
     }
 
     input {
         font-size: 2.2rem;
         line-height: 1.5;
+        border: none;
+        padding: 8px;
     }
 }    
 
@@ -305,18 +304,37 @@ input {
         align-items: center;
         justify-content: center;
         margin-bottom: 100px;
-
     }
 
     .DeskTopEventButton {
         width: 10vw;
         height: 7vh;
         margin-left: 20px;
-    
+        border-radius: 30px;
+        border: none;
+        background-color: rgba(169, 169, 169, 1);
     }
 
     input {
         font-size: 2.2rem;
         line-height: 1.5;
+        border: none;
+        padding: 8px;
     }
-}    
+}
+
+.desktopMainPageContainer {
+    position: absolute;
+    top: 15vh;
+    right: 5vw;
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 35px;
+  }

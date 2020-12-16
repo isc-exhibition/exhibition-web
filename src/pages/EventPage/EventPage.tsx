@@ -3,15 +3,15 @@ import styles from './EventPage.module.scss';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
 import EventLetter from '../../assets/EventLetter.png';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
-import MobilebackgroundImage from '../../assets/background/mobile_background.png';
-import DesktopbackgroundImage from '../../assets/background/desktop_background.png';
+import mobileBackgroundImage from '../../assets/background/mobile_background.png';
+import desktopBackgroundImage from '../../assets/background/desktop_background.png';
 
 let event;
 
 function EventPage() {
-  const isDeviceHeightHighAsIphone8Plus = UseMediaQuery('(max-width: 800px)');
+  const isDeviceWidthWideAsDesktop = UseMediaQuery('(max-width: 800px)');
 
-  if (isDeviceHeightHighAsIphone8Plus) {
+  if (isDeviceWidthWideAsDesktop) {
     event = (
       <div className={styles.EventPageContainer}>
         <div className={styles.TextContainer}>
@@ -76,9 +76,9 @@ function EventPage() {
   }
   return (
     <>
-      <BackgroundImage backgroundImageUrl={isDeviceHeightHighAsIphone8Plus
-        ? MobilebackgroundImage : DesktopbackgroundImage}
-      />
+      {!isDeviceWidthWideAsDesktop
+        ? <div className={styles.desktopMainPageContainer} style={{ backgroundImage: `url(${desktopBackgroundImage})` }} />
+        : <BackgroundImage backgroundImageUrl={mobileBackgroundImage} />}
       {event}
     </>
   );
