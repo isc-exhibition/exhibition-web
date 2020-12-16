@@ -12,6 +12,8 @@ function Header() {
 
   const isOnIntro = useRouteMatch('/intro')?.path === '/intro';
   const isOnMain = useRouteMatch('/main')?.path === '/main';
+  const isOnCredit = useRouteMatch('/credit')?.path === '/credit';
+  const backButtonColor = isOnCredit ? 'black' : 'white';
 
   return (
     <>
@@ -21,7 +23,7 @@ function Header() {
       {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
       {!isOnMain
         && (
-        <button className={styles.backButton} type="button" onClick={goBack}>
+        <button className={styles.backButton} style={{ color: backButtonColor }} type="button" onClick={goBack}>
           <i className="fas fa-arrow-left" />
         </button>
         )}

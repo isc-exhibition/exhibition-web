@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import Modal from 'react-modal';
 import styles from './Navbar.module.scss';
 
@@ -20,11 +20,14 @@ function Navbar() {
     setIsNavbarMenuModalOpen(false);
   };
 
+  const isOnCredit = useRouteMatch('/credit')?.path === '/credit';
+  const navbarButtonColor = isOnCredit ? 'black' : 'white';
+
   const isNoticeDismissed = localStorage.getItem('ISCEXHIBITIONINFO_DISMISSED') === 'true';
 
   const menuList = [
     { name: '이벤트', path: '/event' },
-    { name: '크레딧', path: '/main' },
+    { name: '크레딧', path: '/credit' },
   ];
 
   useEffect(() => {
@@ -38,7 +41,7 @@ function Navbar() {
   return (
     <>
       {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
-      <button className={styles.navbarButton} type="button" onClick={toggleNavbarModal}><i className="fas fa-bars" /></button>
+      <button className={styles.navbarButton} style={{ color: navbarButtonColor }} type="button" onClick={toggleNavbarModal}><i className="fas fa-bars" /></button>
       <Modal
         isOpen={isNavbarMenuModalOpen}
         onRequestClose={toggleNavbarModal}
