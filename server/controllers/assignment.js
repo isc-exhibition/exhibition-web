@@ -32,12 +32,14 @@ const createAssignment = async (req, res, next) => {
   }
 
   const {
-    name, members, description, concept, link, subjectId,
+    name, members, description, concept, link, subjectId, assignmentId,
   } = req.body;
 
   let assignment;
   try {
-    assignment = await create(name, members, description, concept, link, subjectId);
+    assignment = await create(
+      name, members, description, concept, link, subjectId, assignmentId,
+    );
   } catch (err) {
     const error = new HttpError(
       'Creating Assignment failed',

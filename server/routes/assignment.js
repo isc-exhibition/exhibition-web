@@ -21,6 +21,9 @@ router.post(
     check('subjectId')
       .not()
       .isEmpty(),
+    check('assignmentId')
+      .not()
+      .isEmpty(),
   ],
   assignmentControllers.createAssignment,
 );
