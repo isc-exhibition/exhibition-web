@@ -8,7 +8,7 @@ import UseMediaQuery from '../../customHooks/UseMediaQuery';
 
 function FaqPage() {
   let faqPage;
-  const isMobile = UseMediaQuery('(max-width: 767px)');
+  const isMobile = UseMediaQuery('(max-width: 800px)');
 
   let faqAnswer;
   const [isOpen, setOpen] = useState(false);
