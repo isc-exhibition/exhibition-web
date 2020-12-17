@@ -270,7 +270,8 @@ function FaqPage() {
   return (
     <>
       { faqPage }
-      <img src={faqNpc} alt="" className={styles.faqNpc} />
+      {isMobile ? null : <img src={faqNpc} alt="" className={styles.faqNpc} />}
+
     </>
   );
 }
