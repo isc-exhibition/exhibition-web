@@ -3,6 +3,6 @@ const assignmentControllers = require('../controllers/assignment');
 
 const router = express.Router();
 
-router.get('/:id', assignmentControllers.getAssignment);
+router.get('/:id', assignmentControllers.getAssignmentList);
 
 module.exports = router;

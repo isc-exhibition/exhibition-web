@@ -2,14 +2,13 @@ const mongoose = require('mongoose');
 
 const assignmentSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  members: [String],
+  team: String,
   description: String,
   concept: String,
   link: String,
+  image_link: String,
   subject_id: { type: Number, required: true },
-  assignment_id: { type: Number, required: true },
+  assignment_id: { type: Number, required: true, unique: true },
 });
-
-assignmentSchema.index({ subject_id: 1, assignment_id: 1 }, { unique: true });
 
 module.exports = mongoose.model('Assignment', assignmentSchema);

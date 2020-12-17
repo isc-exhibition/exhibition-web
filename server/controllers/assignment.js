@@ -1,26 +1,30 @@
 const { validationResult } = require('express-validator');
 const HttpError = require('../models/http-error');
 const create = require('../services/assignment');
+const getAssignmentListBySubjectId = require('../services/subject');
+const getAssignmentById = require('../services/assignment');
 
-const MOCKUPAssingment = [
-  {
-    id: '1', name: 'DS의 모헙', members: '금진섭, 송지우, 장다연, 고지연', link: 'https://naver.com',
-  },
-  {
-    id: '2', name: 'DS의 모헙2', members: '금진섭, 송지우, 장다연, 고지연', link: 'https://naver.com',
-  },
-];
-
-const getAssginment = (req, res, next) => {
+const getAssignmentList = async (req, res, next) => {
   const { id } = req.params;
 
-  const assginment = MOCKUPAssingment.find((assignment) => assignment.id === id);
-
-  if (!assginment) {
+  const assignment = await getAssignmentListBySubjectId(id);
+  if (!assignment) {
     return next(new HttpError('Could not find a assignment for that id', 404));
   }
 
-  res.json({ assginment });
+  res.json({ assignment });
+};
+
+const getAssignment = async (req, res, next) => {
+  const { id } = req.params;
+
+  const assignment = await getAssignmentById(id);
+
+  if (!assignment) {
+    return next(new HttpError('Could not find a assignment for that id', 404));
+  }
+
+  res.json({ assignment });
 };
 
 const createAssignment = async (req, res, next) => {
@@ -32,13 +36,13 @@ const createAssignment = async (req, res, next) => {
   }
 
   const {
-    name, members, description, concept, link, subjectId, assignmentId,
+    name, team, description, concept, link, imageLink, subjectId, assignmentId,
   } = req.body;
 
   let assignment;
   try {
     assignment = await create(
-      name, members, description, concept, link, subjectId, assignmentId,
+      name, team, description, concept, link, imageLink, subjectId, assignmentId,
     );
   } catch (err) {
     const error = new HttpError(
@@ -51,5 +55,6 @@ const createAssignment = async (req, res, next) => {
   res.status(201).json({ assginment: assignment });
 };
 
-exports.getAssginment = getAssginment;
+exports.getAssignmentList = getAssignmentList;
 exports.createAssignment = createAssignment;
+exports.getAssignment = getAssignment;
