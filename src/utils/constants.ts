@@ -1,3 +1,12 @@
+import {
+  UCDDescription,
+  soundInteractionDescription,
+  ICT101Description, futureNews2Description,
+  interactiveMediaDescription, digitalVideo2Description,
+  interactiveStoryDescription,
+  personalProjectDescription,
+
+} from './subject';
 import digitalVideo2Image from '../assets/subject/DigitalVideo2_bread.png';
 import futureNews2Image from '../assets/subject/FutureNews2_bread.png';
 import ICT101Image from '../assets/subject/ICT101_bread.png';
@@ -20,17 +29,46 @@ interface SubjectListOnFallSemester {
     id: number;
     name: string;
     image: string;
+    description: any;
 }
 
 const subjectListOnFallSemester: SubjectListOnFallSemester[] = [
-  { id: 1, name: UCD, image: UCDImage },
-  { id: 2, name: soundInteraction, image: soundInteractionImage },
-  { id: 3, name: ICT101, image: ICT101Image },
-  { id: 4, name: futureNews2, image: futureNews2Image },
-  { id: 5, name: interactiveMedia, image: interactiveMediaImage },
-  { id: 6, name: digitalVideo2, image: digitalVideo2Image },
-  { id: 7, name: interactiveStory, image: interactiveStoryImage },
-  { id: 8, name: personalProject, image: personalProjectImage },
+  {
+    id: 6, name: UCD, image: UCDImage, description: UCDDescription,
+  },
+  {
+    id: 5,
+    name: soundInteraction,
+    image: soundInteractionImage,
+    description: soundInteractionDescription,
+  },
+  {
+    id: 2, name: ICT101, image: ICT101Image, description: ICT101Description,
+  },
+  {
+    id: 7, name: futureNews2, image: futureNews2Image, description: futureNews2Description,
+  },
+  {
+    id: 1,
+    name: interactiveMedia,
+    image: interactiveMediaImage,
+    description: interactiveMediaDescription,
+  },
+  {
+    id: 4, name: digitalVideo2, image: digitalVideo2Image, description: digitalVideo2Description,
+  },
+  {
+    id: 3,
+    name: interactiveStory,
+    image: interactiveStoryImage,
+    description: interactiveStoryDescription,
+  },
+  {
+    id: 8,
+    name: personalProject,
+    image: personalProjectImage,
+    description: personalProjectDescription,
+  },
 ];
 
 export default subjectListOnFallSemester;

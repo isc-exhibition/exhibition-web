@@ -1,36 +1,34 @@
 import React, { CSSProperties, useEffect, useState } from 'react';
+import axios from 'axios';
+import { match } from 'react-router-dom';
 import styles from './SubjectPage.module.scss';
 import AssignmentList from '../../components/AssignmentList/AssignmentList';
 import tempImg from '../../assets/subject/UCD_bread.png';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
+import subjectListOnFallSemester from '../../utils/constants';
 
-const mockupSubject = {
-  shortName: '유저는 저유',
-  name: '사용자 중심 디자인',
-  professor: '홍화정 교수님',
-  introduction: `멋진 프로젝트를 기획했는데, 사용자에게 불편하거나 혹은 사용할 사람조차 없다면 말짱 도루묵이겠죠? 
+interface Props {
+  match: match<any>;
+}
 
-  지금 이 순간 사람들이 필요로 하는 것을 철저히 조사하고 분석하는 과정부터, 그에 딱 맞는 프로젝트를 기획하고 시험하는 과정까지.
-  
-  나 이런 거 필요했네...? 
-  
-  숨겨진 니즈를 찾아 뚝딱뚝딱 기획한 수강생들의 작품들을 만나보세요.`,
-
-};
-
-function SubjectPage() {
+function SubjectPage(props: Props) {
   const isDeviceWidthWideAsDesktop = UseMediaQuery('(min-width: 800px)');
 
-  const subject = mockupSubject;
+  // eslint-disable-next-line no-shadow
+  const { match } = props;
+  const subjectId = Number(match.params.id);
+
+  const subjectDescription = subjectListOnFallSemester.find((sub) => sub.id
+  === subjectId)?.description;
 
   const [isHiddenScrollUpText, setHiddenScrollUpText] = useState(false);
 
   const isClassImage = isDeviceWidthWideAsDesktop ? (
     <div className={styles.classImage}>
       <img src={tempImg} alt="img" />
-      <h2 className={styles.name}>{subject.name}</h2>
+      <h2 className={styles.name}>{subjectDescription?.name}</h2>
     </div>
-  ) : <h2 className={styles.name}>{subject.name}</h2>;
+  ) : <h2 className={styles.name}>{subjectDescription?.name}</h2>;
 
   const assignmentTrayBottom = '-496px';
 
@@ -47,8 +45,17 @@ function SubjectPage() {
   };
 
   useEffect(() => {
+    const { CancelToken } = axios;
+    const source = CancelToken.source();
+
+    axios.get(`/api/v1/subject/${subjectId}`, { cancelToken: source.token })
+      .then((res) => console.log(res));
+
     addScrollListenr();
-    return removeScrollListenr;
+    return () => {
+      source.cancel();
+      removeScrollListenr();
+    };
   });
 
   const assignmentTrayStyle: CSSProperties = {
@@ -77,12 +84,12 @@ function SubjectPage() {
         <div className={styles.textContainer}>
           <h4 className={styles.shortName}>
             &quot;
-            {subject.shortName}
+            {subjectDescription?.shortName}
             &quot;
           </h4>
           {isClassImage}
-          <h5 className={styles.professor}>{subject.professor}</h5>
-          <p className={styles.introduction}>{subject.introduction}</p>
+          <h5 className={styles.professor}>{subjectDescription?.professor}</h5>
+          <p className={styles.introduction}>{subjectDescription?.introduction}</p>
         </div>
       </div>
       {scrollMessage}
