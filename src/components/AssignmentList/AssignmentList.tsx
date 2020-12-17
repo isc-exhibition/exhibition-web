@@ -3,22 +3,18 @@ import { Link } from 'react-router-dom';
 import styles from './AssignmentList.module.scss';
 import trayBackgroundImage from './subject_tray.png';
 import desktopTrayImage from '../../assets/desktop_tray.png';
-import MockupAssginmentImage from '../../assets/infonpc.png';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
 
-function AssignmentList() {
+interface Props {
+  subject: any;
+}
+
+function AssignmentList(props: Props) {
   const isDeviceWidthWideAsDesktop = UseMediaQuery('(min-width: 800px)');
 
-  const trayImage = isDeviceWidthWideAsDesktop ? `url(${desktopTrayImage}` : `url(${trayBackgroundImage})`;
+  const { subject } = props;
 
-  const mockupAssignmentList = [
-    { name: '과제1', id: '1', previewImageUrl: MockupAssginmentImage },
-    { name: '과제1', id: '1', previewImageUrl: MockupAssginmentImage },
-    { name: '과제1', id: '1', previewImageUrl: MockupAssginmentImage },
-    { name: '과제1', id: '1', previewImageUrl: MockupAssginmentImage },
-    { name: '과제1', id: '1', previewImageUrl: MockupAssginmentImage },
-    { name: '과제1', id: '1', previewImageUrl: MockupAssginmentImage },
-  ];
+  const trayImage = isDeviceWidthWideAsDesktop ? `url(${desktopTrayImage}` : `url(${trayBackgroundImage})`;
 
   return (
     <div
@@ -26,9 +22,9 @@ function AssignmentList() {
       style={{ backgroundImage: trayImage }}
     >
       <div className={styles.assignmentWrapper}>
-        {mockupAssignmentList.map((assignment) => (
-          <Link to={`/assignment/${assignment.id}`}>
-            <div className={styles.assignment} style={{ backgroundImage: `url(${assignment.previewImageUrl})` }} />
+        {subject?.data.assignment.map((assignment: any) => (
+          <Link to={`/assignment/${assignment.assignment_id}`}>
+            <div className={styles.assignment} style={{ backgroundImage: `url(${assignment.image_link})` }} />
           </Link>
         ))}
       </div>

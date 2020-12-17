@@ -18,6 +18,8 @@ function SubjectPage(props: Props) {
   const { match } = props;
   const subjectId = Number(match.params.id);
 
+  const [subjectResponse, setSubjectResponse] = useState<any>(null);
+
   const subjectDescription = subjectListOnFallSemester.find((sub) => sub.id
   === subjectId)?.description;
 
@@ -49,14 +51,16 @@ function SubjectPage(props: Props) {
     const source = CancelToken.source();
 
     axios.get(`/api/v1/subject/${subjectId}`, { cancelToken: source.token })
-      .then((res) => console.log(res));
+      .then((res) => {
+        setSubjectResponse(res);
+      });
 
     addScrollListenr();
     return () => {
       source.cancel();
       removeScrollListenr();
     };
-  });
+  }, []);
 
   const assignmentTrayStyle: CSSProperties = {
     transition: 'all 0.5s ease',
@@ -69,12 +73,12 @@ function SubjectPage(props: Props) {
   const scrollMessage = isDeviceWidthWideAsDesktop ? (
     <div style={assignmentTrayStyle}>
       {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Down!</h2> }
-      <AssignmentList />
+      <AssignmentList subject={subjectResponse} />
     </div>
   ) : (
     <div style={assignmentTrayStyle}>
       {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Up!</h2> }
-      <AssignmentList />
+      <AssignmentList subject={subjectResponse} />
     </div>
   );
 
