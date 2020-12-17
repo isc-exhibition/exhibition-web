@@ -33,7 +33,7 @@
 @media(min-width: 800px){
 
     .assignmnetList {
-        max-width: 900px;
+        max-width: 960px;
         height: 70vh;
         min-height: 546px;
         max-height: 650px;
@@ -44,13 +44,15 @@
         display: flex;
         justify-content: center;
     
+    
         .assignmentWrapper {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-evenly;
-            width: 90%;
-            padding: 80px;
+            width: 100%;
+            padding: 90px;
+        }
     
         .assignment {
             width: 200px;
@@ -60,8 +62,6 @@
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
-            }
         }
     }
-    
 }
