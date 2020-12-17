@@ -47,7 +47,7 @@ function AssignmentPage() {
             <img className={styles.mainImage} src={mockupAssignment.imageUrl} alt="" />
           </div>
           <h3 style={{
-            marginBottom: '4px', paddingLeft: '50px', fontSize: '1.375rem', fontWeight: 'bold', textShadow: '2px 2px 3px rgba(0, 0, 0, 0.9)',
+            marginBottom: '4px', paddingLeft: '50px', fontSize: '1.5rem', fontWeight: 'bold', textShadow: '2px 2px 3px rgba(0, 0, 0, 0.9)',
           }}
           >
             과제 설명

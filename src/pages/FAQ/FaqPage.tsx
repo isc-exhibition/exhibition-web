@@ -5,6 +5,8 @@ import mobileBackgroundImage from '../../assets/background/mobile_background.png
 import desktopBackgroundImage from '../../assets/background/desktop_background.png';
 import { faqWhatIsISCExhibition, ISCIntroduction, HowtoEnterISC } from '../../utils/faqList';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
+import faqNpc from '../../assets/faqNPC.png';
+
 // import InfoNpc from '../../components/InfoNpc/InfoNpc';
 
 function FaqPage() {
@@ -268,7 +270,7 @@ function FaqPage() {
   return (
     <>
       { faqPage }
-      {/* {!isMobile && <InfoNpc />} */}
+      <img src={faqNpc} alt="" className={styles.faqNpc} />
     </>
   );
 }
