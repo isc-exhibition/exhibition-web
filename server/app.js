@@ -1,13 +1,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const assignmentsRoutes = require('./routes/assignment');
+const subjectsRoutes = require('./routes/subject');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use('/api/v1/assignment', assignmentsRoutes);
+app.use('/api/v1/subject', subjectsRoutes);
 
 app.use((error, req, res, next) => {
   if (res.headerSent) {
@@ -18,7 +23,7 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect('', { useNewUrlParser: true })
+  .connect(process.env.MONGO_DB, { useNewUrlParser: true })
   .then(() => {
     app.listen(5000);
   })

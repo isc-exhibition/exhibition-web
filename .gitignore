@@ -27,4 +27,4 @@ yarn-error.log*
 
 /dist
 /.vscode
-
+.env
