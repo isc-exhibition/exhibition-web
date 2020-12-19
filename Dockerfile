@@ -1,17 +1,13 @@
-# build stage
-FROM node:lts-alpine as build-stage
-WORKDIR /app
-ENV PATH /app/node_modules/.bin:$PATH
-COPY package.json ./
-COPY yarn.lock ./
+FROM node:12-alpine as builder
+WORKDIR /app/frontend
+COPY package.json yarn.lock ./
 RUN yarn install
 COPY . ./
-RUN yarn run build    
+RUN yarn build 
 
-# production stage
-FROM nginx:stable-alpine as production-stage
+FROM nginx:1.19.0
 RUN rm /etc/nginx/conf.d/default.conf
-COPY .nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build-stage /app/build /usr/share/nginx/html
+COPY ./nginx/.nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder /app/frontend/build /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

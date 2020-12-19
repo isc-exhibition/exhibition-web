@@ -1,0 +1,23 @@
+version: "3.3"
+services:
+  server:
+    container_name: server
+    restart: unless-stopped
+    build:
+      context: ./server/
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes: 
+      - ./server/node_modules:/usr/app/server/node_modules
+
+  frontend:
+    container_name: frontend
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./node_modules:/usr/app/node_modules
