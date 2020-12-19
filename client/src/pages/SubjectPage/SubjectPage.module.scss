@@ -5,11 +5,13 @@
     .scrollUpText {
         font-size: 2.25rem;
         font-family: 'Niconne';
-        margin: 0 0 -10px 0;
         text-align: center;
         color: rgba(255, 255, 255, 0.3);
         font-weight: 500;
-        transition: all 2s ease,
+        transition: all 2s ease;
+        position: absolute;
+        width: 100%;
+        top: -60px;
     }
 
     .subjectWrapper {
@@ -75,13 +77,15 @@
         flex-direction: column;
     
         .scrollUpText {
-            font-size: 3rem;
+            font-size: 2.25rem;
             font-family: 'Niconne';
-            margin: 0 0 -10px 0;
             text-align: center;
             color: rgba(255, 255, 255, 0.3);
             font-weight: 500;
-            transition: all 2s ease,
+            transition: all 2s ease;
+            position: absolute;
+            width: 100%;
+            top: -60px;
         }
     
         .subjectWrapper {

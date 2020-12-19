@@ -11,6 +11,7 @@ import FaqPage from './pages/FAQ/FaqPage';
 import CreditPage from './pages/CreditPage/CreditPage';
 import Header from './components/Header/Header';
 import LogoStand from './components/LogoStand/LogoStand';
+import './App.css';
 
 function App() {
   return (

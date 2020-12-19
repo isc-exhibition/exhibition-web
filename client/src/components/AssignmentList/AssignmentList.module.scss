@@ -19,16 +19,30 @@
         align-items: center;
         justify-content: space-evenly;
         width: 90%;
-        padding: 30px;
+        padding: 80px 30px 52px 30px;
 
-    .assignment {
-        width: 120px;
-        height: 120px;
-        background-color: gray;
-        border-radius: 50%;
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
+        .assignment {
+            width: 120px;
+            height: 120px;
+            background-color: gray;
+            border-radius: 50%;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+
+    .arrowButtons {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        position: absolute;
+        top: 52px;
+
+        button {
+            i {
+                font-size: 28px;
+            }
         }
     }
 }}
@@ -65,6 +79,14 @@
             background-position: center center;
             background-size: cover;
             background-repeat: no-repeat;
+        }
+
+        .arrowButtons {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            position: absolute;
+            top: 48px;
         }
     }
 }
