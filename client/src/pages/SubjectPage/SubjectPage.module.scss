@@ -11,7 +11,7 @@
         transition: all 2s ease;
         position: absolute;
         width: 100%;
-        top: -60px;
+        top: -40px;
     }
 
     .subjectWrapper {
@@ -55,12 +55,13 @@
         .professor {
             font-size: 1.5rem;
             text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+            margin-bottom: 32px;
         }
 
         .introduction {
             word-break: break-all;
             width: 84%;
-            text-align: center;
+            text-align: justify;
         }
     }
 

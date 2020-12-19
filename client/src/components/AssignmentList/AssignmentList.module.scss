@@ -68,12 +68,12 @@
             align-items: center;
             justify-content: space-evenly;
             width: 100%;
-            padding: 90px;
+            padding: 80px 160px;
         }
     
         .assignment {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             background-color: gray;
             border-radius: 50%;
             background-position: center center;
@@ -83,10 +83,16 @@
 
         .arrowButtons {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-evenly;
             width: 100%;
             position: absolute;
-            top: 48px;
+            top: 50px;
+
+            button {
+                i {
+                    font-size: 40px;
+                }
+            }
         }
     }
 }

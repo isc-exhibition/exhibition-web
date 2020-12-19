@@ -3,7 +3,6 @@ import axios from 'axios';
 import { match } from 'react-router-dom';
 import styles from './SubjectPage.module.scss';
 import AssignmentList from '../../components/AssignmentList/AssignmentList';
-import tempImg from '../../assets/subject/UCD_bread.png';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
 import subjectListOnFallSemester from '../../utils/constants';
 
@@ -18,16 +17,19 @@ function SubjectPage(props: Props) {
   const { match } = props;
   const subjectId = Number(match.params.id);
 
-  const [subjectResponse, setSubjectResponse] = useState<any>(null);
+  const [subjectResponseData, setSubjectResponseData] = useState<any>(null);
 
   const subjectDescription = subjectListOnFallSemester.find((sub) => sub.id
   === subjectId)?.description;
 
+  const subjectImage = subjectListOnFallSemester.find((sub) => sub.id
+  === subjectId)?.image;
+
   const [isHiddenScrollUpText, setHiddenScrollUpText] = useState(false);
 
-  const isClassImage = isDeviceWidthWideAsDesktop ? (
+  const classImage = isDeviceWidthWideAsDesktop ? (
     <div className={styles.classImage}>
-      <img src={tempImg} alt="img" />
+      <img src={subjectImage} alt="img" />
       <h2 className={styles.name}>{subjectDescription?.name}</h2>
     </div>
   ) : <h2 className={styles.name}>{subjectDescription?.name}</h2>;
@@ -52,7 +54,7 @@ function SubjectPage(props: Props) {
 
     axios.get(`/api/v1/subject/${subjectId}`, { cancelToken: source.token })
       .then((res) => {
-        setSubjectResponse(res);
+        setSubjectResponseData(res);
       });
 
     addScrollListenr();
@@ -73,12 +75,12 @@ function SubjectPage(props: Props) {
   const scrollMessage = isDeviceWidthWideAsDesktop ? (
     <div style={assignmentTrayStyle}>
       {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Down!</h2> }
-      <AssignmentList subject={subjectResponse} />
+      <AssignmentList subject={subjectResponseData} />
     </div>
   ) : (
     <div style={assignmentTrayStyle}>
       {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Up!</h2> }
-      <AssignmentList subject={subjectResponse} />
+      <AssignmentList subject={subjectResponseData} />
     </div>
   );
 
@@ -91,7 +93,7 @@ function SubjectPage(props: Props) {
             {subjectDescription?.shortName}
             &quot;
           </h4>
-          {isClassImage}
+          {classImage}
           <h5 className={styles.professor}>{subjectDescription?.professor}</h5>
           <p className={styles.introduction}>{subjectDescription?.introduction}</p>
         </div>
