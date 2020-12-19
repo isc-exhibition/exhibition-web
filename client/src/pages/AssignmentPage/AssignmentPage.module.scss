@@ -78,33 +78,22 @@
 
 @media(min-width: 800px) {
     .assignmentWrapper {
-        position: absolute;
-        height: 100%;
-        top: 0%;
-        width: 100%;
         color: white;
         display: flex;
         justify-content: center;
         flex-direction: column;
-        align-items: center;
     
         .assignmentContainer{
-            width: 70%;
-            height: 80vh;
             display: flex;
             justify-content: center;
             flex-direction: column;
-            align-items: flex-start;
-            transform : translateX(100px);
+            margin: 180px 0 0 180px;
+            width: 50%;
 
             .alignImageContainer {
                 display: flex;
             }
-    
-            h2, h3, h4, h5, p {
-                margin: 0;
-            }
-    
+            
             .name, .concept, .teamname, .members, .description, .whiteRectangle, a {
                 padding: 0 50px;
             }
@@ -114,7 +103,7 @@
             }
     
             .teamname, .members, .description {
-                font-size: 1.5rem; 
+                font-size: 1.4rem; 
              }
     
             .name {
@@ -129,9 +118,10 @@
             }
     
             .mainImage {
-                height: 250px;
-                display: flex;
-                margin-left: 50px;
+                height: 32vh;
+                width: auto;
+                position: absolute;
+                right: 14vw;
             }
     
             .concept:after {
@@ -149,7 +139,7 @@
             }
     
             .description{
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
     
             .link {
@@ -161,27 +151,18 @@
             }
             .buttonContainer{
                 display: flex;
+                flex-direction: column;
                 align-items: center;
-                justify-content: center;
-                width: 70vw;
-                margin-top: 50px;
-                transform: translateX(-120px);
+                position: absolute;
+                right: 14vw;
+                margin-top: 28vh;
 
-            .toAssignment {
-                font-size: 24px;
-                color: white;
-                margin-top: 16px;
-            
+                a {
+                    color: white;
+                    font-size: 1.4rem;
 
+                }
             }
-
-            .toOtherAssignment {
-                font-size: 24px;
-                color: white;
-                margin-top: 16px;
-        
-            }
-        }
         }
     }
 }

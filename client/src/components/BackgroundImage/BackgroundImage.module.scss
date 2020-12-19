@@ -55,9 +55,11 @@
 
 @media (min-width: 800px) {
   .background {
-    height: 100vh;
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
+    width: 88vw;
+    margin: auto;
+    left: 10vw;
   }
 }
