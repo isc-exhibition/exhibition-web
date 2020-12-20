@@ -7,12 +7,14 @@ dotenv.config();
 
 const assignmentsRoutes = require('./routes/assignment');
 const subjectsRoutes = require('./routes/subject');
+const eventsRoutes = require('./routes/event');
 
 const app = express();
 
 app.use(bodyParser.json());
 app.use('/api/v1/assignment', assignmentsRoutes);
 app.use('/api/v1/subject', subjectsRoutes);
+app.use('/api/v1/event', eventsRoutes);
 
 app.use((error, req, res, next) => {
   if (res.headerSent) {
