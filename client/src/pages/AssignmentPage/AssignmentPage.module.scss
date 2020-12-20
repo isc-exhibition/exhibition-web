@@ -4,12 +4,11 @@
     top: 0%;
     width: 100%;
     color: white;
-    margin-top: 20px;
+    margin-top: 15vh;
 
     .assignmentContainer{
         width: 100%;
         height: 80vh;
-        margin-top: 100px;
 
         .name, .concept, .teamname, .members, .description, .whiteRectangle, a {
             padding: 0 50px;
@@ -80,17 +79,23 @@
 
 @media(min-width: 800px) {
     .assignmentWrapper {
-        color: white;
+        position: absolute;
+        top: 15vh;
+        right: 5vw;
+        width: 80vw;
+        height: 80vh;
         display: flex;
         justify-content: center;
         flex-direction: column;
+        margin: 0;
     
         .assignmentContainer{
             display: flex;
             justify-content: center;
             flex-direction: column;
-            margin: 100px 0 0 280px;
             width: 50%;
+            height: 80%;
+            margin-left: 8vw;
 
             .alignImageContainer {
                 display: flex;
@@ -123,7 +128,7 @@
                 height: 32vh;
                 width: auto;
                 position: absolute;
-                right: 14vw;
+                right: 5vw;
             }
     
             .concept:after {
@@ -157,8 +162,8 @@
                 flex-direction: column;
                 align-items: center;
                 position: absolute;
-                right: 14vw;
-                margin-top: 28vh;
+                right: 6.3vw;
+                margin-top: 35vh;
 
                 a {
                     color: white;
