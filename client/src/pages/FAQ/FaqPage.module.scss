@@ -34,7 +34,7 @@
     border: 2px;
     border-radius: 25px;
     margin-top: 15px;
-    padding: 0 7px 0 7px;
+    padding: 0 7 0 7px;
 
     display: flex;
     flex-direction: column;
@@ -235,7 +235,7 @@
     .FaqIndexBoxLast {
         width: 90%;
         height: 33%;
-        margin-bottom: 0px;
+        margin-bottom: 30px;
     
     }
     
@@ -277,9 +277,6 @@
         background-size: cover;
         width: 30vw;
         height: 80vh;
-        
-    
-     
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -339,4 +336,173 @@
     background-size: cover;
     background-repeat: no-repeat;
     border-radius: 35px;
+  }
+
+  @media (min-width: 750px) and (max-width: 1025px) {
+    .FaqContainer {
+        position: absolute;
+        top: 0%;
+        width: 100%;
+        height: 100%;
+        
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .FaqIndexContainer {
+        background-image: url('../../assets/paper.png');
+        background-position: center;
+        width: 95vw;
+        height: 75vh;
+        transform: translateY(50px);
+     
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    
+    .IntroContainer{
+        height: 5vh;
+        width: auto;
+        background-color: black;
+        opacity: 0.7;
+        border: 2px;
+        border-radius: 25px;
+        margin-top: 15px;
+        padding: 0 7 0 7px;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    
+    .Intro{
+        margin:0;
+        font-size: 0.7rem;
+        font-weight: bold;
+        color: white;
+        padding: 5px;
+    }
+    
+    .FaqIndexBoxFirst {
+        
+        width: 90%;
+        height: 25%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    
+    }
+    
+    .FaqIndexBoxSecond {
+        width: 90%;
+        height: 27%;
+        margin-top: 3px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+    
+    .FaqIndexBoxLast {
+        width: 90%;
+        height: 33%;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    
+    }
+    
+    
+    .FaqTitle{
+        font-size: 1.2rem;
+        margin-left: 10px;
+        font-weight: bold;
+    
+    }
+    
+    .FaqText {
+        font-size: 0.8rem;
+        font-weight: 400;
+        margin:  0 0 0 20px;
+        line-height: 1.8;
+        padding-top: 5px;
+    
+    }
+    
+    .IndentText{
+        font-size: 0.8rem;
+        font-weight: normal;
+        margin: 0 0 0 30px;
+        line-height: 1.8;
+    
+    }
+    
+    .DoubleIndentText{
+        font-size: 0.8rem;
+        font-weight: normal;
+        margin:  0 0 0 40px;
+        line-height: 1.8;
+    
+    }
+    
+    .FaqAnswerContainer {
+        background-image: url('../../assets/paper.png');
+        background-position: center;
+        width: 95vw;
+        height: 80vh;
+        overflow: scroll;
+        overflow-x: hidden;
+        transform: translateY(30px);
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .FaqButton {
+        background: none;
+        border: none;
+        position: absolute;
+        width: 10vw;
+        height: auto;
+        top: 3%;
+        left: 8%;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    
+    .AnswerTextContainer {
+        margin : 50px auto;
+    }
+    
+    .AnswerTitle {
+        font-size: 1.2rem;
+        margin: 10px 30px;
+        padding-left : 10px 0 0 10px;
+    }
+    
+    .AnswerContent {
+        margin: 10px 30px;
+        font-size: 1rem;
+        padding-left : 15px;
+        line-height: 1.5rem;
+    }
+    
   }
