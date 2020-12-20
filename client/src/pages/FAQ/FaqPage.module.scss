@@ -1,3 +1,4 @@
+
 .FaqContainer {
     position: absolute;
     top: 0%;
@@ -14,7 +15,6 @@
 .FaqIndexContainer {
     background-image: url('../../assets/paper.png');
     background-position: center;
-    background-size: cover;
     width: 95vw;
     height: 75vh;
     transform: translateY(30px);
@@ -48,14 +48,16 @@
     font-size: 0.7rem;
     font-weight: bold;
     color: white;
+    padding: 5px;
 }
 
 .FaqIndexBoxFirst {
-    cursor: pointer;
+    
     width: 90%;
     height: 25%;
     margin-top: 3px;
     margin-bottom: 10px;
+    cursor: pointer;
 
 }
 
@@ -85,9 +87,10 @@
 
 .FaqText {
     font-size: 0.8rem;
-    font-weight: normal;
+    font-weight: 400;
     margin:  0 0 0 20px;
     line-height: 1.8;
+    padding-top: 5px;
 
 }
 
@@ -110,7 +113,6 @@
 .FaqAnswerContainer {
     background-image: url('../../assets/paper.png');
     background-position: center;
-    background-size: cover;
     width: 95vw;
     height: 80vh;
     overflow: scroll;
@@ -142,11 +144,14 @@
 .AnswerTitle {
     font-size: 1.2rem;
     margin: 10px 30px;
+    padding-left : 10px 0 0 10px;
 }
 
 .AnswerContent {
     margin: 10px 30px;
     font-size: 1rem;
+    padding-left : 15px;
+    line-height: 1.5rem;
 }
 
 @media (min-width : 800px) {
@@ -211,6 +216,7 @@
         font-size: 0.7rem;
         font-weight: bold;
         color: white;
+        padding: 5px;
     }
     
     .FaqIndexBoxFirst {
@@ -289,6 +295,7 @@
     .AnswerTitle {
         font-size: 1.2rem;
         margin: 10px 30px;
+        padding-left: 0 10px 0 10px;
 
         
     }
@@ -296,6 +303,9 @@
     .AnswerContent {
         margin: 10px 30px;
         font-size: 1rem;
+        line-height: 1.5rem;
+        padding-left: 0 15px 0 15px;
+        font-weight: 400px;
         
     }
 
