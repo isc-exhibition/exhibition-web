@@ -19,7 +19,7 @@
 
 .infoModal {
     position: absolute;
-    width: 200px;
+    width: 220px;
     background: rgba(255, 255, 255, 0.95);
     border: solid black 1px;
     padding: 27px 35px 35px 27px;
@@ -43,7 +43,10 @@
         margin: 40px 0;
     }
 
-
+    a {
+        color: black;
+        margin: 16px;
+    }
 }
 
 .infoOverlay {
@@ -64,4 +67,3 @@
         opacity: 1;
     }
 }
-

@@ -90,7 +90,6 @@ input {
     padding: 8px;
 }
 
-
 @media (min-width: 800px) {    
 
     .EventPageContainer {
@@ -202,7 +201,6 @@ input {
         padding: 8px;
     }
 }    
-
 
 @media (min-width: 801px) and (max-width: 1024px) {    
 
@@ -335,3 +333,8 @@ input {
     background-repeat: no-repeat;
     border-radius: 35px;
   }
+
+input {
+    font-family: 'Noto sans KR', sans-serif;
+    text-align: center;
+}
