@@ -69,7 +69,7 @@ function AssignmentPage(props: Props) {
               <button className={styles.toAssignment} type="button" onClick={goBack}>다른 과제 보러가기</button>
             </div>
           ) }
-          { (isDesktop && assignmentResponse?.link)
+          { (!isDesktop && assignmentResponse?.link)
            && <a className={styles.toAssignment} href={assignmentResponse?.link}>과제 보러가기</a> }
         </div>
       </div>
