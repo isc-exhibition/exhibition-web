@@ -24,7 +24,7 @@ export const soundInteractionDescription = {
 };
 
 export const ICT101Description = {
-  shortName: '정보의 보정',
+  shortName: '정보 문화 문 보정',
   name: '정보문화기술입문',
   professor: '오종환 교수님',
   introduction: `코딩을 처음하신다구요? 그런 당신을 위해 준비했습니다! p5.js와 함께하는 정보 문화 기술 입문! 
