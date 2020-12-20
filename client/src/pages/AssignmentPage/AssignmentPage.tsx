@@ -18,7 +18,7 @@ function AssignmentPage(props: Props) {
 
   // eslint-disable-next-line no-shadow
   const { match } = props;
-  const assignmentId = Number(match.params.id);
+  const assignmentId = match.params.id;
 
   const assginmentButton = isDesktop ? (
     <div className={styles.buttonContainer}>

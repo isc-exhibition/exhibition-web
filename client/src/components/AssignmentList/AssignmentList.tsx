@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './AssignmentList.module.scss';
@@ -72,12 +73,12 @@ function AssignmentList(props: Props) {
         <EventLetter positionBottom="30px" positionRight="40px" letterIndex={1} />
         { hasPagination
           ? assignmentsInCurrentPage?.map((assignment: any) => (
-            <Link to={`/assignment/${assignment.assignment_id}`}>
+            <Link to={`/assignment/${assignment._id}`}>
               <div className={styles.assignment} style={{ backgroundImage: `url(${assignment.image_link})`, content: 'sdfsf' }} />
             </Link>
           ))
           : firstPageAssingments?.map((assignment: any) => (
-            <Link to={`/assignment/${assignment.assignment_id}`}>
+            <Link to={`/assignment/${assignment._id}`}>
               <div className={styles.assignment} style={{ backgroundImage: `url(${assignment.image_link})`, content: 'sdfsf' }} />
             </Link>
           ))}

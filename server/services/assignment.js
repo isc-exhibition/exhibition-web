@@ -18,7 +18,7 @@ const Assingment = require('../models/assignment');
 
 const getAssignmentById = async (id) => {
   const assignmentList = await Assingment.find();
-  const filtered = assignmentList.find((ass) => ass.assignment_id == id);
+  const filtered = assignmentList.find((ass) => ass._id == id);
   return filtered;
 };
 
