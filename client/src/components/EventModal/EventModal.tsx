@@ -19,9 +19,7 @@ function EventModal(props: Props) {
   } = props;
 
   const setDismissedLetter = () => {
-    if (letter?.index !== 3) {
-      localStorage.setItem(`ISSHOWNEVENTLETTER${letter?.index}`, 'true');
-    }
+    localStorage.setItem(`ISSHOWNEVENTLETTER${letter?.index}`, 'true');
   };
 
   const mainTest = letter?.text || eventAnswer?.text;
