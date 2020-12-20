@@ -62,13 +62,15 @@ function AssignmentPage(props: Props) {
             과제 설명
           </h3>
           <p className={styles.description}>{assignmentResponse?.description}</p>
-          {isDesktop ? (
+          {isDesktop && (
             <div className={styles.buttonContainer}>
               {assignmentResponse?.link
        && <a className={styles.toAssignment} href={assignmentResponse?.link}>과제 보러가기</a> }
               <button className={styles.toAssignment} type="button" onClick={goBack}>다른 과제 보러가기</button>
             </div>
-          ) : <a className={styles.toAssignment} href={assignmentResponse?.link}>과제 보러가기</a>}
+          ) }
+          { (isDesktop && assignmentResponse?.link)
+           && <a className={styles.toAssignment} href={assignmentResponse?.link}>과제 보러가기</a> }
         </div>
       </div>
     </>
