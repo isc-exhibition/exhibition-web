@@ -66,12 +66,12 @@
     
         .subjectList {
             min-width: 500px;
+            min-height: 395px;
             height: 40vh;
             display: flex;
             flex-wrap: wrap;
             max-width: 500px;
             justify-content: center;
-            margin: 80px auto auto;
         }
 
         .subjectImage {

@@ -73,7 +73,7 @@ function AssignmentList(props: Props) {
         )}
       <div className={styles.assignmentWrapper}>
         {/* 1~5 번의 과목에 이벤트 쪽지 넣기 */}
-        {subjectId < 6 && <EventLetter positionBottom={`${30 * subjectId}px`} positionRight={`${40 * subjectId}px`} letterIndex={subjectId} /> }
+        {subjectId < 6 && <EventLetter positionBottom={`${30 * subjectId}px`} positionRight={`${13 * subjectId}vw`} letterIndex={subjectId} /> }
         { hasPagination
           ? assignmentsInCurrentPage?.map((assignment: any) => (
             <Link to={`/assignment/${assignment._id}`}>

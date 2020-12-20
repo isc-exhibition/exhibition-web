@@ -4,7 +4,7 @@
     top: 0%;
     width: 100%;
     color: white;
-    margin-top: 15vh;
+    margin-top: 20vh;
 
     .assignmentContainer{
         width: 100%;
@@ -31,6 +31,7 @@
 
         .concept {
            font-size: 1.25rem;
+           line-height: 1.8rem;
         }
 
         .mainImage {
@@ -57,6 +58,7 @@
         .description{
             font-size: 1.25rem;
             font-weight: 400;
+            line-height: 1.8rem;
         }
 
         .link {
@@ -114,21 +116,22 @@
              }
     
             .name {
-                font-size: 3rem;
+                font-size: 2.75rem;
                 font-weight: normal;
                 text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
-                margin: 4px 0 22px;
+                margin: 4px 0 25px;
             }
     
             .concept {
                font-size: 1.5rem;
+               line-height: 2.25rem;
             }
     
             .mainImage {
                 height: 32vh;
                 width: auto;
                 position: absolute;
-                right: 5vw;
+                right: 60px;
             }
     
             .concept:after {
@@ -146,7 +149,7 @@
             }
     
             .description{
-                font-size: 1.4rem;
+                font-size: 1.2rem;
                 font-weight: 400;
             }
     
@@ -162,8 +165,9 @@
                 flex-direction: column;
                 align-items: center;
                 position: absolute;
-                right: 6.3vw;
-                margin-top: 35vh;
+                right: 140px;
+                bottom: 40px;
+                // margin-top: 40vh;
 
                 button {
                     font-size: 1.2rem;
