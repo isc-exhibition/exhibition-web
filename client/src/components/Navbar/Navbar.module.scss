@@ -198,6 +198,42 @@
         display: none;
     }
 
+    .infoModal {
+        position: absolute;
+        width: 70%;
+        max-width: 710px;
+        height: 67%;
+        min-height: 476px;
+        background: rgba(255, 255, 255, 0.95);
+        border: solid black 1px;
+        padding: 27px 35px 35px 27px;
+        top: 50%;
+        left: 50%;
+        right: auto;
+        bottom: auto;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        border-radius: 40px;
+        outline: none;
+        animation: fadein 0.5s;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 150;
+        line-height: 2rem;
+        font-size: 1.2rem;
+
+        .infoTitle {
+            font-size: 1.2rem;
+        }
+
+        .infoEvent {
+            font-size: 1.2rem;
+        }
+    }
+
     .navbarMenuPC {
         display: flex;
         justify-content: space-between;
