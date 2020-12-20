@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, match } from 'react-router-dom';
+import { match, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import BackgroundImage from '../../components/BackgroundImage/BackgroundImage';
 import styles from './AssignmentPage.module.scss';
@@ -14,6 +14,11 @@ interface Props {
 function AssignmentPage(props: Props) {
   const isDesktop = UseMediaQuery('(min-width: 800px)');
 
+  const history = useHistory();
+  const goBack = () => {
+    history.goBack();
+  };
+
   const [assignmentResponse, setAssignmentResponse] = useState<any>(null);
 
   // eslint-disable-next-line no-shadow
@@ -23,7 +28,7 @@ function AssignmentPage(props: Props) {
   const assginmentButton = isDesktop ? (
     <div className={styles.buttonContainer}>
       <a className={styles.toAssignment} href={assignmentResponse?.link}>과제 보러가기</a>
-      <Link to="/subjectpage" className={styles.toOtherAssignment}><p>다른 과제 보러가기</p></Link>
+      <button className={styles.toAssignment} type="button" onClick={goBack}>다른 과제 보러가기</button>
     </div>
   ) : <a className={styles.toAssignment} href={assignmentResponse?.link}>과제 보러가기</a>;
 
