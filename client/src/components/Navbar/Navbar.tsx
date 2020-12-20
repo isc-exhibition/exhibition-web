@@ -75,7 +75,7 @@ function Navbar() {
         shouldFocusAfterRender={false}
       >
         <p className={styles.infoTitle}>
-          2020-2 정보문화학 과제전
+          2020-2 서울대학교 정보문화학 과제전
           <br />
           과제전 제과에 오신 것을 환영합니다!
         </p>
