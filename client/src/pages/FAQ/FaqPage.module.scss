@@ -17,7 +17,7 @@
     background-position: center;
     width: 95vw;
     height: 75vh;
-    transform: translateY(30px);
+    transform: translateY(50px);
  
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@
     border: 2px;
     border-radius: 25px;
     margin-top: 15px;
-    padding: 5px;
+    padding: 0 7px 0 7px;
 
     display: flex;
     flex-direction: column;
@@ -55,8 +55,7 @@
     
     width: 90%;
     height: 25%;
-    margin-top: 3px;
-    margin-bottom: 10px;
+    margin-top: 20px;
     cursor: pointer;
 
 }
@@ -202,7 +201,7 @@
         border: 2px;
         border-radius: 25px;
         margin-top: 15px;
-        padding: 5px;
+     
     
         display: flex;
         flex-direction: column;
@@ -216,7 +215,7 @@
         font-size: 0.7rem;
         font-weight: bold;
         color: white;
-        padding: 5px;
+        padding: 0 10px 0 10px;
     }
     
     .FaqIndexBoxFirst {
@@ -236,7 +235,7 @@
     .FaqIndexBoxLast {
         width: 90%;
         height: 33%;
-        margin-bottom: 30px;
+        margin-bottom: 0px;
     
     }
     
