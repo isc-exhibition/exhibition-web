@@ -19,7 +19,9 @@ function EventModal(props: Props) {
   } = props;
 
   const setDismissedLetter = () => {
-    localStorage.setItem(`ISSHOWNEVENTLETTER${letter?.index}`, 'true');
+    if (letter?.index !== 3) {
+      localStorage.setItem(`ISSHOWNEVENTLETTER${letter?.index}`, 'true');
+    }
   };
 
   const mainTest = letter?.text || eventAnswer?.text;
@@ -47,10 +49,10 @@ function EventModal(props: Props) {
     >
       {letter && <p>당신이 찾은 글자는...</p> }
       <h1>{mainTest}</h1>
-      {letter?.index === 2 && turtleEventImage()}
+      {letter?.index === 3 && turtleEventImage()}
       {eventAnswer?.isRight && (
       <>
-        <p>맞추신 분을 위한 선물</p>
+        <p>맞히신 분을 위한 선물</p>
         <a href="https://forms.gle/xAynbuRhCGqUQAx7A">보러가기</a>
       </>
       ) }
