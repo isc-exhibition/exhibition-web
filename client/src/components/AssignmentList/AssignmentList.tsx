@@ -6,6 +6,7 @@ import trayBackgroundImage from './subject_tray.png';
 import desktopTrayImage from '../../assets/desktop_tray.png';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
 import EventLetter from '../EventLetter/EventLetter';
+import noImage from '../../assets/noimage.png';
 
 interface Props {
   subject: any;
@@ -76,12 +77,12 @@ function AssignmentList(props: Props) {
         { hasPagination
           ? assignmentsInCurrentPage?.map((assignment: any) => (
             <Link to={`/assignment/${assignment._id}`}>
-              <div className={styles.assignment} style={{ backgroundImage: `url(${assignment.image_link})`, content: 'sdfsf' }} />
+              <div className={styles.assignment} style={{ backgroundImage: `url(${assignment.image_link || noImage})` }} />
             </Link>
           ))
           : firstPageAssingments?.map((assignment: any) => (
             <Link to={`/assignment/${assignment._id}`}>
-              <div className={styles.assignment} style={{ backgroundImage: `url(${assignment.image_link})`, content: 'sdfsf' }} />
+              <div className={styles.assignment} style={{ backgroundImage: `url(${assignment.image_link})` }} />
             </Link>
           ))}
       </div>
