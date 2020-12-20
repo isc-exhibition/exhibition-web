@@ -78,7 +78,7 @@ export const interactiveStoryDescription = {
 
 export const personalProjectDescription = {
   shortName: '나혼자 혼나',
-  name: '',
+  name: '개인 프로젝트',
   professor: '',
   introduction: `바쁜 학기 중에도 하고 싶은 프로젝트를 열심히 한 학생들이 있습니다. 
   수많은 과제와 시험 속에서도 따로 개인 프로젝트를 준비해 과제전에 출품해주신 멋진 분들,

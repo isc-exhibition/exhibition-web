@@ -167,4 +167,15 @@
             }
         }
     }
+
+    .desktopMainPageContainer {
+    position: absolute;
+    top: 15vh;
+    right: 5vw;
+    width: 80vw;
+    height: 80vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 35px;
+  }
 }
