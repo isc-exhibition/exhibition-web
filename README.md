@@ -14,7 +14,7 @@ yarn
 yarn start
 ```
 
-### 배포 환경해서 실행하기
+### 배포 환경으로 실행하기
 1. docker & docker-compose 설치
 2. 이미지 빌드
 ```sh
