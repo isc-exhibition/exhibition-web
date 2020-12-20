@@ -4,22 +4,24 @@
     min-width: 345px;
     min-height: 443px;
     bottom: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-position: top center;
     background-size: contain;
     background-repeat: no-repeat;
 
     .subjectList {
         width: 90%;
+        min-height: 440px;
+        height: 54vh;
         max-width: 340px;
-        height: 90%;
-        max-height: 450px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-content: stretch;
-        margin: auto;
         text-align: center;
-        margin-top: 40px;
+        align-items: center;
 
         a {
             text-decoration: none;
