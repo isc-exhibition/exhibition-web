@@ -22,7 +22,8 @@ function IntroPage() {
   }
 
   if (!notClick) {
-    enter = <p className={styles.IntroEnter}>터치하여 입장하세요</p>;
+    enter = isDeviceHeightHighAsIphone8Plus ? <p className={styles.IntroEnter}>터치하여 입장하세요</p>
+      : <p className={styles.IntroEnter}>클릭하여 입장하세요</p>;
   } else {
     enter = null;
   }

@@ -57,6 +57,7 @@
 
         .description{
             font-size: 1.25rem;
+            font-weight: 400;
         }
 
         .link {
@@ -88,7 +89,7 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
-            margin: 180px 0 0 180px;
+            margin: 100px 0 0 280px;
             width: 50%;
 
             .alignImageContainer {
@@ -141,6 +142,7 @@
     
             .description{
                 font-size: 1.4rem;
+                font-weight: 400;
             }
     
             .link {

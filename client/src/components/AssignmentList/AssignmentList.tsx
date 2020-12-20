@@ -23,7 +23,7 @@ function AssignmentList(props: Props) {
 
   const firstPageAssingments = hasPagination ? assignments.slice(0, 6) : assignments;
   const secondPageAssingments = hasPagination
-    ? assignments.slice(firstPageAssingments.length + 1) : null;
+    ? assignments.slice(firstPageAssingments.length, 12) : null;
   const thirdPageAssignments = hasThirdPage
     ? assignments.slice(firstPageAssingments.length + secondPageAssingments.length) : null;
 

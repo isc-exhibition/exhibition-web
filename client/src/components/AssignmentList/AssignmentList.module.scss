@@ -42,6 +42,7 @@
         button {
             i {
                 font-size: 28px;
+                cursor: pointer;
             }
         }
     }
@@ -87,10 +88,13 @@
             width: 100%;
             position: absolute;
             top: 50px;
-
+            
             button {
+                
                 i {
+                   
                     font-size: 40px;
+                    cursor: pointer;
                 }
             }
         }
