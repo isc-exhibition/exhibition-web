@@ -128,7 +128,7 @@
                 height: 32vh;
                 width: auto;
                 position: absolute;
-                right: 5vw;
+                right: 60px;
             }
     
             .concept:after {
@@ -162,8 +162,9 @@
                 flex-direction: column;
                 align-items: center;
                 position: absolute;
-                right: 6.3vw;
-                margin-top: 35vh;
+                right: 140px;
+                bottom: 40px;
+                // margin-top: 40vh;
 
                 button {
                     font-size: 1.2rem;
