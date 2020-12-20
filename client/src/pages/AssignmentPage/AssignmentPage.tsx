@@ -65,12 +65,12 @@ function AssignmentPage(props: Props) {
           {isDesktop && (
             <div className={styles.buttonContainer}>
               {assignmentResponse?.link
-       && <a className={styles.toAssignment} href={assignmentResponse?.link}>과제 보러가기</a> }
+       && <a className={styles.toAssignment} href={assignmentResponse?.link} target="_blank" rel="noreferrer">과제 보러가기</a> }
               <button className={styles.toAssignment} type="button" onClick={goBack}>다른 과제 보러가기</button>
             </div>
           ) }
           { (!isDesktop && assignmentResponse?.link)
-           && <a className={styles.toAssignment} href={assignmentResponse?.link}>과제 보러가기</a> }
+           && <a className={styles.toAssignment} href={assignmentResponse?.link} target="_blank" rel="noreferrer">과제 보러가기</a> }
         </div>
       </div>
     </>

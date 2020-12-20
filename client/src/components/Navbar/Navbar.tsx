@@ -92,7 +92,7 @@ function Navbar() {
           (어딘가에 행운의 거북이가 있을지도..?)
         </p>
         <button className={styles.infoModalButton} type="button" onClick={toggleInfoModal}>확인</button>
-        <a href="https://www.instagram.com/isc_exhibition_2020/?hl=ko">과제전 방명록 쓰러 가기(인스타그램)</a>
+        <a href="https://www.instagram.com/isc_exhibition_2020/?hl=ko" target="_blank" rel="noreferrer">과제전 방명록 쓰러 가기(인스타그램)</a>
       </Modal>
     </>
   );

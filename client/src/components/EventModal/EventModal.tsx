@@ -32,7 +32,7 @@ function EventModal(props: Props) {
   const turtleEventImage = () => (
     <div style={{ display: 'flex', alignItems: 'center', margin: '-16px 0 10px' }}>
       <p>그리고...?!</p>
-      <a href="https://forms.gle/hUa7UPDJr9Fb6sGCA">
+      <a href="https://forms.gle/hUa7UPDJr9Fb6sGCA" target="_blank" rel="noreferrer">
         <img src={turtleImage} alt="거북이" width="110px" height="auto" />
       </a>
     </div>
@@ -51,7 +51,7 @@ function EventModal(props: Props) {
       {eventAnswer?.isRight && (
       <>
         <p>맞히신 분을 위한 선물</p>
-        <a href="https://forms.gle/xAynbuRhCGqUQAx7A">보러가기</a>
+        <a href="https://forms.gle/xAynbuRhCGqUQAx7A" target="_blank" rel="noreferrer">보러가기</a>
       </>
       ) }
       <button className={styles.infoModalButton} type="button" onClick={onCloseModal}>
