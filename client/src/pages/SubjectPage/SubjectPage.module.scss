@@ -36,7 +36,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 100px;
         }
         
         .name {
@@ -91,26 +90,28 @@
         }
     
         .subjectWrapper {
-            width: 100%;
-            height: 100vh;
+            position: fixed;
+            top: 15vh;
+            right: 5vw;
+            width: 80vw;
+            height:80vh;
+            border-radius: 35px;
             background-image: url(../../assets/desktop_subject_background.png);
             background-position: center center;
-            background-size: cover;
+            background-size: auto;
             background-repeat: no-repeat;
             color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: fixed;
-            margin-top: 8vh;
 
             .textContainer {
-                width: 80vw;
                 height: 80vh;
                 margin-top: 80px;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-end;
+                padding-right: 5%;
             
                 .classImage {
                     display: flex;
