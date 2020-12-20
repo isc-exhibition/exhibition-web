@@ -1,10 +1,10 @@
 const getEventLetterAnswer = async (req, res, next) => {
-    const { letter } = req.body;
+    const { letter } = req.query;
 
     if (letter === letterAnswer) {
-        res.json({ rightAnswerResponse });
+        res.json({ answer: rightAnswerResponse });
     } else {
-        res.json({ wrongAnswerResponse });
+        res.json({ answer: wrongAnswerResponse });
     }
   };
 
@@ -17,7 +17,7 @@ const rightAnswerResponse = {
 }
 
 const wrongAnswerResponse = {
-    isRight: true,
+    isRight: false,
     text: '오답입니다ㅠㅠ'
 }
 
