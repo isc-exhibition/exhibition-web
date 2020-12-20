@@ -4,6 +4,7 @@ import styles from './AssignmentList.module.scss';
 import trayBackgroundImage from './subject_tray.png';
 import desktopTrayImage from '../../assets/desktop_tray.png';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
+import EventLetter from '../EventLetter/EventLetter';
 
 interface Props {
   subject: any;
@@ -22,7 +23,7 @@ function AssignmentList(props: Props) {
 
   const firstPageAssingments = hasPagination ? assignments.slice(0, 6) : assignments;
   const secondPageAssingments = hasPagination
-    ? assignments.slice(firstPageAssingments.length + 1) : null;
+    ? assignments.slice(firstPageAssingments.length, 12) : null;
   const thirdPageAssignments = hasThirdPage
     ? assignments.slice(firstPageAssingments.length + secondPageAssingments.length) : null;
 
@@ -68,6 +69,7 @@ function AssignmentList(props: Props) {
         </div>
         )}
       <div className={styles.assignmentWrapper}>
+        <EventLetter positionBottom="30px" positionRight="40px" letterIndex={1} />
         { hasPagination
           ? assignmentsInCurrentPage?.map((assignment: any) => (
             <Link to={`/assignment/${assignment.assignment_id}`}>

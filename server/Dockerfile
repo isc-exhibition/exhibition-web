@@ -4,4 +4,4 @@ COPY package.json yarn.lock ./
 RUN yarn install
 COPY . ./
 EXPOSE 80
-CMD ["node", "app.js"]    
+CMD ["yarn", "pm2-runtime", "start", "app.js"]    

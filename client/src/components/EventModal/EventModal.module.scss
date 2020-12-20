@@ -1,0 +1,67 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: none;
+    z-index: 150;
+}
+
+.infoModalButton {
+    width: 135px;
+    height: 50px;
+    border: solid black 1px;
+    background: rgba(200, 200, 200, 0.46);
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.infoModal {
+    position: absolute;
+    width: 200px;
+    background: rgba(255, 255, 255, 0.95);
+    border: solid black 1px;
+    padding: 27px 35px 35px 27px;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border-radius: 40px;
+    outline: none;
+    animation: fadein 0.5s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    z-index: 150;
+    padding: 40px 20px;
+    align-items: center;
+
+    h1 {
+        margin: 40px 0;
+    }
+
+
+}
+
+.infoOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: none;
+    z-index: 150;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
