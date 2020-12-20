@@ -48,9 +48,9 @@ function AssignmentPage(props: Props) {
 
   return (
     <>
-      <BackgroundImage backgroundImageUrl={isDesktop
-        ? DesktopBackgroundImage : subjectBackgroundImage}
-      />
+      {isDesktop
+        ? <div className={styles.desktopMainPageContainer} style={{ backgroundImage: `url(${DesktopBackgroundImage})` }} />
+        : <BackgroundImage backgroundImageUrl={subjectBackgroundImage} />}
       <div className={styles.assignmentWrapper}>
         <div className={styles.assignmentContainer}>
           <div className={styles.alignImageContainer}>
