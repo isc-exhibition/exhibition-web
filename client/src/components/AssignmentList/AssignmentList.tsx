@@ -9,13 +9,14 @@ import EventLetter from '../EventLetter/EventLetter';
 
 interface Props {
   subject: any;
+  subjectId: number;
 }
 
 function AssignmentList(props: Props) {
   const isDeviceWidthWideAsDesktop = UseMediaQuery('(min-width: 800px)');
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
 
-  const { subject } = props;
+  const { subject, subjectId } = props;
   const assignments = subject?.data?.assignment;
 
   // TODO: 나중에 서버의 Pagination으로 처리해야 합니다
@@ -70,7 +71,8 @@ function AssignmentList(props: Props) {
         </div>
         )}
       <div className={styles.assignmentWrapper}>
-        <EventLetter positionBottom="30px" positionRight="40px" letterIndex={1} />
+        {/* 1~5 번의 과목에 이벤트 쪽지 넣기 */}
+        {subjectId < 6 && <EventLetter positionBottom={`${30 * subjectId}px`} positionRight={`${40 * subjectId}px`} letterIndex={subjectId} /> }
         { hasPagination
           ? assignmentsInCurrentPage?.map((assignment: any) => (
             <Link to={`/assignment/${assignment._id}`}>

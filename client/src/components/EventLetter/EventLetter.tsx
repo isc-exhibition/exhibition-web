@@ -13,7 +13,7 @@ function EventLetter(props: Props) {
   const { letterIndex, positionRight, positionBottom } = props;
   const [isEventModalOpen, setIsEventModalOpen] = useState(false);
 
-  const eventLetter = eventLetters.find((letter: Letter) => letter.index === letterIndex);
+  const eventLetter = eventLetters.find((letter: Letter) => letter.index === letterIndex % 5);
 
   const eventLetterStyle: CSSProperties = {
     transition: 'all 1s ease',

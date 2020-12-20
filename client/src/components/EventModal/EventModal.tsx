@@ -29,14 +29,14 @@ function EventModal(props: Props) {
     closeModal();
   };
 
-  const turtleEventImage = () => {
+  const turtleEventImage = () => (
     <div style={{ display: 'flex', alignItems: 'center', margin: '-16px 0 10px' }}>
       <p>그리고...?!</p>
       <a href="https://forms.gle/hUa7UPDJr9Fb6sGCA">
         <img src={turtleImage} alt="거북이" width="110px" height="auto" />
       </a>
-    </div>;
-  };
+    </div>
+  );
   return (
     <Modal
       isOpen
@@ -47,7 +47,7 @@ function EventModal(props: Props) {
     >
       {letter && <p>당신이 찾은 글자는...</p> }
       <h1>{mainTest}</h1>
-      {letter?.index === 2 && turtleEventImage}
+      {letter?.index === 2 && turtleEventImage()}
       {eventAnswer?.isRight && (
       <>
         <p>맞추신 분을 위한 선물</p>

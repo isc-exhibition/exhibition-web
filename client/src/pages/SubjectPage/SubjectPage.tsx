@@ -75,12 +75,12 @@ function SubjectPage(props: Props) {
   const scrollMessage = isDeviceWidthWideAsDesktop ? (
     <div style={assignmentTrayStyle}>
       {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Down!</h2> }
-      <AssignmentList subject={subjectResponseData} />
+      <AssignmentList subject={subjectResponseData} subjectId={subjectId} />
     </div>
   ) : (
     <div style={assignmentTrayStyle}>
       {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Up!</h2> }
-      <AssignmentList subject={subjectResponseData} />
+      <AssignmentList subject={subjectResponseData} subjectId={subjectId} />
     </div>
   );
 
