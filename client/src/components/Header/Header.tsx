@@ -13,13 +13,15 @@ function Header() {
   const isOnIntro = useRouteMatch('/intro')?.path === '/intro';
   const isOnMain = useRouteMatch('/main')?.path === '/main';
   const isOnCredit = useRouteMatch('/credit')?.path === '/credit';
+  const isOnSubjectPage = useRouteMatch('/subjectpage')?.path === '/subjectpage';
   const backButtonColor = isOnCredit ? 'black' : 'white';
+  const headerPosition = isOnSubjectPage ? 'fixed' : 'absolute';
 
   return (
     <>
       {!isOnIntro
     && (
-    <div className={styles.header}>
+    <div className={styles.header} style={{ position: headerPosition }}>
       {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
       {!isOnMain
         && (
