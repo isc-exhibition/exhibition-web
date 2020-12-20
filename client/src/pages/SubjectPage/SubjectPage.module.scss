@@ -74,18 +74,8 @@
 
 @media (min-width: 800px) {
     .subjectPage {
-        display: flex;
-        flex-direction: column;
     
         .scrollUpText {
-            font-size: 2.25rem;
-            font-family: 'Niconne';
-            text-align: center;
-            color: rgba(255, 255, 255, 0.3);
-            font-weight: 500;
-            transition: all 2s ease;
-            position: absolute;
-            width: 100%;
             top: -60px;
         }
     
@@ -116,43 +106,34 @@
                 .classImage {
                     display: flex;
                     align-items: center;
-                    
-                    .name {
-                        font-size: 3rem;
-                        font-weight: bold;
-                        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
-                        margin: 4px 0 22px 10px;
-                    }
-                
-                    .shortName {
-                        font-size: 2rem;
-                        font-weight: bold;
-                        text-shadow: 3px 3px 0.4px rgba(0, 0, 0, 0.7);
-                    }
-        
-                    .professor {
-                        font-size: 1.8rem;
-                        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
-                    }
-            
-                    .introduction {
-                        word-break: break-all;
-                        width: 84%;
-                        text-align:end;
-                        font-size: 1.5rem;
-                        font-weight: 400;
-                    }
                 }
-            }
+                    
+                .name {
+                    font-size: 3rem;
+                    font-weight: bold;
+                    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
+                    margin: 4px 0 22px 10px;
+                }
+            
+                .shortName {
+                    font-size: 2rem;
+                    font-weight: bold;
+                    text-shadow: 3px 3px 0.4px rgba(0, 0, 0, 0.7);
+                }
     
-            h2, h4, h5 {
-                margin: 0;
-            }
-    
-            .assignmentListWrapper {
-                top: 88vh;
-                position: fixed;
-                width: 100vw;
+                .professor {
+                    font-size: 1.8rem;
+                    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.9);
+                }
+        
+                .introduction {
+                    word-break: break-all;
+                    width: 70%;
+                    text-align: end;
+                    font-size: 1.3rem;
+                    font-weight: 400;
+                    line-height: 2rem;
+                }
             }
         }
     }
