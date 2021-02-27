@@ -85,11 +85,8 @@ function Navbar() {
           <p>셋째, 과제전 제과 간판을 누르면 메인화면으로 돌아올 수 있습니다.</p>
         </div>
         <p className={styles.infoEvent}>
-          보물찾기 이벤트도 준비되어있으니,
           <br />
-          곳곳에 숨겨져 있는 쪽지를 찾아 회문을 완성해보세요!
-          <br />
-          (어딘가에 행운의 거북이가 있을지도..?)
+          보물찾기 이벤트는 종료되었습니다. 참여해 주신 많은 분들께 감사드립니다!
         </p>
         <button className={styles.infoModalButton} type="button" onClick={toggleInfoModal}>확인</button>
         <a href="https://www.instagram.com/isc_exhibition_2020/?hl=ko" target="_blank" rel="noreferrer">과제전 방명록 쓰러 가기(인스타그램)</a>

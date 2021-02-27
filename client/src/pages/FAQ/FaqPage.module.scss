@@ -44,7 +44,7 @@
     font-size: 0.7rem;
     font-weight: bold;
     color: white;
-    padding: 0 8px 0 8px;
+    padding: 0 12px;
 }
 
 .FaqIndexBoxFirst {
@@ -117,6 +117,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    z-index: 300;
 }
 
 .FaqButton {
@@ -204,7 +205,7 @@
         font-size: 0.9rem;
         font-weight: bold;
         color: white;
-        padding: 0 10px 0 10px;
+        padding: 0 12px;
     }
     
     .FaqIndexBoxFirst {
@@ -372,7 +373,7 @@
         font-size: 0.7rem;
         font-weight: bold;
         color: white;
-        padding: 0 7px 0 7px;
+        padding: 0 12px;
     }
     
     .FaqIndexBoxFirst {

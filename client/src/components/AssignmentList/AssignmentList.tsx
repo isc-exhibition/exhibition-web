@@ -5,19 +5,17 @@ import styles from './AssignmentList.module.scss';
 import trayBackgroundImage from './subject_tray.png';
 import desktopTrayImage from '../../assets/desktop_tray.png';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
-import EventLetter from '../EventLetter/EventLetter';
 import noImage from '../../assets/noimage.png';
 
 interface Props {
   subject: any;
-  subjectId: number;
 }
 
 function AssignmentList(props: Props) {
   const isDeviceWidthWideAsDesktop = UseMediaQuery('(min-width: 800px)');
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
 
-  const { subject, subjectId } = props;
+  const { subject } = props;
   const assignments = subject?.data?.assignment;
 
   // TODO: 나중에 서버의 Pagination으로 처리해야 합니다
@@ -72,8 +70,6 @@ function AssignmentList(props: Props) {
         </div>
         )}
       <div className={styles.assignmentWrapper}>
-        {/* 1~5 번의 과목에 이벤트 쪽지 넣기 */}
-        {subjectId < 6 && <EventLetter positionBottom={`${30 * subjectId}px`} positionRight={`${13 * subjectId}vw`} letterIndex={subjectId} /> }
         { hasPagination
           ? assignmentsInCurrentPage?.map((assignment: any) => (
             <Link to={`/assignment/${assignment._id}`}>
