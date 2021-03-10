@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { GetAssignmentByIdInput } from '../input/assignment.input';
+import { AssignmentByIdInput } from '../input/assignment.input';
 import { AssignmentType } from '../type/assignment.type';
 import { Assignment } from '../entity/assignment.entity';
 import { ObjectID } from 'mongodb';
@@ -14,15 +14,24 @@ export class AssignmentService {
   ) {}
 
   async getAssignmentById(
-    getAssignmentByIdInput: GetAssignmentByIdInput,
+    getAssignmentByIdInput: AssignmentByIdInput,
   ): Promise<AssignmentType> {
-    const { _id } = getAssignmentByIdInput;
+    const { id } = getAssignmentByIdInput;
+
+    let _id: ObjectID = null;
+
+    try {
+      _id = new ObjectID(id);
+    } catch {
+      throw new NotFoundException(`Assignment with id ${id} not found`);
+    }
+
     const assignment = await this.assignmentRepository.findOne({
       where: { _id: new ObjectID(_id) },
     });
 
     if (!assignment) {
-      throw new NotFoundException(`Room id ${_id} not found`);
+      throw new NotFoundException(`Assignment with id ${id} not found`);
     }
 
     return assignment;

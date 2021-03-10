@@ -1,9 +1,7 @@
 import { Field, InputType } from '@nestjs/graphql';
-import { IsMongoId } from 'class-validator';
 
 @InputType()
-export class GetAssignmentByIdInput {
-  @IsMongoId()
+export class AssignmentByIdInput {
   @Field()
-  _id: string;
+  id: string;
 }
