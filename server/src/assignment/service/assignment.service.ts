@@ -73,4 +73,19 @@ export class AssignmentService {
 
     return [...new Set(assignmentList)];
   }
+
+  async createAssignment(name, team, description, concept, link, image_link, subject_id, assignment_id): Promise<AssignmentType> {
+    const assignment = this.assignmentRepository.create({
+      name,
+      team,
+      description,
+      concept,
+      link,
+      image_link,
+      subject_id,
+      assignment_id,
+    });
+
+    return this.assignmentRepository.save(assignment);
+  }
 }
