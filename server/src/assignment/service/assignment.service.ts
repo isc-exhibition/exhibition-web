@@ -8,6 +8,8 @@ import { AssignmentType } from '../type/assignment.type';
 import { Assignment } from '../entity/assignment.entity';
 import { ObjectID } from 'mongodb';
 import { MongoRepository } from 'typeorm';
+import { CreateAssignmentInput } from '../input/assignment.input';
+import { create } from 'node:domain';
 
 @Injectable()
 export class AssignmentService {
@@ -74,7 +76,8 @@ export class AssignmentService {
     return [...new Set(assignmentList)];
   }
 
-  async createAssignment(name, team, description, concept, link, image_link, subject_id, assignment_id): Promise<AssignmentType> {
+  async createAssignment(createAssignmentInput: CreateAssignmentInput): Promise<AssignmentType> {
+    const { name, team, description, concept, link, image_link, subject_id, assignment_id } = createAssignmentInput;
     const assignment = this.assignmentRepository.create({
       name,
       team,
@@ -85,7 +88,7 @@ export class AssignmentService {
       subject_id,
       assignment_id,
     });
-
+    
     return this.assignmentRepository.save(assignment);
   }
 }
