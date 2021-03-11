@@ -1,4 +1,5 @@
-import { Field, InputType } from '@nestjs/graphql';
+import { Field, InputType, Int } from '@nestjs/graphql';
+import { IsNotEmpty } from 'class-validator';
 
 @InputType()
 export class AssignmentByIdInput {
@@ -17,12 +18,15 @@ export class AssignmentListInput {
 
 @InputType()
 export class CreateAssignmentInput {
+  @IsNotEmpty()
   @Field()
   name: string;
 
+  @IsNotEmpty()
   @Field()
   team: string;
 
+  @IsNotEmpty()
   @Field()
   description: string;
 
@@ -35,9 +39,9 @@ export class CreateAssignmentInput {
   @Field()
   image_link: string;
 
-  @Field()
+  @Field((type) => Int)
   subject_id: number;
 
-  @Field()
+  @Field((type) => Int)
   assignment_id: number;
 }
