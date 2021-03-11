@@ -1,7 +1,7 @@
 import { Args, Query, Mutation, Resolver } from '@nestjs/graphql';
 import { AssignmentService } from '../service/assignment.service';
 import { AssignmentType } from '../type/assignment.type';
-import { CreateAssignmentInput } from '../input/assignment.input';
+import { CreateAssignmentInput, DeleteAssignmentByIdInput } from '../input/assignment.input';
 import {
   AssignmentByIdInput,
   AssignmentListInput,
@@ -32,4 +32,12 @@ export class AssignmentResolver {
   ) {
     return this.assignmentService.createAssignment(createAssignmentInput);
   }
+
+  @Mutation((returns) => AssignmentType)
+  deleteAssignmentById(
+    @Args('deleteAssignmentByIdInput') deleteAssignmentById: DeleteAssignmentByIdInput
+  ) {
+    return this.assignmentService.deleteAssignmentById(deleteAssignmentById);
+  }
+
 }

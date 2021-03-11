@@ -45,3 +45,9 @@ export class CreateAssignmentInput {
   @Field((type) => Int)
   assignment_id: number;
 }
+
+@InputType()
+export class DeleteAssignmentByIdInput {
+  @Field()
+  id: string;
+}

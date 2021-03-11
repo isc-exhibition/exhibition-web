@@ -8,8 +8,8 @@ import { AssignmentType } from '../type/assignment.type';
 import { Assignment } from '../entity/assignment.entity';
 import { ObjectID } from 'mongodb';
 import { MongoRepository } from 'typeorm';
-import { CreateAssignmentInput } from '../input/assignment.input';
-import { create } from 'node:domain';
+import { CreateAssignmentInput, DeleteAssignmentByIdInput } from '../input/assignment.input';
+import { AssignmentResolver } from '../resolver/assignment.resolver';
 
 @Injectable()
 export class AssignmentService {
@@ -91,5 +91,24 @@ export class AssignmentService {
     });
 
     return this.assignmentRepository.save(assignment);
+  }
+
+  async deleteAssignmentById(deleteAssignmentByIdInput: DeleteAssignmentByIdInput): Promise<AssignmentType> {
+    const { id } = deleteAssignmentByIdInput;
+    let _id: ObjectID = null;
+
+    try {
+      _id = new ObjectID(id);
+    } catch {
+      throw new NotFoundException(`Assignment with id ${id} not found`);
+    }
+
+    const result = await this.assignmentRepository.findOneAndDelete({_id});
+
+    if (!result.value) {
+      throw new NotFoundException(`Assignment with id ${id} not found`);
+    }
+
+    return result.value;
   }
 }
