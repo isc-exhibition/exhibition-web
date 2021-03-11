@@ -1,6 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { GetAssignmentByIdInput } from '../input/assignment.input';
+import {
+  AssignmentByIdInput,
+  AssignmentListInput,
+} from '../input/assignment.input';
 import { AssignmentType } from '../type/assignment.type';
 import { Assignment } from '../entity/assignment.entity';
 import { ObjectID } from 'mongodb';
@@ -14,17 +17,60 @@ export class AssignmentService {
   ) {}
 
   async getAssignmentById(
-    getAssignmentByIdInput: GetAssignmentByIdInput,
+    assignmentByIdInput: AssignmentByIdInput,
   ): Promise<AssignmentType> {
-    const { _id } = getAssignmentByIdInput;
+    const { id } = assignmentByIdInput;
+
+    let _id: ObjectID = null;
+
+    try {
+      _id = new ObjectID(id);
+    } catch {
+      throw new NotFoundException(`Assignment with id ${id} not found`);
+    }
+
     const assignment = await this.assignmentRepository.findOne({
       where: { _id: new ObjectID(_id) },
     });
 
     if (!assignment) {
-      throw new NotFoundException(`Room id ${_id} not found`);
+      throw new NotFoundException(`Assignment with id ${id} not found`);
     }
 
     return assignment;
+  }
+
+  async getAssignmentList(
+    assignmentListInput: AssignmentListInput,
+  ): Promise<AssignmentType[]> {
+    if (!assignmentListInput) {
+      return this.assignmentRepository.find();
+    }
+
+    const { search_word, subject_id } = assignmentListInput;
+
+    let assignmentList: AssignmentType[] = [];
+
+    if (subject_id) {
+      assignmentList = await this.assignmentRepository.find({
+        where: {
+          subject_id,
+        },
+      });
+    }
+
+    if (search_word) {
+      const searchedAssignmentList = await this.assignmentRepository.find({
+        where: {
+          $text: {
+            $search: search_word,
+          },
+        },
+      });
+
+      assignmentList.push(...searchedAssignmentList);
+    }
+
+    return [...new Set(assignmentList)];
   }
 }
