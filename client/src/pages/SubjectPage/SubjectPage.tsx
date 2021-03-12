@@ -1,6 +1,6 @@
 import React, { CSSProperties, useEffect, useState } from 'react';
-import axios from 'axios';
 import { match } from 'react-router-dom';
+import { gql, useQuery } from '@apollo/client';
 import styles from './SubjectPage.module.scss';
 import AssignmentList from '../../components/AssignmentList/AssignmentList';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
@@ -10,6 +10,27 @@ interface Props {
   match: match<any>;
 }
 
+export interface AssignmentListInterface {
+  _id: string;
+  // eslint-disable-next-line camelcase
+  image_link: string;
+}
+
+interface AssignmentListData {
+  assignmentList: AssignmentListInterface[];
+}
+
+const ASSIGNMENT_LIST = gql`
+  query ($subjectId: Float) {
+    assignmentList(assignmentListInput: {
+      subject_id: $subjectId
+    }) {
+      _id
+      image_link
+    }
+  }
+`;
+
 function SubjectPage(props: Props) {
   const isDeviceWidthWideAsDesktop = UseMediaQuery('(min-width: 800px)');
 
@@ -17,7 +38,10 @@ function SubjectPage(props: Props) {
   const { match } = props;
   const subjectId = Number(match.params.id);
 
-  const [subjectResponseData, setSubjectResponseData] = useState<any>(null);
+  const { data, error, loading } = useQuery<AssignmentListData>(
+    ASSIGNMENT_LIST,
+    { variables: { subjectId } },
+  );
 
   const subjectDescription = subjectListOnFallSemester.find((sub) => sub.id
   === subjectId)?.description;
@@ -49,17 +73,8 @@ function SubjectPage(props: Props) {
   };
 
   useEffect(() => {
-    const { CancelToken } = axios;
-    const source = CancelToken.source();
-
-    axios.get(`/api/v1/subject/${subjectId}`, { cancelToken: source.token })
-      .then((res) => {
-        setSubjectResponseData(res);
-      });
-
     addScrollListenr();
     return () => {
-      source.cancel();
       removeScrollListenr();
     };
   }, []);
@@ -72,17 +87,21 @@ function SubjectPage(props: Props) {
     paddingBottom: '32px',
   };
 
-  const scrollMessage = isDeviceWidthWideAsDesktop ? (
-    <div style={assignmentTrayStyle}>
-      {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Down!</h2> }
-      <AssignmentList subject={subjectResponseData} />
-    </div>
-  ) : (
-    <div style={assignmentTrayStyle}>
-      {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Up!</h2> }
-      <AssignmentList subject={subjectResponseData} />
-    </div>
-  );
+  let scrollMessage = null;
+
+  if (!loading && !error && data) {
+    scrollMessage = isDeviceWidthWideAsDesktop ? (
+      <div style={assignmentTrayStyle}>
+        {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Down!</h2> }
+        <AssignmentList assignmentList={data.assignmentList} />
+      </div>
+    ) : (
+      <div style={assignmentTrayStyle}>
+        {!isHiddenScrollUpText && <h2 className={styles.scrollUpText}>Scroll Up!</h2> }
+        <AssignmentList assignmentList={data.assignmentList} />
+      </div>
+    );
+  }
 
   return (
     <div className={styles.subjectPage}>
