@@ -1,4 +1,4 @@
-import { EntityRepository, Repository } from 'typeorm';
+import { EntityRepository, Repository, SimpleConsoleLogger } from 'typeorm';
 import { Admin } from './admin.entitiy';
 import { AdminCredentialsDto } from './dto/auth.admin-credentials.dto';
 
@@ -8,8 +8,10 @@ export class AdminRepository extends Repository<Admin> {
     authCredentialsDto: AdminCredentialsDto,
   ): Promise<string> {
     const { admin_id, password } = authCredentialsDto;
+
     const admin = await this.findOne({ admin_id });
-    if (admin && admin.validatePassword(password)) {
+
+    if (admin && (await admin.validatePassword(password))) {
       return admin.admin_id;
     } else {
       return null;
