@@ -9,7 +9,7 @@ export class Assignment {
   @Column()
   subject_id: number;
 
-  @Column({ length: 100 })
+  @Column()
   name: string;
 
   @Column()
