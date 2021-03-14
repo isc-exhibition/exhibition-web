@@ -1,5 +1,5 @@
 import { Field, InputType, Int } from '@nestjs/graphql';
-import { IsNotEmpty } from 'class-validator';
+import { IsNotEmpty, Length } from 'class-validator';
 
 @InputType()
 export class AssignmentByIdInput {
@@ -19,6 +19,7 @@ export class AssignmentListInput {
 @InputType()
 export class CreateAssignmentInput {
   @IsNotEmpty()
+  @Length(0, 100)
   @Field()
   name: string;
 
@@ -27,9 +28,11 @@ export class CreateAssignmentInput {
   team: string;
 
   @IsNotEmpty()
+  @Length(0, 300)
   @Field()
   description: string;
 
+  @Length(0, 200)
   @Field({ nullable: true })
   concept: string;
 
@@ -54,15 +57,18 @@ export class UpdateAssignmentByIdInput {
   @Field()
   id: string;
 
+  @Length(0, 100)
   @Field({ nullable: true })
   name: string;
 
   @Field({ nullable: true })
   team: string;
 
+  @Length(0, 300)
   @Field({ nullable: true })
   description: string;
 
+  @Length(0, 200)
   @Field({ nullable: true })
   concept: string;
 
