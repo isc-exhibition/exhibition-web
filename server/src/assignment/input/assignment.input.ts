@@ -30,13 +30,13 @@ export class CreateAssignmentInput {
   @Field()
   description: string;
 
-  @Field()
+  @Field({ nullable: true })
   concept: string;
 
-  @Field()
+  @Field({ nullable: true })
   link: string;
 
-  @Field()
+  @Field({ nullable: true })
   image_link: string;
 
   @Field((type) => Int)

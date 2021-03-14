@@ -2,7 +2,6 @@ import {
   Column,
   Entity,
   ObjectIdColumn,
-  PrimaryGeneratedColumn,
 } from 'typeorm';
 
 // (중요!) typeorm에서 mongodb index 설정이 잘 되지 않기 때문에 mongodb에서 직접 index를 붙여 놓은 부분이 있으니 꼭 확인할 것!
@@ -10,10 +9,6 @@ import {
 export class Assignment {
   @ObjectIdColumn()
   _id: string;
-
-  @PrimaryGeneratedColumn()
-  @Column()
-  assignment_id: number;
 
   @Column()
   subject_id: number;
@@ -28,11 +23,11 @@ export class Assignment {
   description: string;
 
   @Column()
-  concept: string;
+  concept: string = "";
 
   @Column()
-  link: string;
+  link: string = "";
 
   @Column()
-  image_link: string;
+  image_link: string = "";
 }
