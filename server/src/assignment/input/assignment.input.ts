@@ -41,13 +41,37 @@ export class CreateAssignmentInput {
 
   @Field((type) => Int)
   subject_id: number;
-
-  @Field((type) => Int)
-  assignment_id: number;
 }
 
 @InputType()
 export class DeleteAssignmentByIdInput {
   @Field()
   id: string;
+}
+
+@InputType()
+export class UpdateAssignmentByIdInput {
+  @Field()
+  id: string;
+
+  @Field({ nullable: true })
+  name: string;
+
+  @Field({ nullable: true })
+  team: string;
+
+  @Field({ nullable: true })
+  description: string;
+
+  @Field({ nullable: true })
+  concept: string;
+
+  @Field({ nullable: true })
+  link: string;
+
+  @Field({ nullable: true })
+  image_link: string;
+
+  @Field({ nullable: true })
+  subject_id: number;
 }
