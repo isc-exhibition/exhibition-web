@@ -1,8 +1,16 @@
-import { Entity, Column, ObjectIdColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  ObjectIdColumn,
+  BaseEntity,
+  BeforeInsert,
+  Unique,
+} from 'typeorm';
 import * as bcrypt from 'bcrypt';
 
 @Entity()
-export class Admin {
+@Unique(['admin_id'])
+export class Admin extends BaseEntity {
   @ObjectIdColumn()
   _id: string;
 
@@ -12,9 +20,22 @@ export class Admin {
   @Column()
   password: string;
 
+  @Column()
+  test: string;
+
+  @Column()
+  isAdmin: boolean;
+
+  @Column()
+  salt: string;
+
+  @BeforeInsert()
+  init() {
+    this.isAdmin = false;
+  }
+
   async validatePassword(password: string): Promise<boolean> {
-    const salt = '$2b$10$YWeeDixLMlml2NW5BZdYuO';
-    const hash = await bcrypt.hash(password, salt);
+    const hash = await bcrypt.hash(password, this.salt);
     return hash === this.password;
   }
 }

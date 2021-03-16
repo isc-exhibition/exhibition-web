@@ -12,6 +12,10 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
+  async signUp(adminCredentialsDto: AdminCredentialsDto): Promise<string> {
+    return this.adminRepository.signUp(adminCredentialsDto);
+  }
+
   async signIn(
     adminCredentialsDto: AdminCredentialsDto,
   ): Promise<{ accessToken: string }> {
