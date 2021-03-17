@@ -8,7 +8,11 @@ import { AssignmentType } from '../type/assignment.type';
 import { Assignment } from '../entity/assignment.entity';
 import { ObjectID } from 'mongodb';
 import { MongoRepository } from 'typeorm';
-import { CreateAssignmentInput, DeleteAssignmentByIdInput, UpdateAssignmentByIdInput } from '../input/assignment.input';
+import {
+  CreateAssignmentInput,
+  DeleteAssignmentByIdInput,
+  UpdateAssignmentByIdInput,
+} from '../input/assignment.input';
 
 @Injectable()
 export class AssignmentService {
@@ -68,8 +72,18 @@ export class AssignmentService {
     return [...new Set(assignmentList)];
   }
 
-  async createAssignment(createAssignmentInput: CreateAssignmentInput): Promise<AssignmentType> {
-    const { name, team, description, concept, link, image_link, subject_id } = createAssignmentInput;
+  async createAssignment(
+    createAssignmentInput: CreateAssignmentInput,
+  ): Promise<AssignmentType> {
+    const {
+      name,
+      team,
+      description,
+      concept,
+      link,
+      image_link,
+      subject_id,
+    } = createAssignmentInput;
 
     const assignment = this.assignmentRepository.create({
       name,
@@ -84,11 +98,13 @@ export class AssignmentService {
     return this.assignmentRepository.save(assignment);
   }
 
-  async deleteAssignmentById(deleteAssignmentByIdInput: DeleteAssignmentByIdInput): Promise<AssignmentType> {
+  async deleteAssignmentById(
+    deleteAssignmentByIdInput: DeleteAssignmentByIdInput,
+  ): Promise<AssignmentType> {
     const { id } = deleteAssignmentByIdInput;
     const _id = this.validateId(id);
 
-    const result = await this.assignmentRepository.findOneAndDelete({_id});
+    const result = await this.assignmentRepository.findOneAndDelete({ _id });
 
     if (!result.value) {
       throw new NotFoundException(`Assignment with id ${id} not found`);
@@ -97,20 +113,33 @@ export class AssignmentService {
     return result.value;
   }
 
-  async updateAssignmentById(updateAssignmentByIdInput: UpdateAssignmentByIdInput): Promise<AssignmentType> {
-    const { id, name, team, description, concept, link, image_link, subject_id } = updateAssignmentByIdInput;
+  async updateAssignmentById(
+    updateAssignmentByIdInput: UpdateAssignmentByIdInput,
+  ): Promise<AssignmentType> {
+    const {
+      id,
+      name,
+      team,
+      description,
+      concept,
+      link,
+      image_link,
+      subject_id,
+    } = updateAssignmentByIdInput;
 
     const _id = this.validateId(id);
-  
+
     delete updateAssignmentByIdInput.id;
 
     const found = await this.assignmentRepository.findOneAndUpdate(
-      {'_id': _id},
-      { $set: 
-        {
-          ...updateAssignmentByIdInput
+      { _id: _id },
+      {
+        $set: {
+          ...updateAssignmentByIdInput,
         },
-      }, { returnOriginal: false });
+      },
+      { returnOriginal: false },
+    );
 
     return found.value;
   }
@@ -125,5 +154,31 @@ export class AssignmentService {
     }
 
     return _id;
+  }
+
+  getEventLetterAnswer(letter: string) {
+    // const letterAnswer = '요새밤새요';
+
+    // console.log(letter);
+
+    // if (letter === letterAnswer) {
+    //   const rightAnswerResponse = {
+    //     isRight: true,
+    //     text: '정답입니다!',
+    //   };
+    //   return rightAnswerResponse;
+    // } else {
+    //   const wrongAnswerResponse = {
+    //     isRight: false,
+    //     text: '오답입니다 ㅠㅠ',
+    //   };
+    //   return wrongAnswerResponse;
+    // }
+
+    const eventOverResponse = {
+      isRight: false,
+      text: '쪽지 이벤트는 종료되었습니다! 참여해 주셔서 감사합니다',
+    };
+    return eventOverResponse;
   }
 }
