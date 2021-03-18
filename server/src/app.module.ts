@@ -3,14 +3,18 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AssignmentModule } from './assignment/assignment.module';
 import { Assignment } from './assignment/entity/assignment.entity';
+import { getMongoURI, database } from './config';
+
+const mongoURI = getMongoURI();
 
 @Module({
   imports: [
     TypeOrmModule.forRoot({
       type: 'mongodb',
-      url: 'mongodb://localhost/iscexhibition',
+      url: mongoURI,
       synchronize: true,
       useUnifiedTopology: true,
+      database: database,
       entities: [Assignment],
     }),
     AssignmentModule,
