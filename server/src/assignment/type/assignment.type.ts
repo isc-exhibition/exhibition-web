@@ -26,3 +26,12 @@ export class AssignmentType {
   @Field((type) => Int)
   subject_id: number;
 }
+
+@ObjectType('EventAnswer')
+export class EventAnswer {
+  @Field()
+  isRight: boolean;
+
+  @Field()
+  text: string;
+}
