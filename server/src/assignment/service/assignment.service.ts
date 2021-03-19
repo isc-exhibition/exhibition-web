@@ -157,24 +157,6 @@ export class AssignmentService {
   }
 
   getEventLetterAnswer(letter: string) {
-    // const letterAnswer = '요새밤새요';
-
-    // console.log(letter);
-
-    // if (letter === letterAnswer) {
-    //   const rightAnswerResponse = {
-    //     isRight: true,
-    //     text: '정답입니다!',
-    //   };
-    //   return rightAnswerResponse;
-    // } else {
-    //   const wrongAnswerResponse = {
-    //     isRight: false,
-    //     text: '오답입니다 ㅠㅠ',
-    //   };
-    //   return wrongAnswerResponse;
-    // }
-
     const eventOverResponse = {
       isRight: false,
       text: '쪽지 이벤트는 종료되었습니다! 참여해 주셔서 감사합니다',
