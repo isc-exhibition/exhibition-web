@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 import Modal from 'react-modal';
-import { EventAnswerResponseData } from '../../pages/EventPage/EventPage';
+import { EventResult } from '../../pages/EventPage/EventPage';
 import { Letter } from '../EventLetter/letter';
 import styles from './EventModal.module.scss';
 import turtleImage from '../../assets/turtle.png';
@@ -10,7 +10,7 @@ import turtleImage from '../../assets/turtle.png';
 interface Props {
     closeModal: () => void;
     letter?: Letter;
-    eventAnswer?: EventAnswerResponseData;
+    eventAnswer?: EventResult;
 }
 
 function EventModal(props: Props) {
