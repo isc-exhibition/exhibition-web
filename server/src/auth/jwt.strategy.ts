@@ -18,7 +18,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
 
   async validate(payload: JwtPayload) {
     const { admin_id } = payload;
-    const admin = await this.AdminRepository.findOne({ admin_id });
+    const admin = await this.adminRepository.findOne({ admin_id });
     if (!admin) {
       throw new UnauthorizedException();
     }

@@ -1,6 +1,7 @@
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
+import { response } from 'express';
 import { AdminRepository } from './admin.repository';
 import { AdminCredentialsDto } from './dto/auth.admin-credentials.dto';
 
@@ -16,19 +17,15 @@ export class AuthService {
     return this.adminRepository.signUp(adminCredentialsDto);
   }
 
-  async signIn(
-    adminCredentialsDto: AdminCredentialsDto,
-  ): Promise<{ accessToken: string }> {
+  async signIn(adminCredentialsDto: AdminCredentialsDto): Promise<any> {
     const admin = await this.adminRepository.validateAdminPassword(
       adminCredentialsDto,
     );
     if (!admin) {
       throw new UnauthorizedException('Invalid Id or Password');
     }
-
     const payload = { admin };
     const accessToken = await this.jwtService.sign(payload);
-
-    return { accessToken };
+    return { accessToken, admin };
   }
 }

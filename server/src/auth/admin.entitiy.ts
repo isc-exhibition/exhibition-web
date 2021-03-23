@@ -21,9 +21,6 @@ export class Admin extends BaseEntity {
   password: string;
 
   @Column()
-  test: string;
-
-  @Column()
   isAdmin: boolean;
 
   @Column()

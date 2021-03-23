@@ -1,13 +1,7 @@
-import {
-  Body,
-  Controller,
-  Post,
-  UseGuards,
-  ValidationPipe,
-} from '@nestjs/common';
+import { Body, Controller, Post, Res, ValidationPipe } from '@nestjs/common';
 import { AdminCredentialsDto } from './dto/auth.admin-credentials.dto';
 import { AuthService } from './auth.service';
-import * as bcrypt from 'bcrypt';
+import { Response } from 'express';
 
 @Controller('auth')
 export class AuthController {
@@ -21,18 +15,14 @@ export class AuthController {
   }
 
   @Post('/signin')
-  signIn(
+  async signIn(
     @Body() adminCredentialsDto: AdminCredentialsDto,
-  ): Promise<{ accessToken: string }> {
-    return this.authService.signIn(adminCredentialsDto);
-  }
-
-  @Post('/test')
-  test(): any {
-    const password = '1234';
-    const salt = '$2b$10$YWeeDixLMlml2NW5BZdYuO';
-
-    const hash = bcrypt.hash(password, salt);
-    return hash;
+    @Res({ passthrough: true }) response: Response,
+  ): Promise<any> {
+    const { accessToken, admin } = await this.authService.signIn(
+      adminCredentialsDto,
+    );
+    response.cookie('JwtToken', accessToken, { httpOnly: true });
+    return admin;
   }
 }
