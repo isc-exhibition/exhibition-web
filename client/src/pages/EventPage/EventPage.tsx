@@ -32,11 +32,10 @@ function EventPage() {
 
   const [getEventLetterAnswer, { data, error, loading }] = useLazyQuery<EventResultData>(
     GET_EVENT_LETTER_ANSWER,
-    { variables: { letter: answer } },
   );
 
   const eventButtonClicked = () => {
-    getEventLetterAnswer();
+    getEventLetterAnswer({ variables: { letter: answer } });
     setIsAnswerModalOpen(true);
   };
 
