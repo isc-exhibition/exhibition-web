@@ -1,14 +1,19 @@
 name: Deploy to Amazon ECS (Server App)
 
 on: 
-  push:
-    paths:
-    - 'server/**'
-    branches: [ main ]
+  workflow_run:
+    workflows: 
+    - "Node.js CI (Server)"
+    types:
+    - completed
+    push:
+      paths:
+      - 'server/**'
+      branches: [ main ]
 
 jobs:
   deploy:
-    name: Deploy
+    name: Deploy Server App
     runs-on: ubuntu-latest
     defaults:
       run:

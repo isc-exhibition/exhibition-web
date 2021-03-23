@@ -1,11 +1,16 @@
 name: Deploy to Amazon S3 (Client App)
 
 on:
-  push:
-    paths:
-    - 'client/**'
-    branches: [ main ]
-
+  workflow_run:
+    workflows: 
+    - "Node.js CI (Client)"
+    types:
+    - completed
+    push:
+      paths:
+      - 'client/**'
+      branches: [ main ]
+  
 jobs:
   deploy:
     name: Deploy Client App
