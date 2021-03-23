@@ -1,4 +1,8 @@
 ### 서울대학교 정보문화학 과제전 웹페이지
+![Server Build](https://github.com/isc-exhibition/exhibition-web/actions/workflows/node-server.yml/badge.svg?branch=main)
+![Server Deploy](https://github.com/isc-exhibition/exhibition-web/actions/workflows/deploy-server.yml/badge.svg?branch=main)
+![Client Build](https://github.com/isc-exhibition/exhibition-web/actions/workflows/node-client.yml/badge.svg?branch=main)
+![Client Deploy](https://github.com/isc-exhibition/exhibition-web/actions/workflows/deploy-client.yml/badge.svg?branch=main)
 
 ### Client
 ```sh
