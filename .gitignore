@@ -24,6 +24,7 @@ yarn-error.log*
 
 .eslintcache
 
-/dist
-/.vscode
+dist/
+build/
+.vscode
 .env

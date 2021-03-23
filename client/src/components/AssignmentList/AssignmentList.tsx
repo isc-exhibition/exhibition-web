@@ -6,17 +6,18 @@ import trayBackgroundImage from './subject_tray.png';
 import desktopTrayImage from '../../assets/desktop_tray.png';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
 import noImage from '../../assets/noimage.png';
+import { AssignmentListInterface } from '../../pages/SubjectPage/SubjectPage';
 
 interface Props {
-  subject: any;
+  assignmentList: AssignmentListInterface[];
 }
 
 function AssignmentList(props: Props) {
   const isDeviceWidthWideAsDesktop = UseMediaQuery('(min-width: 800px)');
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
 
-  const { subject } = props;
-  const assignments = subject?.data?.assignment;
+  const { assignmentList } = props;
+  const assignments = assignmentList;
 
   // TODO: 나중에 서버의 Pagination으로 처리해야 합니다
   const hasPagination = assignments?.length > 6;
@@ -24,9 +25,9 @@ function AssignmentList(props: Props) {
 
   const firstPageAssingments = hasPagination ? assignments.slice(0, 6) : assignments;
   const secondPageAssingments = hasPagination
-    ? assignments.slice(firstPageAssingments.length, 12) : null;
+    ? assignments.slice(firstPageAssingments.length, 12) : [];
   const thirdPageAssignments = hasThirdPage
-    ? assignments.slice(firstPageAssingments.length + secondPageAssingments.length) : null;
+    ? assignments.slice(firstPageAssingments.length + secondPageAssingments?.length) : [];
 
   // eslint-disable-next-line no-nested-ternary
   const assignmentsInCurrentPage = currentPageIndex === 0
