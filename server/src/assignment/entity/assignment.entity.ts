@@ -12,7 +12,7 @@ export class Assignment extends BaseEntity {
   @ObjectIdColumn()
   _id: string;
 
-  @PrimaryGeneratedColumn()g
+  @PrimaryGeneratedColumn()
   @Column()
   assignment_id: number;
 
