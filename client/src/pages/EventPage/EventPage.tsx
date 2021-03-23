@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import axios from 'axios';
 import { gql, useLazyQuery } from '@apollo/client';
 import styles from './EventPage.module.scss';
 import UseMediaQuery from '../../customHooks/UseMediaQuery';
@@ -29,28 +28,15 @@ query ($letter: String!) {
 function EventPage() {
   const isDeviceWidthWideAsDesktop = UseMediaQuery('(max-width: 800px)');
   const [answer, setAnswer] = useState('');
-  const [eventAnswerResponse, setEventAnswerResponse] = useState<EventResult>();
   const [isAnswerModalOpen, setIsAnswerModalOpen] = useState(false);
 
-  // const sendLetterAnswerRequest = async () => {
-  //   const response = await axios.get('/api/v1/event/', { params: { letter: answer } });
-  //   setEventAnswerResponse(response.data.answer);
-  //   setIsAnswerModalOpen(true);
-  // };
-
-  // const { loading, error, data } = useQuery(
-  //   GET_EVENT_LETTER_ANSWER,
-  //   { variables: { letter: answer } },
-  // );
-
-  const [getEventLetterAnswer, { data }] = useLazyQuery<EventResultData>(
+  const [getEventLetterAnswer, { data, error, loading }] = useLazyQuery<EventResultData>(
     GET_EVENT_LETTER_ANSWER,
     { variables: { letter: answer } },
   );
 
   const eventButtonClicked = () => {
     getEventLetterAnswer();
-    setEventAnswerResponse(data?.getEventLetterAnswer);
     setIsAnswerModalOpen(true);
   };
 
@@ -87,7 +73,7 @@ function EventPage() {
         <div className={styles.EventBoard}>
           <p className={styles.BoardTitle}>회문입력</p>
           <input type="text" name="EventAnswer" placeholder="Hint: _ _ _ _ _(5글자)" onChange={(e) => setAnswer(e.target.value)} />
-          <button className={styles.EventButton} name="EventButton" type="button" onClick={() => eventButtonClicked()}>제출하기</button>
+          <button className={styles.EventButton} name="EventButton" type="button" onClick={eventButtonClicked}>제출하기</button>
         </div>
       </div>
 
@@ -114,7 +100,7 @@ function EventPage() {
               <p className={styles.InputTitle}>회문 입력</p>
               <div className={styles.DeskTopInput}>
                 <input type="text" name="EventAnswer" placeholder="Hint: _ _ _ _ _(5글자)" onChange={(e) => setAnswer(e.target.value)} />
-                <button className={styles.DeskTopEventButton} name="DeskTopEventButton" type="button" onClick={() => eventButtonClicked()}>제출하기</button>
+                <button className={styles.DeskTopEventButton} name="DeskTopEventButton" type="button" onClick={eventButtonClicked}>제출하기</button>
               </div>
             </div>
           </div>
@@ -128,11 +114,12 @@ function EventPage() {
         ? <div className={styles.desktopMainPageContainer} style={{ backgroundImage: `url(${desktopBackgroundImage})` }} />
         : <BackgroundImage backgroundImageUrl={mobileBackgroundImage} />}
       {event}
-      {isAnswerModalOpen && (
-      <EventModal
-        closeModal={closeModdal}
-        eventAnswer={eventAnswerResponse}
-      />
+      {(isAnswerModalOpen
+       && !loading && !error) && (
+       <EventModal
+         closeModal={closeModdal}
+         eventAnswer={data?.getEventLetterAnswer}
+       />
       )}
     </>
   );
