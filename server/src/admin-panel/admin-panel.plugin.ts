@@ -1,10 +1,10 @@
 import { INestApplication } from '@nestjs/common';
-import AdminBro, { BaseResource } from 'admin-bro';
+import AdminBro from 'admin-bro';
 import * as AdminBroExpress from 'admin-bro-expressjs';
 import { Database, Resource } from '@admin-bro/typeorm';
 import { validate } from 'class-validator';
 // import { getConnection } from 'typeorm';
-import { Admin } from '../auth/admin.entitiy';
+import { User } from '../auth/admin.entitiy';
 import { Assignment } from '../assignment/entity/assignment.entity';
 
 export async function setupAdminPanel(app: INestApplication): Promise<void> {
@@ -14,7 +14,7 @@ export async function setupAdminPanel(app: INestApplication): Promise<void> {
   // const connection = await getConnection();
 
   const adminBro = new AdminBro({
-    resources: [{ resource: Assignment }, { resource: Admin }],
+    resources: [{ resource: Assignment }, { resource: User }],
     rootPath: '/admin',
   });
 

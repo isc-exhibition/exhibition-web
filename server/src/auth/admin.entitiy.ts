@@ -9,13 +9,13 @@ import {
 import * as bcrypt from 'bcrypt';
 
 @Entity()
-@Unique(['admin_id'])
-export class Admin extends BaseEntity {
+@Unique(['user_id'])
+export class User extends BaseEntity {
   @ObjectIdColumn()
   _id: string;
 
   @Column()
-  admin_id: string;
+  user_id: string;
 
   @Column()
   password: string;

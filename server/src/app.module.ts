@@ -5,7 +5,7 @@ import { AssignmentModule } from './assignment/assignment.module';
 import { Assignment } from './assignment/entity/assignment.entity';
 import { getMongoData } from './config';
 import { AuthModule } from './auth/auth.module';
-import { Admin } from './auth/admin.entitiy';
+import { User } from './auth/admin.entitiy';
 
 @Module({
   imports: [
@@ -18,7 +18,7 @@ import { Admin } from './auth/admin.entitiy';
           url: mongoURI,
           database: database,
           synchronize: true,
-          entities: [Assignment, Admin],
+          entities: [Assignment, User],
         };
       },
     }),

@@ -1,5 +1,5 @@
 import { EntityRepository, Repository } from 'typeorm';
-import { Admin } from './admin.entitiy';
+import { User } from './admin.entitiy';
 import { AdminCredentialsDto } from './dto/auth.admin-credentials.dto';
 import * as bcrypt from 'bcrypt';
 import {
@@ -7,13 +7,13 @@ import {
   InternalServerErrorException,
 } from '@nestjs/common';
 
-@EntityRepository(Admin)
-export class AdminRepository extends Repository<Admin> {
+@EntityRepository(User)
+export class AdminRepository extends Repository<User> {
   async signUp(adminCredentialsDto: AdminCredentialsDto): Promise<string> {
-    const { admin_id, password } = adminCredentialsDto;
+    const { user_id, password } = adminCredentialsDto;
 
-    const user = new Admin();
-    user.admin_id = admin_id;
+    const user = new User();
+    user.user_id = user_id;
     user.salt = await bcrypt.genSalt();
     user.password = await bcrypt.hash(password, user.salt);
 
@@ -32,12 +32,12 @@ export class AdminRepository extends Repository<Admin> {
   async validateAdminPassword(
     authCredentialsDto: AdminCredentialsDto,
   ): Promise<string> {
-    const { admin_id, password } = authCredentialsDto;
+    const { user_id, password } = authCredentialsDto;
 
-    const admin = await this.findOne({ admin_id });
+    const user = await this.findOne({ user_id });
 
-    if (admin && (await admin.validatePassword(password))) {
-      return admin.admin_id;
+    if (user && (await user.validatePassword(password))) {
+      return user.user_id;
     } else {
       return null;
     }
