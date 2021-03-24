@@ -1,4 +1,4 @@
-name: Deploy (Server App)
+name: Deploy (Server)
 
 on: 
   workflow_run:
@@ -15,6 +15,7 @@ jobs:
   deploy:
     name: Deploy Server App
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     defaults:
       run:
         working-directory: server
