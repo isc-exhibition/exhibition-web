@@ -1,9 +1,9 @@
-name: Deploy to Amazon S3 (Client App)
+name: Deploy (Client App)
 
 on:
   workflow_run:
     workflows: 
-    - "Node.js CI (Client)"
+    - "Build (Client)"
     types:
     - completed
     push:

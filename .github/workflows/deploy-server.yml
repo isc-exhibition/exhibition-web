@@ -1,9 +1,9 @@
-name: Deploy to Amazon ECS (Server App)
+name: Deploy (Server App)
 
 on: 
   workflow_run:
     workflows: 
-    - "Node.js CI (Server)"
+    - "Build (Server)"
     types:
     - completed
     push:
