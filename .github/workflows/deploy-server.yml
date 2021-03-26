@@ -1,9 +1,9 @@
-name: Deploy to Amazon ECS (Server App)
+name: Deploy (Server)
 
 on: 
   workflow_run:
     workflows: 
-    - "Node.js CI (Server)"
+    - "Build (Server)"
     types:
     - completed
     push:
@@ -15,6 +15,7 @@ jobs:
   deploy:
     name: Deploy Server App
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     defaults:
       run:
         working-directory: server
