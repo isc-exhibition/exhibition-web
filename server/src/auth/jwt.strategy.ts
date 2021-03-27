@@ -4,15 +4,20 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtPayload } from './jwt-payload.interface';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AdminRepository } from './admin.repository';
+import { getJwtSecretKey, getMongoData } from 'src/config';
+
+
+
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(
     @InjectRepository(AdminRepository)
     private adminRepository: AdminRepository,
   ) {
+    
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      secretOrKey: 'iscexhibition',
+      secretOrKey: getJwtSecretKey(),
     });
   }
 

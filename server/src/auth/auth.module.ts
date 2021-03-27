@@ -6,14 +6,25 @@ import { AdminRepository } from './admin.repository';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './jwt.strategy';
+import { getMongoData } from 'src/config';
+
+async function getJwtSecretKey() {
+  const secretdata = await getMongoData();
+  const jwtSecretKey = secretdata.jwtSecretKey
+  return jwtSecretKey
+} 
 
 @Module({
   imports: [
     PassportModule.register({ defaultStrategy: 'jwt' }),
-    JwtModule.register({
-      secret: 'iscexhibition',
-      signOptions: {
-        expiresIn: 60 * 60, // 1 hour
+    JwtModule.registerAsync({
+      useFactory: async () => {
+        const JwtSecretKey = await getJwtSecretKey();
+        return {
+          secret: JwtSecretKey,       
+          signOptions: {
+            expiresIn: 60 * 60, // 1 hour
+        },}
       },
     }),
     TypeOrmModule.forFeature([AdminRepository]),
