@@ -19,7 +19,7 @@ export class AdminRepository extends Repository<User> {
 
     try {
       await user.save();
-      return 'Successfully Signed In';
+      return 'Successfully Signed Up';
     } catch (error) {
       if (error.code === 11000) {
         throw new ConflictException('Username already exist');

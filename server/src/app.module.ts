@@ -7,6 +7,7 @@ import { getMongoData } from './config';
 import { AuthModule } from './auth/auth.module';
 import { User } from './auth/admin.entitiy';
 
+
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
