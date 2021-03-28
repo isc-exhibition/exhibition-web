@@ -29,11 +29,11 @@ export class Assignment extends BaseEntity {
   description: string;
 
   @Column()
-  concept: string;
+  concept = '';
 
   @Column()
-  link: string;
+  link = '';
 
   @Column()
-  image_link: string;
+  image_link = '';
 }
