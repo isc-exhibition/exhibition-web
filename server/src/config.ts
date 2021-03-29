@@ -44,8 +44,5 @@ export const getMongoData = async () => {
   return { mongoURI, database, jwtSecretKey };
 };
 
-export const getJwtSecretKey = async() => {
-  const secretdata = await getMongoData()
-  const jwtSecretKey = secretdata.jwtSecretKey
-  return jwtSecretKey
-} 
+export const getJwtSecretKey = async() => (await getMongoData()).jwtSecretKey
+

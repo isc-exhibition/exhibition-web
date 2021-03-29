@@ -6,13 +6,8 @@ import { AdminRepository } from './admin.repository';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './jwt.strategy';
-import { getMongoData } from 'src/config';
+import { getJwtSecretKey, getMongoData } from 'src/config';
 
-async function getJwtSecretKey() {
-  const secretdata = await getMongoData();
-  const jwtSecretKey = secretdata.jwtSecretKey
-  return jwtSecretKey
-} 
 
 @Module({
   imports: [
@@ -24,7 +19,8 @@ async function getJwtSecretKey() {
           secret: JwtSecretKey,       
           signOptions: {
             expiresIn: 60 * 60, // 1 hour
-        },}
+          },
+        }
       },
     }),
     TypeOrmModule.forFeature([AdminRepository]),
