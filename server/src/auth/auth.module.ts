@@ -6,7 +6,7 @@ import { AdminRepository } from './admin.repository';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './jwt.strategy';
-import { getJwtSecretKey, getMongoData } from 'src/config';
+import { getJwtSecretKey} from 'src/config';
 
 
 @Module({

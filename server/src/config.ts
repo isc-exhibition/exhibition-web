@@ -13,7 +13,7 @@ const client = new AWS.SecretsManager({
 
 
 
-export const getMongoData = async () => {
+export const getSecretData = async () => {
   let mongoURI = '';
   let database = '';
   let jwtSecretKey = '';
@@ -44,5 +44,5 @@ export const getMongoData = async () => {
   return { mongoURI, database, jwtSecretKey };
 };
 
-export const getJwtSecretKey = async() => (await getMongoData()).jwtSecretKey
+export const getJwtSecretKey = async() => (await getSecretData()).jwtSecretKey
 

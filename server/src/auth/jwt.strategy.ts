@@ -4,7 +4,7 @@ import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtPayload } from './jwt-payload.interface';
 import { InjectRepository } from '@nestjs/typeorm';
 import { AdminRepository } from './admin.repository';
-import { getJwtSecretKey, getMongoData } from 'src/config';
+import { getJwtSecretKey } from 'src/config';
 
 
 
