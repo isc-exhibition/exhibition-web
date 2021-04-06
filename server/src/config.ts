@@ -11,9 +11,12 @@ const client = new AWS.SecretsManager({
   region: region,
 });
 
-export const getMongoData = async () => {
+
+
+export const getSecretData = async () => {
   let mongoURI = '';
   let database = '';
+  let jwtSecretKey = '';
 
   const secret = await client
     .getSecretValue({ SecretId: secretName })
@@ -33,9 +36,13 @@ export const getMongoData = async () => {
     }
 
     database = secretObject.database;
+    jwtSecretKey = secretObject.jwtSecretKey
   } else {
     throw 'SecretString not found';
   }
 
-  return { mongoURI, database };
+  return { mongoURI, database, jwtSecretKey };
 };
+
+export const getJwtSecretKey = async() => (await getSecretData()).jwtSecretKey
+
