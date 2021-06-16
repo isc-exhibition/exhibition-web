@@ -1,0 +1,7 @@
+/build
+/node_modules
+.eslintrc.js
+react-app-env.d.ts
+reportWebVitals.ts
+babael.config.js
+config-overrides.js
