@@ -4,12 +4,12 @@ module.exports = {
     es2021: true,
   },
   settings: {
-    "import/resolver": {
-      "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"],
-        "paths": ["src"]
-      }
-    }
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        paths: ['src'],
+      },
+    },
   },
   extends: [
     'plugin:react/recommended',
@@ -28,32 +28,32 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-    'linebreak-style' :0,
+    'linebreak-style': 0,
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
-    "no-undef": "off",
-    "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"],
-    "react/jsx-props-no-spreading": "off",
-    "react/require-default-props": "off",
-    "react/require-default-props": "off",
-    "camelcase": "warn",
-    "import/extensions": [
-      "error",
-      "ignorePackages",
+    'no-undef': 'off',
+    'no-use-before-define': 'off',
+    '@typescript-eslint/no-use-before-define': ['error'],
+    'react/jsx-props-no-spreading': 'off',
+    'react/require-default-props': 'off',
+    'import/prefer-default-export': 'off',
+    camelcase: 'warn',
+    'import/extensions': [
+      'error',
+      'ignorePackages',
       {
-        "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
-   ],
-   'import/no-extraneous-dependencies': [
-    'off',
-    {
-      devDependencies: [
-        '**/*.stories.tsx',
-      ],
-    },
-  ],
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
+    'import/no-extraneous-dependencies': [
+      'off',
+      {
+        devDependencies: [
+          '**/*.stories.tsx',
+        ],
+      },
+    ],
   },
 };
