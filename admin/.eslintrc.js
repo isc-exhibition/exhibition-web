@@ -37,6 +37,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'import/prefer-default-export': 'off',
     'react/button-has-type': 'off',
+    'no-unused-vars': 'off',
     camelcase: 'warn',
     'import/extensions': [
       'error',

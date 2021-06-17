@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import Input from './Input/Input';
 import LoginButton from './Input/LoginButton';
 import { getRestApiEndpoint } from './config.api';
+import { UserContext } from './provider/user';
 
 const Container = styled.div`
   width: 100vw;
@@ -48,6 +49,8 @@ function Login() {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
 
+  const { isLogin, login } = useContext(UserContext);
+
   const handleIdInput = (value: string) => {
     setId(value);
   };
@@ -58,12 +61,13 @@ function Login() {
 
   const endpoint = getRestApiEndpoint();
 
-  const login = async () => {
+  const handleLogin = async () => {
     if (id && password) {
       axios.post(`${endpoint}/auth/signin`, { user_id: id, password })
-        .then(() => {
-          // 메인 페이지로 이동하게 만들기
-          console.log('성공요');
+        .then((res: AxiosResponse<any>) => {
+          login(res.data);
+          // TODO: 메인 페이지로 이동하게 만들기
+          login('얍');
         })
         .catch(() => {
           // console.error(e);
@@ -80,15 +84,15 @@ function Login() {
         </Heading01>
         <InputBox>
           <Heading02>아이디</Heading02>
-          <Input type="text" maxLength={20} css={css`width: 447px; font-size: 42px`} handleChange={handleIdInput} handleEnter={login} value={id} />
+          <Input type="text" maxLength={20} css={css`width: 447px; font-size: 42px`} handleChange={handleIdInput} handleEnter={handleLogin} value={id} />
         </InputBox>
         {' '}
         <InputBox>
           <Heading02>비밀번호</Heading02>
-          <Input type="password" maxLength={30} css={css`width: 447px; font-size: 42px`} handleChange={handlePasswordInput} handleEnter={login} value={password} />
+          <Input type="password" maxLength={30} css={css`width: 447px; font-size: 42px`} handleChange={handlePasswordInput} handleEnter={handleLogin} value={password} />
         </InputBox>
         <InputBox>
-          <LoginButton orangeColor onClick={login} css={css`width: 447px; height: 80px; font-size: 42px; margin-top: 12px;`}>
+          <LoginButton orangeColor onClick={handleLogin} css={css`width: 447px; height: 80px; font-size: 42px; margin-top: 12px;`}>
             로그인
           </LoginButton>
         </InputBox>
