@@ -36,6 +36,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'react/require-default-props': 'off',
     'import/prefer-default-export': 'off',
+    'react/button-has-type': 'off',
     camelcase: 'warn',
     'import/extensions': [
       'error',
