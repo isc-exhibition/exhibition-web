@@ -1,23 +1,20 @@
 import { PassportStrategy } from '@nestjs/passport';
-import { Strategy, ExtractJwt } from 'passport-jwt';
+import { Strategy } from 'passport-jwt';
 import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtPayload } from './jwt-payload.interface';
 import { InjectRepository } from '@nestjs/typeorm';
-import { AdminRepository } from './admin.repository';
-import { getJwtSecretKey } from 'src/config';
-
-
+import { User } from './admin.entitiy';
+import { MongoRepository } from 'typeorm';
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(
-    @InjectRepository(AdminRepository)
-    private adminRepository: AdminRepository,
+    @InjectRepository(User)
+    private adminRepository: MongoRepository<User>,
   ) {
-    
     super({
-      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-      secretOrKey: getJwtSecretKey(),
+      jwtFromRequest: fromAuthCookie(),
+      secretOrKey: process.env.JWT_SECRET_KEY,
     });
   }
 
@@ -29,4 +26,14 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     }
     return user;
   }
+}
+
+function fromAuthCookie() {
+  return function (request) {
+    let token = null;
+    if (request && request.cookies) {
+      token = request.cookies['Authorization'];
+    }
+    return token;
+  };
 }

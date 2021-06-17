@@ -22,7 +22,8 @@ export class AuthController {
     const { accessToken, user } = await this.authService.signIn(
       adminCredentialsDto,
     );
-    response.cookie('JwtToken', accessToken, { httpOnly: true });
+    response.cookie('Authorization', accessToken, { httpOnly: true });
+    response.statusCode = 200;
     return user;
   }
 }
