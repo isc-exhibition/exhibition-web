@@ -3,13 +3,15 @@ import { Global, css } from '@emotion/react';
 import {
   BrowserRouter as Router, Switch, Route, Redirect,
 } from 'react-router-dom';
-// import Login from './Login';
+import Login from './Login';
+import UserProvider from './provider/user';
 
 function App() {
   return (
     <Router>
-      <Global
-        styles={css`
+      <UserProvider>
+        <Global
+          styles={css`
         html,
         body {
           padding: 0;
@@ -20,11 +22,12 @@ function App() {
           min-height: 100vh;
         }
       `}
-      />
-      <Switch>
-        {/* <Route exact path="/login" component={Login} /> */}
-        <Redirect exact to="/" />
-      </Switch>
+        />
+        <Switch>
+          <Route exact path="/login" component={Login} />
+          <Redirect exact to="/" />
+        </Switch>
+      </UserProvider>
     </Router>
   );
 }

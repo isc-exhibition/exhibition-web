@@ -31,3 +31,10 @@ const getApolloClient = () => {
 };
 
 export default getApolloClient;
+
+export const getRestApiEndpoint = () => {
+  if (NODE_ENV === 'production') {
+    return 'https://api.iscexhibition.com/';
+  }
+  return 'http://localhost:3000';
+};

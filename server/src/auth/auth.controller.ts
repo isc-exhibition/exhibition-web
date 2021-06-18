@@ -19,10 +19,11 @@ export class AuthController {
     @Body() adminCredentialsDto: AdminCredentialsDto,
     @Res({ passthrough: true }) response: Response,
   ): Promise<any> {
-    const { accessToken, user } = await this.authService.signIn(
+    const { accessToken, user_id } = await this.authService.signIn(
       adminCredentialsDto,
     );
-    response.cookie('JwtToken', accessToken, { httpOnly: true });
-    return user;
+    response.cookie('Authorization', accessToken, { httpOnly: true });
+    response.statusCode = 200;
+    return user_id;
   }
 }

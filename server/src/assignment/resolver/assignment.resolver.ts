@@ -10,7 +10,8 @@ import {
   AssignmentByIdInput,
   AssignmentListInput,
 } from '../input/assignment.input';
-import { runInThisContext } from 'node:vm';
+import { UseGuards } from '@nestjs/common';
+import { GQLAuthGuard } from '../../auth/guard/auth.guard';
 
 @Resolver((of) => AssignmentType)
 export class AssignmentResolver {
@@ -32,6 +33,7 @@ export class AssignmentResolver {
   }
 
   @Mutation((returns) => AssignmentType)
+  @UseGuards(GQLAuthGuard)
   createAssignment(
     @Args('createAssignmentInput') createAssignmentInput: CreateAssignmentInput,
   ) {
@@ -39,6 +41,7 @@ export class AssignmentResolver {
   }
 
   @Mutation((returns) => AssignmentType)
+  @UseGuards(GQLAuthGuard)
   deleteAssignmentById(
     @Args('deleteAssignmentByIdInput')
     deleteAssignmentByIdInput: DeleteAssignmentByIdInput,
@@ -49,6 +52,7 @@ export class AssignmentResolver {
   }
 
   @Mutation((returns) => AssignmentType)
+  @UseGuards(GQLAuthGuard)
   UpdateAssignmentById(
     @Args('updateAssignmentByIdInput')
     updateAssignmentByIdInput: UpdateAssignmentByIdInput,

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import * as AWS from 'aws-sdk';
 
 const { NODE_ENV } = process.env;
@@ -10,8 +11,6 @@ const localURI = 'mongodb://localhost';
 const client = new AWS.SecretsManager({
   region: region,
 });
-
-
 
 export const getSecretData = async () => {
   let mongoURI = '';
@@ -36,7 +35,7 @@ export const getSecretData = async () => {
     }
 
     database = secretObject.database;
-    jwtSecretKey = secretObject.jwtSecretKey
+    jwtSecretKey = secretObject.jwtSecretKey;
   } else {
     throw 'SecretString not found';
   }
@@ -44,5 +43,8 @@ export const getSecretData = async () => {
   return { mongoURI, database, jwtSecretKey };
 };
 
-export const getJwtSecretKey = async() => (await getSecretData()).jwtSecretKey
+export const getJwtSecretKey = async () => (await getSecretData()).jwtSecretKey;
 
+const { jwtSecretKey } = process.env;
+
+require('dotenv').config();
