@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import Login from './Login';
 import UserProvider from './provider/user';
+import ListContainer from './containers/ListContainer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         />
         <Switch>
           <Route exact path="/login" component={Login} />
+          <Route exact path="/assignment" component={ListContainer} />
           <Redirect exact to="/" />
         </Switch>
       </UserProvider>
