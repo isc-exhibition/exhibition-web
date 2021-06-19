@@ -11,6 +11,7 @@ import { JwtPayload } from './jwt-payload.interface';
 import * as bcrypt from 'bcrypt';
 import { User } from './admin.entitiy';
 import { MongoRepository } from 'typeorm';
+import { Logger } from '@nestjs/common';
 
 @Injectable()
 export class AuthService {
@@ -21,19 +22,16 @@ export class AuthService {
   ) {}
 
   async signIn(adminCredentialsDto: AdminCredentialsDto): Promise<any> {
-    try {
       const user_id = await this.validateUser(adminCredentialsDto);
       if (!user_id) {
+        Logger.error('Could not validate this user');
         throw new UnauthorizedException('Invalid Id or Password');
       }
+
       const payload: JwtPayload = { user_id };
       const accessToken = await this.jwtService.sign(payload);
 
       return { accessToken, user_id };
-    } catch (e) {
-      console.log(e);
-      throw new InternalServerErrorException();
-    }
   }
 
   async signUp(adminCredentialsDto: AdminCredentialsDto): Promise<string> {
