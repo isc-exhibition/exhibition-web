@@ -6,6 +6,7 @@ import {
 import Login from './Login';
 import UserProvider from './provider/user';
 import ListContainer from './containers/ListContainer';
+import CreateAssingmentForm from './containers/CreateAssingmentForm';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Switch>
           <Route exact path="/login" component={Login} />
           <Route exact path="/assignment" component={ListContainer} />
+          <Route exact path="/assignment/create" component={CreateAssingmentForm} />
           <Redirect exact to="/" />
         </Switch>
       </UserProvider>

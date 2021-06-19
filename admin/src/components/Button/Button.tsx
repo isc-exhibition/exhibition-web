@@ -1,13 +1,13 @@
 /* eslint-disable react/button-has-type */
 import React, { ButtonHTMLAttributes, memo } from 'react';
 import { css } from '@emotion/react';
-import { buttonStyle } from './ButtonStyles';
+import { buttonStyle } from './style';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   orangeColor: boolean;
 }
 
-function LoginButton(props: Props) {
+function Button(props: Props) {
   const { children, orangeColor, ...rest } = props;
 
   return (
@@ -24,4 +24,4 @@ function LoginButton(props: Props) {
   );
 }
 
-export default memo(LoginButton);
+export default memo(Button);

@@ -2,8 +2,8 @@ import React, { useContext, useState } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import axios, { AxiosResponse } from 'axios';
+import Button from 'components/Button/Button';
 import Input from './Input/Input';
-import LoginButton from './Input/LoginButton';
 import { getRestApiEndpoint } from './config.api';
 import { UserContext } from './provider/user';
 
@@ -92,9 +92,9 @@ function Login() {
           <Input type="password" maxLength={30} css={css`width: 447px; font-size: 42px`} handleChange={handlePasswordInput} handleEnter={handleLogin} value={password} />
         </InputBox>
         <InputBox>
-          <LoginButton orangeColor onClick={handleLogin} css={css`width: 447px; height: 80px; font-size: 42px; margin-top: 12px;`}>
+          <Button orangeColor onClick={handleLogin} css={css`width: 447px; height: 80px; font-size: 42px; margin-top: 12px;`}>
             로그인
-          </LoginButton>
+          </Button>
         </InputBox>
       </BoxContainer>
     </Container>
