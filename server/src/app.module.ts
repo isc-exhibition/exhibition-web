@@ -7,7 +7,6 @@ import { getSecretData } from './config';
 import { AuthModule } from './auth/auth.module';
 import { User } from './auth/admin.entitiy';
 
-
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
@@ -24,7 +23,13 @@ import { User } from './auth/admin.entitiy';
       },
     }),
     AssignmentModule,
-    GraphQLModule.forRoot({ autoSchemaFile: true }),
+    GraphQLModule.forRoot({
+      autoSchemaFile: true,
+      cors: {
+        credentials: true,
+        origin: ['http://localhost:3001', 'https://iscexhibition.com'],
+      },
+    }),
     AuthModule,
   ],
 })
