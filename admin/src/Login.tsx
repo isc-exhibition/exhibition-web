@@ -63,7 +63,7 @@ function Login() {
 
   const handleLogin = async () => {
     if (id && password) {
-      axios.post(`${endpoint}/auth/signin`, { user_id: id, password })
+      axios.post(`${endpoint}/auth/signin`, { user_id: id, password }, { withCredentials: true })
         .then((res: AxiosResponse<any>) => {
           login(res.data);
           // TODO: 메인 페이지로 이동하게 만들기
