@@ -186,13 +186,13 @@ export default function CreateAssingmentForm({ handleCancel, handleCreateNFT }: 
         <FormContainer>
           <Column css={css`margin-right: 44px`}>
             <GrayHeading04>
-              과목 이름
+              과목 번호 (각 과목에 할당된 숫자를 입력해주세요)
             </GrayHeading04>
             <StyledInput type="text" register={register} required name="subject_id" />
-            <GrayHeading04>
+            {/* <GrayHeading04>
               학기
             </GrayHeading04>
-            <StyledInput type="text" register={register} required name="image_link" />
+            <StyledInput type="text" register={register} required name="image_link" /> */}
             <GrayHeading04>
               Image
             </GrayHeading04>
