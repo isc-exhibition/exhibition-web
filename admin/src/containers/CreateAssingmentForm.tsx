@@ -17,8 +17,9 @@ import { ImageFile, NFTInfoToSave } from 'utils/types';
 
 const Container = styled.div`
   padding: 32px 80px;
-  background-color: white;
+  background-color: ${COLORS.lightGray};
   height: 100%;
+  min-height: 100vh;
   width: 100%;
   box-sizing: border-box;
   margin: auto;
@@ -27,11 +28,14 @@ const Container = styled.div`
   align-items: flex-start;
 `;
 
-const MainContainer = styled.div`
+const FormContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-start;
   box-sizing: border-box;
+  padding: 24px 40px;
+  border-radius: 24px;
+  background: white;
 `;
 
 const Column = styled.div`
@@ -65,8 +69,8 @@ const StyledTextarea = styled(RHFTextarea)`
   height: 124px;
   padding: 19px;
   box-sizing: border-box;
-  border: 1px solid ${COLORS.lightGray};
   margin: 16px 0 24px 0;
+  border: 1px solid ${COLORS.lightGray};
   font-size: 16px;
   line-height: 29px;
   resize: none;
@@ -136,7 +140,7 @@ export default function CreateAssingmentForm({ handleCancel, handleCreateNFT }: 
         새로운 과제 등록하기
       </Heading01>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <MainContainer>
+        <FormContainer>
           <Column css={css`margin-right: 44px`}>
             <GrayHeading04>
               과목 이름
@@ -179,8 +183,8 @@ export default function CreateAssingmentForm({ handleCancel, handleCreateNFT }: 
             </GrayHeading04>
             <StyledTextarea register={register} required name="description" />
             <ButtonContainer>
-              <Button orangeColor type="submit" disabled={isSubmitting} css={css`height: 40px; font-size: 24px`}>
-                Create
+              <Button orangeColor type="submit" disabled={isSubmitting} css={css`height: 40px; font-size: 21px; line-height: 32px;`}>
+                등록하기
               </Button>
               {handleCancel
             && (
@@ -200,7 +204,7 @@ export default function CreateAssingmentForm({ handleCancel, handleCreateNFT }: 
             )}
             </ButtonContainer>
           </Column>
-        </MainContainer>
+        </FormContainer>
       </form>
     </Container>
   );
