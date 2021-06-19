@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styled from '@emotion/styled';
+import { gql, useMutation } from '@apollo/client';
 import { COLORS } from 'utils/theme';
 import { Heading01 } from 'components/Heading/Heading01';
 import { Heading04 } from 'components/Heading/Heading04';
@@ -85,13 +86,43 @@ const ButtonContainer = styled.div`
   justify-content: flex-start;
 `;
 
+const CREATE_ASSIGNMENT = gql`
+  mutation ($name: String! $team: String! $description: String! $concept: String! $link: String! $image_link: String! $subject_id: Int! ) {
+    createAssignment(createAssignmentInput: {
+      name: $name,
+      team: $team,
+      description: $description,
+      concept: $concept,
+      link: $link,
+      image_link: $image_link,
+      subject_id: $subject_id,
+    }) {
+      name
+    }
+  }
+`;
+
 interface Props {
   handleCancel?: () => void;
   handleCreateNFT?: (nftInfo: NFTInfoToSave) => void;
 }
 
+type CreateAssignmentInput = {
+  name: string;
+  team: string;
+  description: string;
+  concept: string;
+  link: string;
+  image_link: string;
+  subject_id: number;
+}
+
 export default function CreateAssingmentForm({ handleCancel, handleCreateNFT }: Props) {
   const [uploadedImage, setUploadedImage] = useState<ImageFile[]>([]);
+
+  const [sendMutaion, { data, error, loading }] = useMutation<any>(
+    CREATE_ASSIGNMENT,
+  );
 
   // const wallet = useAppSelector(selectWallet);
 
@@ -104,8 +135,20 @@ export default function CreateAssingmentForm({ handleCancel, handleCreateNFT }: 
   } = useForm();
   const { isSubmitting } = formState;
 
-  const onSubmit = (data: any) => {
-    console.log(data);
+  const onSubmit = async (submitData: CreateAssignmentInput) => {
+    const {
+      name, team, description, concept, link, image_link, subject_id,
+    } = submitData;
+    try {
+      console.log(await sendMutaion({
+        variables: {
+          name, team, description, concept, link, image_link, subject_id: Number(subject_id),
+        },
+      }));
+    } catch (err) {
+      console.error(err);
+      alert('문제가 생겼습니다. 뭔가 수정후 다시 해주세요!');
+    }
     // if (uploadedImage.length) {
     //   if (wallet?.publicKey) {
     //     const pubKey = wallet.publicKey.toBase58();
@@ -145,11 +188,11 @@ export default function CreateAssingmentForm({ handleCancel, handleCreateNFT }: 
             <GrayHeading04>
               과목 이름
             </GrayHeading04>
-            <StyledInput type="text" register={register} required name="name" />
+            <StyledInput type="text" register={register} required name="subject_id" />
             <GrayHeading04>
               학기
             </GrayHeading04>
-            <StyledInput type="text" register={register} required name="name" />
+            <StyledInput type="text" register={register} required name="image_link" />
             <GrayHeading04>
               Image
             </GrayHeading04>
@@ -163,7 +206,7 @@ export default function CreateAssingmentForm({ handleCancel, handleCreateNFT }: 
             <GrayHeading04>
               과제 링크
             </GrayHeading04>
-            <StyledInput type="text" register={register} required name="name" />
+            <StyledInput type="text" register={register} required name="link" />
           </Column>
           <Column>
             <GrayHeading04>
@@ -173,11 +216,11 @@ export default function CreateAssingmentForm({ handleCancel, handleCreateNFT }: 
             <GrayHeading04>
               팀 이름
             </GrayHeading04>
-            <StyledInput type="text" register={register} required name="name" />
+            <StyledInput type="text" register={register} required name="team" />
             <GrayHeading04>
               컨셉
             </GrayHeading04>
-            <StyledInput type="text" register={register} required name="name" />
+            <StyledInput type="text" register={register} required name="concept" />
             <GrayHeading04>
               설명
             </GrayHeading04>
