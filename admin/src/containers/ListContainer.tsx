@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import styled from '@emotion/styled';
 import { gql, useQuery } from '@apollo/client';
@@ -7,6 +8,7 @@ import { COLORS } from '../utils/theme';
 import AssignmentRow from '../components/AssignmentRow/AssignmentRow';
 
 export interface AssignmentListInterface {
+  _id: string;
   name: string;
   team: string;
 }
@@ -18,6 +20,7 @@ interface AssignmentListData {
 const ASSIGNMENT_LIST = gql`
   query {
     assignmentList {
+      _id
       name
       team
     }
@@ -69,8 +72,7 @@ function ListContainer() {
       <AssignmentListContainer>
         {(!loading && !error) && data?.assignmentList.map((assignment, index) => (
           <AssignmentRow index={index}>
-            {/* TODO: 과제 상세 페이지로 이동 -> 과제 id로? */}
-            <Link to={`/assignment/${assignment}`} css={css`${anchorStyle}`}>
+            <Link to={`/assignment/${assignment._id}`} css={css`${anchorStyle}`}>
               <P css={css`font-weight: bold;`}>
                 {assignment.name}
               </P>
